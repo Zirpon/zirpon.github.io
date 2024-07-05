@@ -10,3 +10,7 @@ top: 9
 ---
 
 # {{ title }}
+
+## Endnotes
+
+- [label]: <https://> "website title"

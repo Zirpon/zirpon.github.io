@@ -36,13 +36,13 @@ domStyle.type = "text/css";
 domStyle.rel = "stylesheet";
 
 class BaseClass {
-	constructor() {
-		GM_registerMenuCommand("设置", () => this.menuSet());
-		this.setStyle();
-	}
+    constructor() {
+        GM_registerMenuCommand("设置", () => this.menuSet());
+        this.setStyle();
+    }
 
-	setStyle() {
-		let menuSetStyle = `
+    setStyle() {
+        let menuSetStyle = `
             .zhmMask{
                 z-index:999999999;
                 background-color:#000;
@@ -502,149 +502,244 @@ class BaseClass {
             color: black;
             outline: 1px solid black;
             }
-        `;
-
-		domStyle.appendChild(document.createTextNode(menuSetStyle));
-
-		domHead.appendChild(domStyle);
-	}
-
-	menuSet() {
-		let setHtml = "<div class='zhmMask'></div>";
-
-		setHtml += "<div class='wrap-box' id='setWrap'>";
-
-		setHtml +=
-			"<ul class='iconSetUlHead'><li class='iconSetPageHead'><span></span><span>" +
-			"语音播报设置" +
-			"</span><span class='iconSetSave'>×</span></li></ul>";
-
-		setHtml += "<ul class='setWrapLi'>";
-
-		setHtml += "<br>";
-		setHtml += "<div class='setWrapLiContent'>";
-		setHtml += "<p>语种：</p>";
-		setHtml += "<div>";
-		setHtml +=
-			"<input type='radio' name='lang' value='zh-CN' id='ch_sim'><label for='ch_sim'>国语</label>";
-		setHtml += "</div>";
-		setHtml += "<div>";
-		setHtml +=
-			"<input type='radio' name='lang' value='zh-HK' id='ch_sim'><label for='ch_sim'>粤语</label>";
-		setHtml += "</div>";
-		setHtml += "</div>";
-		setHtml += "<br>";
-
-		let setrate = GM_getValue("RATE", 1);
-		setHtml += "<div class='setWrapLiContent'>";
-		setHtml += "<p>语速：</p>";
-		setHtml += '<select id="framework">';
-		setHtml += '<option value="' + setrate + '">' + setrate + "</option>";
-		setHtml += '<option value="0.5">0.5</option>';
-		setHtml += '<option value="0.8">0.8</option>';
-		setHtml += '<option value="1">1</option>';
-		setHtml += '<option value="1.2">1.2</option>';
-		setHtml += '<option value="1.5">1.5</option>';
-		setHtml += '<option value="1.8">1.8</option>';
-		setHtml += '<option value="2">2</option>';
-		setHtml += '<option value="3">3</option>';
-		setHtml += '<option value="4">4</option>';
-		setHtml += '<option value="5">5</option>';
-		setHtml += '<option value="6">6</option>';
-		setHtml += '<option value="7">7</option>';
-		setHtml += '<option value="8">8</option>';
-		setHtml += '<option value="9">9</option>';
-		setHtml += '<option value="10">10</option>';
-		setHtml += "</select>";
-		setHtml += '<button id="btn2">Submit</button>';
-		setHtml += "</div>";
-
-		setHtml += "</ul>";
-
-		setHtml += "<div style='height:40px;'></div>";
-		setHtml += "<div class='iconSetFoot' style=''>";
-		setHtml += "<ul class='iconSetFootLi'>";
-		setHtml += "</ul>";
-		setHtml += "</div>";
-		setHtml += "</div>";
-
-		if (document.querySelector("#setMask")) return;
-
-		this.createElement("div", "zhmMenu");
-
-		let zhmMenu = document.getElementById("zhmMenu");
-
-		zhmMenu.innerHTML = setHtml;
-
-		let timerZhmIcon = setInterval(function () {
-			if (document.querySelector("#zhmMenu")) {
-				clearInterval(timerZhmIcon); // 取消定时器
-
-				const btn = document.querySelector("#btn");
-				const radioButtons =
-					document.querySelectorAll('input[name="lang"]');
-
-				let selectedLang = GM_getValue("LANG", "zh-HK");
-				radioButtons.forEach(function (checkbox) {
-					checkbox.addEventListener("click", function (event) {
-						if (checkbox.checked) {
-							selectedLang = checkbox.value;
-							GM_setValue("LANG", selectedLang);
-							console.log("选中了选项:", checkbox.value);
-						} else {
-							console.log("取消选中选项:", checkbox.value);
-						}
-					});
-				});
-
-				const btn2 = document.querySelector("#btn2");
-				const sb = document.querySelector("#framework");
-				btn2.onclick = (event) => {
-					event.preventDefault();
-					// show the selected index
-					//alert(sb.selectedIndex);
-					GM_setValue("RATE", sb.value);
-				};
-				sb.onchange = (event) => {
-					event.preventDefault();
-					// show the selected index
-					//alert(sb.selectedIndex);
-					GM_setValue("RATE", sb.value);
-					console.log("语速选择:", sb.value);
-				};
-				document
-					.querySelector(".iconSetSave")
-					.addEventListener("click", () => {
-						//location.href = location.href;
-						var elem = document.getElementById("zhmMenu"); // 按 id 获取要删除的元素
-						elem.parentNode.removeChild(elem); // 让 “要删除的元素” 的 “父元素” 删除 “要删除的元素”
-						let numRate = GM_getValue("RATE", 1);
-						let strLang = GM_getValue("LANG", "zh-HK") == "zh-CN" ? "国语": "粤语";
-						let sTxt = "播报语言设置为" + strLang + "，语速设置为" + numRate;
-						speak(
-							{
-								text: sTxt,
-							},
-							function () {
-								console.log("语音播放结束：" + sTxt);
-							},
-							function () {
-								console.log("语音开始播放");
-							}
-						);
-					});
+			/* 创建一个开关按钮的样式 */
+			.switch {
+				position: relative;
+				display: inline-block;
+				width: 60px;
+				height: 34px;
 			}
-		});
-	}
 
-	createElement(dom, domId) {
-		var rootElement = document.body;
-		var newElement = document.createElement(dom);
-		newElement.id = domId;
-		var newElementHtmlContent = document.createTextNode("");
-		rootElement.appendChild(newElement);
-		newElement.appendChild(newElementHtmlContent);
-	}
+			/* 隐藏开关按钮的输入框 */
+			.switch input {
+				opacity: 0;
+				width: 0;
+				height: 0;
+			}
+
+			/* 创建滑块的样式 */
+			.slider {
+				position: absolute;
+				cursor: pointer;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-color: #ccc;
+				transition: 0.4s;
+			}
+
+			/* 创建滑块的初始状态 */
+			.slider:before {
+				position: absolute;
+				content: "";
+				height: 26px;
+				width: 26px;
+				left: 4px;
+				bottom: 4px;
+				background-color: white;
+				transition: 0.4s;
+			}
+            /* 当输入框被选中时，改变滑块的背景颜色 */
+            input:checked+.slider {
+              background-color: #2196f3;
+            }
+        
+            /* 当输入框被聚焦时，给滑块添加阴影 */
+            input:focus+.slider {
+              box-shadow: 0 0 1px #2196f3;
+            }
+        
+            /* 当输入框被选中时，移动滑块 */
+            input:checked+.slider:before {
+              transform: translateX(26px);
+            }
+        
+            /* 创建滑块的圆角样式 */
+            .slider.round {
+              border-radius: 34px;
+            }
+        
+            /* 创建滑块的圆形样式 */
+            .slider.round:before {
+              border-radius: 50%;
+            }            
+            `;
+
+        domStyle.appendChild(document.createTextNode(menuSetStyle));
+
+        domHead.appendChild(domStyle);
+    }
+
+    menuSet() {
+        let setHtml = "<div class='zhmMask'></div>";
+
+        setHtml += "<div class='wrap-box' id='setWrap'>";
+
+        setHtml +=
+            "<ul class='iconSetUlHead'><li class='iconSetPageHead'><span></span><span>" +
+            "语音播报设置" +
+            "</span><span class='iconSetSave'>×</span></li></ul>";
+
+        setHtml += "<ul class='setWrapLi'>";
+
+        setHtml += "<br>";
+        setHtml += "<div class='setWrapLiContent'>";
+        setHtml += "<p>语音开关：</p>";
+        setHtml += "<div>";
+        setHtml += '\
+            <label class="switch">\
+                <input type="checkbox" id="togBtn" />\
+                <div class="slider round"></div>\
+            </label>'
+        setHtml += "</div>";
+        setHtml += "</div>";
+        setHtml += "<br>";
+
+        setHtml += "<br>";
+        setHtml += "<div class='setWrapLiContent'>";
+        setHtml += "<p>语种：</p>";
+        setHtml += "<div>";
+        setHtml +=
+            "<input type='radio' name='lang' value='zh-CN' id='ch_sim'><label for='ch_sim'>国语</label>";
+        setHtml += "</div>";
+        setHtml += "<div>";
+        setHtml +=
+            "<input type='radio' name='lang' value='zh-HK' id='ch_sim'><label for='ch_sim'>粤语</label>";
+        setHtml += "</div>";
+        setHtml += "</div>";
+        setHtml += "<br>";
+
+        let setrate = GM_getValue("RATE", 1);
+        setHtml += "<div class='setWrapLiContent'>";
+        setHtml += "<p>语速：</p>";
+        setHtml += '<select id="framework">';
+        setHtml += '<option value="' + setrate + '">' + setrate + "</option>";
+        setHtml += '<option value="0.5">0.5</option>';
+        setHtml += '<option value="0.8">0.8</option>';
+        setHtml += '<option value="1">1</option>';
+        setHtml += '<option value="1.2">1.2</option>';
+        setHtml += '<option value="1.5">1.5</option>';
+        setHtml += '<option value="1.8">1.8</option>';
+        setHtml += '<option value="2">2</option>';
+        setHtml += '<option value="3">3</option>';
+        setHtml += '<option value="4">4</option>';
+        setHtml += '<option value="5">5</option>';
+        setHtml += '<option value="6">6</option>';
+        setHtml += '<option value="7">7</option>';
+        setHtml += '<option value="8">8</option>';
+        setHtml += '<option value="9">9</option>';
+        setHtml += '<option value="10">10</option>';
+        setHtml += "</select>";
+        setHtml += '<button id="btn2">Submit</button>';
+        setHtml += "</div>";
+
+        setHtml += "</ul>";
+
+        setHtml += "<div style='height:40px;'></div>";
+        setHtml += "<div class='iconSetFoot' style=''>";
+        setHtml += "<ul class='iconSetFootLi'>";
+        setHtml += "</ul>";
+        setHtml += "</div>";
+        setHtml += "</div>";
+
+        if (document.querySelector("#setMask")) return;
+
+        this.createElement("div", "zhmMenu");
+
+        let zhmMenu = document.getElementById("zhmMenu");
+
+        zhmMenu.innerHTML = setHtml;
+
+        let timerZhmIcon = setInterval(function () {
+            if (document.querySelector("#zhmMenu")) {
+                clearInterval(timerZhmIcon); // 取消定时器
+
+                // 获取之前的开关状态
+                let previousState = GM_getValue("switchVoice", true);
+
+                // 如果之前的状态存在，设置开关的状态
+                if (previousState) {
+                    document.getElementById("togBtn").checked = previousState == true;
+                }
+
+                // 当开关被点击时，切换状态并保存到本地存储
+                document
+                    .getElementById("togBtn")
+                    .addEventListener("change", function () {
+                        previousState = this.checked;
+                        console.log("语音开关:", this.checked);
+                    });
+
+                const btn = document.querySelector("#btn");
+                const radioButtons =
+                    document.querySelectorAll('input[name="lang"]');
+
+                let selectedLang = GM_getValue("LANG", "zh-HK");
+                radioButtons.forEach(function (checkbox) {
+                    checkbox.addEventListener("click", function (event) {
+                        if (checkbox.checked) {
+                            selectedLang = checkbox.value;
+                            GM_setValue("LANG", selectedLang);
+                            console.log("选中了选项:", checkbox.value);
+                        } else {
+                            console.log("取消选中选项:", checkbox.value);
+                        }
+                    });
+                });
+
+                const btn2 = document.querySelector("#btn2");
+                const sb = document.querySelector("#framework");
+                btn2.onclick = (event) => {
+                    event.preventDefault();
+                    // show the selected index
+                    //alert(sb.selectedIndex);
+                    GM_setValue("RATE", sb.value);
+                };
+                sb.onchange = (event) => {
+                    event.preventDefault();
+                    // show the selected index
+                    //alert(sb.selectedIndex);
+                    GM_setValue("RATE", sb.value);
+                    console.log("语速选择:", sb.value);
+                };
+                document
+                    .querySelector(".iconSetSave")
+                    .addEventListener("click", () => {
+                        //location.href = location.href;
+                        var elem = document.getElementById("zhmMenu"); // 按 id 获取要删除的元素
+                        elem.parentNode.removeChild(elem); // 让 “要删除的元素” 的 “父元素” 删除 “要删除的元素”
+                        GM_setValue("switchVoice", true);
+                        let bSwitch = previousState == true ? "语音播报已开启" : "语音播报已关闭";
+                        let numRate = GM_getValue("RATE", 1);
+                        let strLang = GM_getValue("LANG", "zh-HK") === "zh-CN" ? "国语" : "粤语";
+                        let sTxt = bSwitch + "，播报语言设置为" + strLang + "，语速设置为" + numRate;
+                        console.log(sTxt)
+                        speak(
+                            {
+                                text: sTxt,
+                            },
+                            function () {
+                                console.log("语音播放结束：" + sTxt);
+                            },
+                            function () {
+                                console.log("语音开始播放");
+                            }
+                        );
+                        GM_setValue("switchVoice", previousState);
+                    });
+            }
+        });
+    }
+
+    createElement(dom, domId) {
+        var rootElement = document.body;
+        var newElement = document.createElement(dom);
+        newElement.id = domId;
+        var newElementHtmlContent = document.createTextNode("");
+        rootElement.appendChild(newElement);
+        newElement.appendChild(newElementHtmlContent);
+    }
 }
 
 var baseClass = new BaseClass();
@@ -661,230 +756,234 @@ var baseClass = new BaseClass();
  * @returns SpeechSynthesisUtterance
  */
 function speak(
-	{ text, speechRate, lang, volume, pitch },
-	endEvent,
-	startEvent
+    { text, speechRate, lang, volume, pitch },
+    endEvent,
+    startEvent
 ) {
-	if (!window.SpeechSynthesisUtterance) {
-		console.warn("当前浏览器不支持文字转语音服务");
-		return;
-	}
+    if (!window.SpeechSynthesisUtterance) {
+        console.warn("当前浏览器不支持文字转语音服务");
+        return;
+    }
 
-	if (!text) {
-		return;
-	}
+    if (!text) {
+        return;
+    }
+    let onoff = GM_getValue("switchVoice", true);
+    if (onoff != true) {
+        return;
+    }
 
-	let setlang = GM_getValue("LANG", "zh-CN");
-	let setrate = GM_getValue("RATE", 1);
-	const speechUtterance = new SpeechSynthesisUtterance();
-	speechUtterance.text = text;
-	speechUtterance.rate = speechRate || setrate;
-	speechUtterance.lang = lang || setlang;
-	speechUtterance.volume = volume || 1;
-	speechUtterance.pitch = pitch || 1;
-	speechUtterance.onend = function () {
-		endEvent && endEvent();
-	};
-	speechUtterance.onstart = function () {
-		startEvent && startEvent();
-	};
-	var timeFun = window.setInterval(function () {
-		window.clearInterval(timeFun);
-		speechSynthesis.speak(speechUtterance);
-	}, 500);
+    let setlang = GM_getValue("LANG", "zh-CN");
+    let setrate = GM_getValue("RATE", 1);
+    const speechUtterance = new SpeechSynthesisUtterance();
+    speechUtterance.text = text;
+    speechUtterance.rate = speechRate || setrate;
+    speechUtterance.lang = lang || setlang;
+    speechUtterance.volume = volume || 1;
+    speechUtterance.pitch = pitch || 1;
+    speechUtterance.onend = function () {
+        endEvent && endEvent();
+    };
+    speechUtterance.onstart = function () {
+        startEvent && startEvent();
+    };
+    var timeFun = window.setInterval(function () {
+        window.clearInterval(timeFun);
+        speechSynthesis.speak(speechUtterance);
+    }, 500);
 
-	return speechUtterance;
+    return speechUtterance;
 }
 
 function shim_GM_notification() {
-	if (typeof GM_notification === "function") {
-		return;
-	}
-	window.GM_notification = function (ntcOptions) {
-		checkPermission();
+    if (typeof GM_notification === "function") {
+        return;
+    }
+    window.GM_notification = function (ntcOptions) {
+        checkPermission();
 
-		function checkPermission() {
-			if (Notification.permission === "granted") {
-				fireNotice();
-			} else if (Notification.permission === "denied") {
-				console.log(
-					"User has denied notifications for this page/site!"
-				);
-				return;
-			} else {
-				Notification.requestPermission(function (permission) {
-					console.log("New permission: ", permission);
-					checkPermission();
-				});
-			}
-		}
+        function checkPermission() {
+            if (Notification.permission === "granted") {
+                fireNotice();
+            } else if (Notification.permission === "denied") {
+                console.log(
+                    "User has denied notifications for this page/site!"
+                );
+                return;
+            } else {
+                Notification.requestPermission(function (permission) {
+                    console.log("New permission: ", permission);
+                    checkPermission();
+                });
+            }
+        }
 
-		function fireNotice() {
-			if (!ntcOptions.title) {
-				console.log("Title is required for notification");
-				return;
-			}
-			if (ntcOptions.text && !ntcOptions.body) {
-				ntcOptions.body = ntcOptions.text;
-			}
-			var ntfctn = new Notification(ntcOptions.title, ntcOptions);
+        function fireNotice() {
+            if (!ntcOptions.title) {
+                console.log("Title is required for notification");
+                return;
+            }
+            if (ntcOptions.text && !ntcOptions.body) {
+                ntcOptions.body = ntcOptions.text;
+            }
+            var ntfctn = new Notification(ntcOptions.title, ntcOptions);
 
-			if (ntcOptions.onclick) {
-				ntfctn.onclick = ntcOptions.onclick;
-			}
-			if (ntcOptions.timeout) {
-				setTimeout(function () {
-					ntfctn.close();
-				}, ntcOptions.timeout);
-			}
-		}
-	};
+            if (ntcOptions.onclick) {
+                ntfctn.onclick = ntcOptions.onclick;
+            }
+            if (ntcOptions.timeout) {
+                setTimeout(function () {
+                    ntfctn.close();
+                }, ntcOptions.timeout);
+            }
+        }
+    };
 }
 
 //function test(){location.reload()}
 function reloadPage() {
-	var refreshInterval = 5 * 1000; //* 3600 * 24; // 设置刷新间隔时间（单位：秒）
-	//test();
-	//location.reload();
-	var timeFun = window.setInterval(function () {
-		location.reload();
-		window.clearInterval(timeFun);
-	}, refreshInterval);
+    var refreshInterval = 5 * 1000; //* 3600 * 24; // 设置刷新间隔时间（单位：秒）
+    //test();
+    //location.reload();
+    var timeFun = window.setInterval(function () {
+        location.reload();
+        window.clearInterval(timeFun);
+    }, refreshInterval);
 }
 
 var init_flag = 0;
 function append_notify(res) {
-	var status = false;
-	var changed = 0;
-	for (let each in res.data.list) {
-		// for room status
-		var isLive = !res.data.list[each].videoLoop;
-		status = isLive && res.data.list[each].show_status == 1;
-		if (!isLive) {
-			console.log(
-				res.data.list[each].nickname +
-					"-" +
-					res.data.list[each].room_id +
-					"-" +
-					isLive +
-					"-" +
-					status +
-					"-视频轮播ing"
-			);
-		}
-		if (!(res.data.list[each].room_id in save)) {
-			save[res.data.list[each].room_id] = status;
-			if (init_flag == 1) {
-				changed = 1;
-			}
-		} else if (save[res.data.list[each].room_id] != status) {
-			save[res.data.list[each].room_id] = status;
-			let strStatus = status == true ? "开播了" : "下播了";
-			var notificationDetails = (function () {
-				var tempUrl = res.data.list[each].url;
-				speak(
-					{
-						text: res.data.list[each].nickname + strStatus,
-					},
-					function () {
-						console.log("语音播放结束");
-					},
-					function () {
-						console.log("语音开始播放");
-					}
-				);
-				return {
-					text: "点击通知快速传送",
-					title: res.data.list[each].nickname + strStatus,
-					image: res.data.list[each].avatar_small,
-					//timeout:    60000,
-					onclick: function () {
-						console.log("Notice clicked.");
-						GM_openInTab(baseURL + tempUrl, false);
-						//window.focus ();
-					},
-				};
-			})();
-			GM_notification(notificationDetails);
-			//下播 开播都刷新 反正状态变了都刷新
-			changed = 1;
-		}
+    var status = false;
+    var changed = 0;
+    for (let each in res.data.list) {
+        // for room status
+        var isLive = !res.data.list[each].videoLoop;
+        status = isLive && res.data.list[each].show_status == 1;
+        if (!isLive) {
+            console.log(
+                res.data.list[each].nickname +
+                "-" +
+                res.data.list[each].room_id +
+                "-" +
+                isLive +
+                "-" +
+                status +
+                "-视频轮播ing"
+            );
+        }
+        if (!(res.data.list[each].room_id in save)) {
+            save[res.data.list[each].room_id] = status;
+            if (init_flag == 1) {
+                changed = 1;
+            }
+        } else if (save[res.data.list[each].room_id] != status) {
+            save[res.data.list[each].room_id] = status;
+            let strStatus = status == true ? "开播了" : "下播了";
+            var notificationDetails = (function () {
+                var tempUrl = res.data.list[each].url;
+                speak(
+                    {
+                        text: res.data.list[each].nickname + strStatus,
+                    },
+                    function () {
+                        console.log("语音播放结束");
+                    },
+                    function () {
+                        console.log("语音开始播放");
+                    }
+                );
+                return {
+                    text: "点击通知快速传送",
+                    title: res.data.list[each].nickname + strStatus,
+                    image: res.data.list[each].avatar_small,
+                    //timeout:    60000,
+                    onclick: function () {
+                        console.log("Notice clicked.");
+                        GM_openInTab(baseURL + tempUrl, false);
+                        //window.focus ();
+                    },
+                };
+            })();
+            GM_notification(notificationDetails);
+            //下播 开播都刷新 反正状态变了都刷新
+            changed = 1;
+        }
 
-		// for room name changing
-		if (!(res.data.list[each].room_id in save_name)) {
-			save_name[res.data.list[each].room_id] =
-				res.data.list[each].room_name;
-			changed = 1;
-		} else if (
-			save_name[res.data.list[each].room_id] !=
-			res.data.list[each].room_name
-		) {
-			save_name[res.data.list[each].room_id] =
-				res.data.list[each].room_name;
-			var notificationDetails_name = (() => {
-				var tempUrl = res.data.list[each].url;
-				speak(
-					{
-						text:
-							res.data.list[each].nickname +
-							" 更改了房间标题" +
-							res.data.list[each].room_name,
-					},
-					function () {
-						console.log("语音播放结束");
-					},
-					function () {
-						console.log("语音开始播放");
-					}
-				);
-				return {
-					text: res.data.list[each].room_name,
-					title: res.data.list[each].nickname + " 更改了房间标题",
-					image: res.data.list[each].avatar_small,
-					//timeout:    60000,
-					onclick: function () {
-						console.log("Notice clicked.");
-						GM_openInTab(baseURL + tempUrl, false);
-						//window.focus ();
-					},
-				};
-			})();
-			GM_notification(notificationDetails_name);
-			changed = 1;
-		}
-	}
-	if (init_flag != 0 && changed == 1) {
-		reloadPage();
-	}
-	init_flag = 1;
-	console.log("Following rooms checked");
+        // for room name changing
+        if (!(res.data.list[each].room_id in save_name)) {
+            save_name[res.data.list[each].room_id] =
+                res.data.list[each].room_name;
+            changed = 1;
+        } else if (
+            save_name[res.data.list[each].room_id] !=
+            res.data.list[each].room_name
+        ) {
+            save_name[res.data.list[each].room_id] =
+                res.data.list[each].room_name;
+            var notificationDetails_name = (() => {
+                var tempUrl = res.data.list[each].url;
+                speak(
+                    {
+                        text:
+                            res.data.list[each].nickname +
+                            " 更改了房间标题" +
+                            res.data.list[each].room_name,
+                    },
+                    function () {
+                        console.log("语音播放结束");
+                    },
+                    function () {
+                        console.log("语音开始播放");
+                    }
+                );
+                return {
+                    text: res.data.list[each].room_name,
+                    title: res.data.list[each].nickname + " 更改了房间标题",
+                    image: res.data.list[each].avatar_small,
+                    //timeout:    60000,
+                    onclick: function () {
+                        console.log("Notice clicked.");
+                        GM_openInTab(baseURL + tempUrl, false);
+                        //window.focus ();
+                    },
+                };
+            })();
+            GM_notification(notificationDetails_name);
+            changed = 1;
+        }
+    }
+    if (init_flag != 0 && changed == 1) {
+        reloadPage();
+    }
+    init_flag = 1;
+    console.log("Following rooms checked");
 }
 
 function check() {
-	console.log("Following rooms checking");
-	GM_xmlhttpRequest({
-		method: "GET",
-		url: `https://www.douyu.com/wgapi/livenc/liveweb/follow/list?sort=0&cid1=0`,
-		onload: (response) => {
-			var res = JSON.parse(response.responseText);
-			append_notify(res);
-		},
-	});
+    console.log("Following rooms checking");
+    GM_xmlhttpRequest({
+        method: "GET",
+        url: `https://www.douyu.com/wgapi/livenc/liveweb/follow/list?sort=0&cid1=0`,
+        onload: (response) => {
+            var res = JSON.parse(response.responseText);
+            append_notify(res);
+        },
+    });
 }
 
 check();
 function notifyTitle(s) {
-	GM_notification({
-		text: "斗鱼开播提醒",
-		title: s,
-		timeout: 1800,
-		image: "https://img.douyucdn.cn/data/yuba/admin/2018/08/13/201808131555573522222945055.jpg?i=31805464339f469e0d3f992e565e261803",
-		onclick: function () {
-			console.log("Notice clicked.");
-			GM_openInTab("https://www.douyu.com", false);
-			//window.focus ();
-		},
-	});
+    GM_notification({
+        text: "斗鱼开播提醒",
+        title: s,
+        timeout: 1800,
+        image: "https://img.douyucdn.cn/data/yuba/admin/2018/08/13/201808131555573522222945055.jpg?i=31805464339f469e0d3f992e565e261803",
+        onclick: function () {
+            console.log("Notice clicked.");
+            GM_openInTab("https://www.douyu.com", false);
+            //window.focus ();
+        },
+    });
 }
 notifyTitle("斗鱼开播提醒启动了");
 //window.onbeforeunload = function(event){notifyTitle('开播提醒已退出')}
