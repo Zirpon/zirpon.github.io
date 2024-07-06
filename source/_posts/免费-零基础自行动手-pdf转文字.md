@@ -10,7 +10,7 @@ tags:
 - Tesseract
 - pdf转文字
 catagories:
-top: 99
+top: 99999
 ---
 
 # 免费 零基础自行动手 pdf转文字

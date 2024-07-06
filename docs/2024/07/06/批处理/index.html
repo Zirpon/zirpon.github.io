@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <!-- link rel="shortcut icon" href="/img/ironman-draw.png" -->
+    <link rel="shortcut icon" href="/img/timg.jpeg">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS --> 
+    <!-- %- css('css/beantech.min.css')% -->
+    
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    
+<link rel="stylesheet" href="/css/widget.css">
+
+
+    
+<link rel="stylesheet" href="/css/rocket.css">
+
+
+    
+<link rel="stylesheet" href="/css/signature.css">
+
+
+    
+<link rel="stylesheet" href="/css/toc.css">
+
+
+    
+<link rel="stylesheet" href="/css/beantech.css">
+
+
+
+
+    <!--新东西 -->
+    
+    <!-- wave start -->
+    <link rel="stylesheet" href="/css/wave.css" />
+    <!-- wave end -->
+    
+
+    
+    <!-- top start (article top hot config) -->
+    <link rel="stylesheet" href="/css/top.css" />
+    <!-- top end -->
+    
+
+    <a id="rocket" href="#top" class=""></a>
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css" />
+      <!-- Search end -->
+    
+
+    
+    <!-- ThemeColor start -->
+    <link rel="stylesheet" href="/css/themecolor.css" />
+    <!-- ThemeColor end -->
+    
+ 
+    <!--新东西 -->
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          批处理 - Zirpon | Blog
+        
+    </title>
+
+    <link rel="canonical" href="/2024/07/06/批处理/">
+
+
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="body--home">
+
+    <!-- ThemeColor -->
+	
+    <!-- ThemeColor -->
+<!-- <div class="toggle" onclick="document.body.classList.toggle('body--dark')">Switch Color</div> -->
+
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <strong class="mdui-icon material-icons bright-mode">🤡</strong>
+  <strong class="mdui-icon material-icons dark-mode">🤡</strong>
+</div>
+
+    
+
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('https://zirpon.github.io/img/header_img/roman.png')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                        </div>
+                        <h1>批处理</h1>
+                        <h2 class="subheading">The quick brown fox jumps over the lazy dog</h2>
+
+                        <span class="meta">
+                            Posted by Zirpon Cheung on
+                            2024-07-06
+                        </span>
+
+                        
+                            <!-- WordCount start -->
+                            <div class="blank_box"></div>
+                            <span class="meta">
+                              Estimated Reading Time <span class="post-count">4</span> Minutes
+                            </span>
+                            <div class="blank_box"></div>
+                            <span class="meta">
+                              Words <span class="post-count">1.1k</span> In Total
+                            </span>
+                            <div class="blank_box"></div>
+                            <!-- 不蒜子统计 start -->
+                            <span class="meta">
+                              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+                            </span>
+                            <!-- 不蒜子统计 end -->
+                            <!-- WordCount end -->
+                        
+
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+        <!-- waveoverlay start -->
+        <div class="preview-overlay">
+          <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+              <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+            </defs>
+            <g class="preview-parallax">
+              <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+              <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+              <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+              <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+            </g>
+          </svg>
+        </div>
+        <!-- waveoverlay end -->
+    
+</header>
+
+    
+    <!-- Navigation (contains search)-->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Cheung Zirpon</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+                    
+          
+          <li><a class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
+          
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 article-container">
+
+                <h1>批处理</h1>
+<h2 id="Example"><a class="header-anchor" href="#Example">¶</a>Example</h2>
+<h3 id="无限循环，定时，固定时间间隔"><a class="header-anchor" href="#无限循环，定时，固定时间间隔">¶</a>无限循环，定时，固定时间间隔</h3>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line"></span><br><span class="line">:start</span><br><span class="line">echo jajaja</span><br><span class="line">choice /t <span class="number">5</span> /d y /n &gt;nul</span><br><span class="line"></span><br><span class="line">goto start</span><br></pre></td></tr></table></figure>
+<h2 id="搜索目录"><a class="header-anchor" href="#搜索目录">¶</a>搜索目录</h2>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">::搜索当前目录下的文件</span><br><span class="line"><span class="keyword">for</span> %%i <span class="keyword">in</span> (*.*) <span class="keyword">do</span> echo <span class="string">"%%i"</span></span><br><span class="line">:: 或者</span><br><span class="line"><span class="keyword">for</span> /r <span class="string">"目录路径"</span> %%a <span class="keyword">in</span> (匹配规则，例如*.txt) <span class="keyword">do</span> 执行操作</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+<h2 id="for"><a class="header-anchor" href="#for">¶</a>for</h2>
+<blockquote>
+<p>reference</p>
+</blockquote>
+<p><a href="https://blog.csdn.net/m0_56208280/article/details/129074215" target="_blank" rel="noopener">Windows 批处理(bat) for循环语句使用教程</a></p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> %%a <span class="keyword">in</span> (ele1 ele2 ele3) <span class="keyword">do</span> (</span><br><span class="line">	echo %%a</span><br><span class="line">)</span><br><span class="line"><span class="keyword">for</span> %%a <span class="keyword">in</span> (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>) <span class="keyword">do</span> (</span><br><span class="line">	echo %%a</span><br><span class="line">)</span><br><span class="line">pause</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> /d %%i <span class="keyword">in</span> (./docs/) <span class="keyword">do</span> (echo %%i)</span><br><span class="line"></span><br><span class="line">:: <span class="keyword">for</span> /l %%i  <span class="keyword">in</span> (start,step,<span class="keyword">end</span>) <span class="keyword">do</span> command</span><br><span class="line"><span class="keyword">for</span> /l %%i <span class="keyword">in</span> (<span class="number">1</span>,<span class="number">3</span>,<span class="number">20</span>) <span class="keyword">do</span> (echo %%i)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> /f %%i <span class="keyword">in</span> (.\test.txt) <span class="keyword">do</span> (echo %%i)</span><br><span class="line"></span><br><span class="line">:: delims这个参数，=后面有一个空格，意思是再将每一个元素以空格分割，默认是只取分割以后的第一个元素。</span><br><span class="line"><span class="keyword">for</span> /f <span class="string">"delims= "</span> %%i <span class="keyword">in</span> (.\test.txt) <span class="keyword">do</span> echo %%i</span><br></pre></td></tr></table></figure>
+<h2 id="If-命令-有三种格式"><a class="header-anchor" href="#If-命令-有三种格式">¶</a>If 命令 有三种格式:</h2>
+<h3 id="1-if-“参数”-“字符串”-待执行的命令"><a class="header-anchor" href="#1-if-“参数”-“字符串”-待执行的命令">¶</a>1. if “参数” == “字符串” 　待执行的命令</h3>
+<p>参数如果等于指定的字符串，则条件成立，运行命令，否则运行下一句。(注意是两个等号）如</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="string">"%1"</span>==<span class="string">"a"</span> format a:</span><br><span class="line"><span class="keyword">if</span> &#123; %<span class="number">1</span> &#125;==&#123; &#125; goto noparms</span><br><span class="line"><span class="keyword">if</span> &#123; %<span class="number">2</span> &#125;==&#123; &#125; goto noparms</span><br></pre></td></tr></table></figure>
+<h3 id="2-if-exist-文件名-待执行的命令"><a class="header-anchor" href="#2-if-exist-文件名-待执行的命令">¶</a>2. if exist 文件名　 待执行的命令</h3>
+<p>如果有指定的文件，则条件成立，运行命令，否则运行下一句 如</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> exist config.sys edit config.sys</span><br></pre></td></tr></table></figure>
+<h3 id="3-if-errorlevel-if-not-errorlevel-数字-待执行的命令"><a class="header-anchor" href="#3-if-errorlevel-if-not-errorlevel-数字-待执行的命令">¶</a>3. if errorlevel / if not errorlevel 数字　 待执行的命令</h3>
+<p>如果返回码等于指定的数字，则条件成立，运行命令，否则运行下一句。<br>
+如</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> errorlevel <span class="number">2</span> goto x2</span><br></pre></td></tr></table></figure>
+<p>DOS 程序运行时都会返回一个数字给 DOS，称为错误码 errorlevel 或称返回码，常见的返回码为 0、1。</p>
+<h2 id="注释方式"><a class="header-anchor" href="#注释方式">¶</a>注释方式</h2>
+<p>1、:: 注释内容（第一个冒号后也可以跟任何一个非字母数字的字符）<br>
+2、rem 注释内容（不能出现重定向符号和管道符号）<br>
+3、echo 注释内容（不能出现重定向符号和管道符号）〉nul<br>
+4、if not exist nul 注释内容（不能出现重定向符号和管道符号）<br>
+5、:注释内容（注释文本不能与已有标签重名）<br>
+6、%注释内容%（可以用作行间注释，不能出现重定向符号和管道符号）<br>
+7、goto 标签 注释内容（可以用作说明 goto 的条件和执行内容）<br>
+8、:标签 注释内容（可以用作标签下方段的执行内容）</p>
+<p>@echo off 表示执行了这条命令后关闭所有命令(包括本身这条命令)的回显。<br>
+而 echo off 命令则表示关闭其他所有命令(不包括本身这条命令)的回显，<br>
+@的作用就是关闭紧跟其后的一条命令的回显，</p>
+<h2 id="判断语句"><a class="header-anchor" href="#判断语句">¶</a>判断语句</h2>
+<h3 id="1-判断字符串相等。"><a class="header-anchor" href="#1-判断字符串相等。">¶</a>1. 判断字符串相等。</h3>
+<p>示例如下：新建一个文本文件，命名为 ifstring，修改文件类型为 bat，：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line"></span><br><span class="line">set <span class="string">"var=this is an apple"</span></span><br><span class="line">rem 比较%var%是否等于apple,如果相等,返回OK,否则返回NO.</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="string">"%var%"</span>==<span class="string">"apple"</span> (echo OK) <span class="keyword">else</span> echo NO</span><br><span class="line"></span><br><span class="line">pause&gt;nul</span><br></pre></td></tr></table></figure>
+<p>注意：if 判断字符串相等时候，后面用的是“==”，而不是“=”。</p>
+<h3 id="2-判断数值相等。"><a class="header-anchor" href="#2-判断数值相等。">¶</a>2. 判断数值相等。</h3>
+<p>示例如下：新建一个文本文件，命名为 ifnumber，修改文件类型为 bat，：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">set /a num1=<span class="number">100</span></span><br><span class="line">set /a num2=<span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> %num1% gtr %num2% echo %num1%大于%num2%</span><br><span class="line"><span class="keyword">if</span> %num1% EQU %num2% echo %num1%等于%num2%</span><br><span class="line"><span class="keyword">if</span> %num1% LSS %num2% echo %num1%小于%num2%</span><br><span class="line"></span><br><span class="line">pause&gt;nul</span><br></pre></td></tr></table></figure>
+<p>注意：比较运算符分为以下几种：</p>
+<p>EQU - 等于<br>
+　　 NEQ - 不等于<br>
+　　 LSS - 小于<br>
+　　 LEQ - 小于或等于<br>
+　　 GTR - 大于<br>
+　　 GEQ - 大于或等于</p>
+<h3 id="3-结合-errorlevel-使用"><a class="header-anchor" href="#3-结合-errorlevel-使用">¶</a>3. 结合 errorlevel 使用</h3>
+<p>示例如下：新建一个文本文件，命名为 iferrorlevel，修改文件类型为 bat，：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@ECHO off</span><br><span class="line"></span><br><span class="line">XCOPY F:\studybat\if\iferrorlevel.bat D:\</span><br><span class="line"><span class="keyword">IF</span> ERRORLEVEL <span class="number">1</span> ECHO 文件拷贝失败</span><br><span class="line"><span class="keyword">IF</span> ERRORLEVEL <span class="number">0</span> ECHO 成功拷贝文件</span><br><span class="line"></span><br><span class="line">pause&gt;nul</span><br></pre></td></tr></table></figure>
+<p>注意：环境变量 errorlevel 的初始值为 0，当一些命令执行不成功，就会返回一个数值，如：1 ，2 等</p>
+<h3 id="4-判断变量定义与否。"><a class="header-anchor" href="#4-判断变量定义与否。">¶</a>4. 判断变量定义与否。</h3>
+<p>示例如下：新建一个文本文件，命名为 ifdefined，修改文件类型为 bat，：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">set <span class="string">"str1=ok"</span></span><br><span class="line">set <span class="string">"str2=no"</span></span><br><span class="line"><span class="keyword">if</span> defined str1 echo str1已经被定义</span><br><span class="line"><span class="keyword">if</span> defined str2 echo str2已经被定义</span><br><span class="line"><span class="keyword">if</span> defined str3 (echo str3已经被定义) <span class="keyword">else</span> echo str3 没有被定义</span><br><span class="line"></span><br><span class="line">pause&gt;nul</span><br></pre></td></tr></table></figure>
+<p>Here is a footnote reference,<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> and another.<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
+<h2 id="Endnotes"><a class="header-anchor" href="#Endnotes">¶</a>Endnotes</h2>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Here is the footnote. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Here’s one with multiple blocks. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2024/07/06/javascript-笔记/" data-toggle="tooltip" data-placement="top" title="javascript 笔记">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2024/07/06/语言学习：英语/" data-toggle="tooltip" data-placement="top" title="语言学习：英语">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <br>
+
+                <!-- require APlayer -->
+                
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+
+                
+
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">批处理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Example"><span class="toc-nav-text">Example</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#无限循环，定时，固定时间间隔"><span class="toc-nav-text">无限循环，定时，固定时间间隔</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#搜索目录"><span class="toc-nav-text">搜索目录</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#for"><span class="toc-nav-text">for</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#If-命令-有三种格式"><span class="toc-nav-text">If 命令 有三种格式:</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-if-“参数”-“字符串”-待执行的命令"><span class="toc-nav-text">1. if “参数” &#x3D;&#x3D; “字符串” 　待执行的命令</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-if-exist-文件名-待执行的命令"><span class="toc-nav-text">2. if exist 文件名　 待执行的命令</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-if-errorlevel-if-not-errorlevel-数字-待执行的命令"><span class="toc-nav-text">3. if errorlevel &#x2F; if not errorlevel 数字　 待执行的命令</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#注释方式"><span class="toc-nav-text">注释方式</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#判断语句"><span class="toc-nav-text">判断语句</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-判断字符串相等。"><span class="toc-nav-text">1. 判断字符串相等。</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-判断数值相等。"><span class="toc-nav-text">2. 判断数值相等。</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-结合-errorlevel-使用"><span class="toc-nav-text">3. 结合 errorlevel 使用</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4-判断变量定义与否。"><span class="toc-nav-text">4. 判断变量定义与否。</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Endnotes"><span class="toc-nav-text">Endnotes</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="http://www.roading.org" target="_blank">Adoo&#39;s blog</a></li>
+                    
+                        <li><a href="https://blog.csdn.net/chosen0ne/" target="_blank">娄振林专栏</a></li>
+                    
+                        <li><a href="https://www.cnblogs.com/miloyip/" target="_blank">Milo的游戏开发</a></li>
+                    
+                        <li><a href="https://www.cnblogs.com/zhaoyl/" target="_blank">Just Love U</a></li>
+                    
+                        <li><a href="https://www.cnblogs.com/sniperHW/" target="_blank">sniperHW</a></li>
+                    
+                        <li><a href="http://www.cppblog.com/converse/" target="_blank">那谁的技术博客</a></li>
+                    
+                        <li><a href="http://www.cppblog.com/Solstice/" target="_blank">陈硕的Blog</a></li>
+                    
+                        <li><a href="https://www.cnblogs.com/learnhow/p/9420404.html#4035973" target="_blank">30分钟带你了解Docker</a></li>
+                    
+                        <li><a href="https://leftnoteasy.cnblogs.com/" target="_blank">LeftNotEasy - Wangda Tan</a></li>
+                    
+                        <li><a href="https://blog.codingnow.com/" target="_blank">云风的 BLOG</a></li>
+                    
+                        <li><a href="https://iyuan.iteye.com/blog/search?page=4&amp;query=ZeroMQ%E5%88%9D%E4%BD%93%E9%AA%8C" target="_blank">zero MQ</a></li>
+                    
+                        <li><a href="https://levblanc.github.io/" target="_blank">levblanc blog</a></li>
+                    
+                        <li><a href="https://blog.zhangruipeng.me/hexo-theme-icarus/" target="_blank">zhangruipeng blog</a></li>
+                    
+                        <li><a href="https://v-vincen.life/" target="_blank">v-vincen blog</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: '∞'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+<script>
+    /**/
+    function setClipboardText(event){
+        event.preventDefault();//阻止元素发生默认的行为（例如，当点击提交按钮时阻止对表单的提交）。
+        var node = document.createElement('div');
+        //对documentfragment不熟，不知道怎么获取里面的内容，用了一个比较笨的方式
+        node.appendChild(window.getSelection().getRangeAt(0).cloneContents());
+        //getRangeAt(0)返回对基于零的数字索引与传递参数匹配的选择对象中的范围的引用。对于连续选择，参数应为零。
+        var htmlData = '<div>'
+            + node.innerHTML
+            + '<br /><br />著作权归作者所有。<br />'
+            + '商业转载请联系作者获得授权，非商业转载请注明出处。<br />'
+            + '作者：Zirpon Cheung <br />链接：'
+            + location.href
+            + '<br />来源：dianfanbao.ltd<br /><br />'
+            + '</div>';
+        var textData = window.getSelection().getRangeAt(0)
+            + '\n\n著作权归作者所有。\n'
+            + '商业转载请联系作者获得授权，非商业转载请注明出处。\n'
+            + '作者：Zirpon Cheung\n'
+            + '链接：'
+            + location.href
+            + '来源：dianfanbao.ltd\n\n';
+        if(event.clipboardData){
+            event.clipboardData.setData("text/html", htmlData);
+            //setData(剪贴板格式, 数据) 给剪贴板赋予指定格式的数据。返回 true 表示操作成功。
+            event.clipboardData.setData("text/plain",textData);
+        }
+        else if(window.clipboardData){ //window.clipboardData的作用是在页面上将需要的东西复制到剪贴板上，提供了对于预定义的剪贴板格式的访问，以便在编辑操作中使用。
+            return window.clipboardData.setData("text", textData);
+        }
+    };
+ 
+    document.addEventListener('copy',function(e){
+        setClipboardText(e);
+    });
+</script>
+
+
+
+<!-- chrome Firefox 中文锚点定位失效-->
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<!-- smooth scroll behavior polyfill  -->
+<script type="text/javascript" src="https://zirpon.github.io/js/smoothscroll.js"></script>
+<script>
+        $('#toc').on('click','a',function(a){
+            // var isChrome = window.navigator.userAgent.indexOf("Chrome") !== -1;
+            // console.log(window.navigator.userAgent,isChrome)
+                // if(isChrome) {
+                    // console.log(a.currentTarget.outerHTML);
+                    // console.log($(a.currentTarget).attr("href"));
+                    //跳转到指定锚点
+                    // document.getElementById(a.target.innerText.toLowerCase()).scrollIntoView(true);
+                    document.getElementById($(a.currentTarget).attr("href").replace("#","")).scrollIntoView({behavior: 'smooth' });
+                // }
+        })  
+</script>
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<body class="">
+<div>
+<img src="https://champon.gitee.io/blog/img/header_img/RomanTheatre_ZH-CN9417897135_1920x1080.jpg" 
+    width='64px' height='48px'>
+</div>
+</body>
+</html>
+-->
+
+	<!-- Footer (contains ThemeColor、viewer) -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/monkeyzhang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/Zirpon">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Zirpon Cheung 2024 
+                    <br>
+                    Theme by <a href="http://beantech.org/" target="_blank" rel="noopener">BeanTech</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="https://zirpon.github.io">Zirpon</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=Zirpon&repo=hexo-theme-zirpon&type=star&count=true" >
+                    </iframe>
+
+                    <br>
+                </p>
+                <br>
+                <!-- cnzz Tongji -->
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- cnzz Tongji -->
+
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- totop(rocket) -->
+<script type="text/javascript" async="true" src="https://zirpon.github.io/js/totop.js?v=1.0.0"></script>
+
+<!-- Busuanzi JavaScript -->
+<script type="text/javascript" async="true" src="/js/busuanzi.pure.mini.js"></script>
+
+
+    <!-- ThemeColor start -->
+    <script type="text/javascript" src="https://zirpon.github.io/js/themecolor.js"></script>
+    <!-- ThemeColor end -->
+
+
+
+    <!-- viewer start -->
+    <!-- viewer start (Picture preview) -->
+    <script type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+    <!-- viewer end -->
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+
+    // fastClick.js
+    async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+        var $nav = document.querySelector("nav");
+        if ($nav)
+        FastClick.attach($nav);
+        }
+    )
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+
+
+    <!-- Search -->
+	
+        <div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/ziploader.js"></script>
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('-1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+    
+
+    <a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="https://zirpon.github.io/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="https://zirpon.github.io/js/toc.js?v=1.0.0" async=""></script>
+    <!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <!-- link rel="shortcut icon" href="/img/ironman-draw.png" -->
+    <link rel="shortcut icon" href="/img/timg.jpeg">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS --> 
+    <!-- %- css('css/beantech.min.css')% -->
+    
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    
+<link rel="stylesheet" href="/css/widget.css">
+
+
+    
+<link rel="stylesheet" href="/css/rocket.css">
+
+
+    
+<link rel="stylesheet" href="/css/signature.css">
+
+
+    
+<link rel="stylesheet" href="/css/toc.css">
+
+
+    
+<link rel="stylesheet" href="/css/beantech.css">
+
+
+
+
+    <!--新东西 -->
+    
+    <!-- wave start -->
+    <link rel="stylesheet" href="/css/wave.css" />
+    <!-- wave end -->
+    
+
+    
+    <!-- top start (article top hot config) -->
+    <link rel="stylesheet" href="/css/top.css" />
+    <!-- top end -->
+    
+
+    <a id="rocket" href="#top" class=""></a>
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css" />
+      <!-- Search end -->
+    
+
+    
+    <!-- ThemeColor start -->
+    <link rel="stylesheet" href="/css/themecolor.css" />
+    <!-- ThemeColor end -->
+    
+ 
+    <!--新东西 -->
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          正则表达式 - Zirpon | Blog
+        
+    </title>
+
+    <link rel="canonical" href="/2024/07/07/正则表达式/">
+
+
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="body--home">
+
+    <!-- ThemeColor -->
+	
+    <!-- ThemeColor -->
+<!-- <div class="toggle" onclick="document.body.classList.toggle('body--dark')">Switch Color</div> -->
+
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <strong class="mdui-icon material-icons bright-mode">🤡</strong>
+  <strong class="mdui-icon material-icons dark-mode">🤡</strong>
+</div>
+
+    
+
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('https://zirpon.github.io/img/header_img/roman.png')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                        </div>
+                        <h1>正则表达式</h1>
+                        <h2 class="subheading">The quick brown fox jumps over the lazy dog</h2>
+
+                        <span class="meta">
+                            Posted by Zirpon Cheung on
+                            2024-07-07
+                        </span>
+
+                        
+                            <!-- WordCount start -->
+                            <div class="blank_box"></div>
+                            <span class="meta">
+                              Estimated Reading Time <span class="post-count">5</span> Minutes
+                            </span>
+                            <div class="blank_box"></div>
+                            <span class="meta">
+                              Words <span class="post-count">1.3k</span> In Total
+                            </span>
+                            <div class="blank_box"></div>
+                            <!-- 不蒜子统计 start -->
+                            <span class="meta">
+                              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+                            </span>
+                            <!-- 不蒜子统计 end -->
+                            <!-- WordCount end -->
+                        
+
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+        <!-- waveoverlay start -->
+        <div class="preview-overlay">
+          <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+              <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+            </defs>
+            <g class="preview-parallax">
+              <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+              <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+              <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+              <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+            </g>
+          </svg>
+        </div>
+        <!-- waveoverlay end -->
+    
+</header>
+
+    
+    <!-- Navigation (contains search)-->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Cheung Zirpon</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+                    
+          
+          <li><a class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
+          
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 article-container">
+
+                <h1>正则表达式</h1>
+<h2 id="basic"><a class="header-anchor" href="#basic">¶</a>basic</h2>
+<figure class="highlight re"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">/a.c/ -&gt; aac、abc、acc、adc</span><br><span class="line">/a*b/ -&gt; <span class="string">"b"</span>、<span class="string">"ab"</span>、<span class="string">"aab"</span>、<span class="string">"aaab"</span> </span><br><span class="line">/a+b/ -&gt; <span class="string">"ab"</span>、<span class="string">"aab"</span>、<span class="string">"aaab"</span> </span><br><span class="line">/colou?r/ -&gt; <span class="string">"color"</span> 或 <span class="string">"colour"</span></span><br><span class="line"></span><br><span class="line">用户名由若干个字母、数字、下划线和中划线组成，所以需要用到 + 表示 <span class="number">1</span> 次或多次出现</span><br><span class="line"><span class="literal">[<span class="identifier">a</span>-<span class="identifier">zA</span>-Z0-<span class="number">9_</span>-]</span>+</span><br><span class="line"></span><br><span class="line">匹配 iframe 标签</span><br><span class="line">/&lt;iframe((<span class="literal">[\<span class="identifier">s</span>\S]</span>)*?)&lt;\/iframe&gt;/</span><br><span class="line"></span><br><span class="line">匹配所有 img 标签</span><br><span class="line">/&lt;img.*?src=<span class="string">"(.*?)"</span>.*?\/?&gt;/gi</span><br><span class="line"></span><br><span class="line">中括号表达式 匹配字符组的一个列表</span><br><span class="line">/Chapter <span class="literal">[<span class="number">1</span>-<span class="number">5</span>]</span>/</span><br><span class="line">/Chapter <span class="literal">[<span class="number">12345</span>]</span>/ -&gt; Chapter <span class="number">1</span>、Chapter <span class="number">2</span>、Chapter <span class="number">3</span>、Chapter <span class="number">4</span> 和 Chapter <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="literal">[!--]</span></span><br><span class="line"><span class="literal">[!-~]</span></span><br><span class="line">/Chapter <span class="literal">[^<span class="number">1</span>-<span class="number">5</span>]</span>/</span><br><span class="line">/<span class="literal">[A-Z<span class="identifier">a</span>-<span class="identifier">z0</span>-<span class="number">9</span>]</span>/</span><br><span class="line"></span><br><span class="line">/^(Chapter<span class="pattern-match">|<span class="constructor">Section</span>) [1-9][0-9]&#123;0,1&#125;<span class="constructor">$</span><span class="operator">/</span></span></span><br><span class="line"><span class="pattern-match"></span></span><br><span class="line"><span class="pattern-match">\b	匹配一个单词边界，也就是指单词和空格间的位置。例如，“er\b"可以匹配"never"中的"er"，但不能匹配"verb"中的"er"。</span></span><br><span class="line"><span class="pattern-match">\<span class="constructor">B</span>	匹配非单词边界。“er\<span class="constructor">B</span>"能匹配"verb"中的"er"，但不能匹配"never"中的"er"。</span></span><br><span class="line"><span class="pattern-match"></span></span><br><span class="line"><span class="pattern-match">\n	匹配一个换行符。等价于\x0a和\c<span class="constructor">J</span>。</span></span><br><span class="line"><span class="pattern-match">\r	匹配一个回车符。等价于\x0d和\c<span class="constructor">M</span>。</span></span><br><span class="line"><span class="pattern-match"></span></span><br><span class="line"><span class="pattern-match">\s	匹配任何空白字符，包括空格、制表符、换页符等等。等价于[ \f\n\r\t\v]。</span></span><br><span class="line"><span class="pattern-match">\<span class="constructor">S</span>	匹配任何非空白字符。等价于[^ \f\n\r\t\v]</span></span><br><span class="line"><span class="pattern-match"></span></span><br><span class="line"><span class="pattern-match">\w	匹配包括下划线的任何单词字符。等价于“[<span class="constructor">A</span>-<span class="constructor">Za</span>-z0-9<span class="constructor">_</span>]"。</span></span><br><span class="line"><span class="pattern-match">\<span class="constructor">W</span>	匹配任何非单词字符。等价于“[^<span class="constructor">A</span>-<span class="constructor">Za</span>-z0-9<span class="constructor">_</span>]"。</span></span><br></pre></td></tr></table></figure>
+<h2 id="常用"><a class="header-anchor" href="#常用">¶</a>常用</h2>
+<blockquote>
+<p>reference</p>
+</blockquote>
+<p><a href="https://stackoverflow.org.cn/regexsucha/" target="_blank" rel="noopener">regexsucha</a><br>
+<a href="https://stackoverflow.org.cn/regex/" target="_blank" rel="noopener">在线测试reg</a></p>
+<figure class="highlight re"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">汉字(字符)	<span class="literal">[\<span class="identifier">u4e00</span>-\<span class="identifier">u9fa5</span>]</span></span><br><span class="line">匹配双字节字符(包括汉字在内)	<span class="literal">[^\<span class="identifier">x00</span>-\<span class="identifier">xff</span>]</span></span><br><span class="line">空白行	\n\s*\r  </span><br><span class="line">        \n\n(editplus) </span><br><span class="line">        ^<span class="literal">[\<span class="identifier">s</span>\S ]</span>*\n</span><br><span class="line">用户名	/^<span class="literal">[<span class="identifier">a</span>-<span class="identifier">z0</span>-<span class="number">9_</span>-]</span>&#123;<span class="number">3</span>,<span class="number">16</span>&#125;$/</span><br><span class="line">密码	/^<span class="literal">[<span class="identifier">a</span>-<span class="identifier">z0</span>-<span class="number">9_</span>-]</span>&#123;<span class="number">6</span>,<span class="number">18</span>&#125;$/</span><br><span class="line">密码<span class="number">2</span>	(?=^.&#123;<span class="number">8</span>,&#125;$)(?=.*\d)(?=.*\W+)(?=.*<span class="literal">[A-Z]</span>)(?=.*<span class="literal">[<span class="identifier">a</span>-<span class="identifier">z</span>]</span>)(?!.*\n).*$ (由数字/大写字母/小写字母/标点符号组成，四种都必有，<span class="number">8</span>位以上)</span><br><span class="line">URL	/^(https?:\/\/)?(<span class="literal">[\<span class="identifier">da</span>-<span class="identifier">z</span>\.-]</span>+)\.(<span class="literal">[<span class="identifier">a</span>-<span class="identifier">z</span>\.]</span>&#123;<span class="number">2</span>,<span class="number">6</span>&#125;)(<span class="literal">[\<span class="operator">/</span>\<span class="identifier">w</span> \.-]</span>*)*\/?$/ 或 <span class="literal">[<span class="identifier">a</span>-<span class="identifier">zA</span>-<span class="identifier">z</span>]</span>+:<span class="comment">//[^\s]*</span></span><br><span class="line">IP 地址	/((<span class="number">2</span><span class="literal">[<span class="number">0</span>-<span class="number">4</span>]</span>\d<span class="pattern-match">|25[0-5]|[01]?\d\d?)\.)&#123;3&#125;(2[0-4]\d|25[0-5]|[01]?\d\d?)<span class="operator">/</span></span></span><br><span class="line"><span class="pattern-match"><span class="operator">/</span>^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.)&#123;3&#125;(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)<span class="constructor">$</span><span class="operator">/</span> 或 ((2[0-4]\d|25[0-5]|[01]?\d\d?)\.)&#123;3&#125;(2[0-4]\d|25[0-5]|[01]?\d\d?)</span></span><br></pre></td></tr></table></figure>
+<h2 id="pattern"><a class="header-anchor" href="#pattern">¶</a>(pattern)</h2>
+<blockquote>
+<p>匹配pattern并获取这一匹配。所获取的匹配可以</p>
+</blockquote>
+<ul>
+<li>从产生的Matches集合得到，</li>
+<li>在VBScript中使用SubMatches集合，</li>
+<li>在JScript中则使用$0…$9属性。</li>
+</ul>
+<blockquote>
+<p>要匹配圆括号字符，请使用“(“或”)&quot;。</p>
+</blockquote>
+<h2 id="正向反向匹配"><a class="header-anchor" href="#正向反向匹配">¶</a>正向反向匹配</h2>
+<blockquote>
+<p>Windows ：Windows 3.1、Windows 95 、Windows 98 和 Windows NT</p>
+</blockquote>
+<h3 id="pattern-v2"><a class="header-anchor" href="#pattern-v2">¶</a>(?:pattern)</h3>
+<blockquote>
+<p>匹配pattern但不获取匹配结果，也就是说这是一个非获取匹配，不进行存储供以后使用。这在使用或字符“(|)&quot;来组合一个模式的各个部分是很有用。<br>
+例如&quot;industr(?:y|ies)&quot;就是一个比&quot;industry|industries&quot;更简略的表达式。</p>
+</blockquote>
+<figure class="highlight re"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Windows (?:<span class="number">95</span> <span class="pattern-match">|98 |<span class="constructor">NT</span> ) -&gt; <span class="constructor">Windows</span> 95 <span class="constructor">Windows</span> 98 <span class="constructor">Windows</span> <span class="constructor">NT</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="pattern-v3"><a class="header-anchor" href="#pattern-v3">¶</a>(?=pattern)</h3>
+<blockquote>
+<p>正向肯定预查，在任何匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。<br>
+例如，“Windows(?=95|98|NT|2000)“能匹配&quot;Windows2000&quot;中的&quot;Windows”，但不能匹配&quot;Windows3.1&quot;中的&quot;Windows&quot;。<br>
+预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。</p>
+</blockquote>
+<blockquote>
+<p>Windows (?=95 |98 |NT ) -&gt; <strong>Windows</strong> 95 <strong>Windows</strong> 98 <strong>Windows</strong> NT</p>
+</blockquote>
+<h3 id="pattern-v4"><a class="header-anchor" href="#pattern-v4">¶</a>(?!pattern)</h3>
+<blockquote>
+<p>正向否定预查，在任何不匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。<br>
+例如“Windows(?!95|98|NT|2000)“能匹配&quot;Windows3.1&quot;中的&quot;Windows”，但不能匹配&quot;Windows2000&quot;中的&quot;Windows&quot;。<br>
+预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始</p>
+</blockquote>
+<blockquote>
+<p>Windows (?!95 |98 |NT ) -&gt; <strong>Windows</strong> ：<strong>Windows</strong> 3.1</p>
+</blockquote>
+<h3 id="pattern-v5"><a class="header-anchor" href="#pattern-v5">¶</a>(?&lt;=pattern)</h3>
+<blockquote>
+<p>反向肯定预查，与正向肯定预查类拟，只是方向相反。<br>
+例如，“(?&lt;=95|98|NT|2000)Windows&quot;能匹配&quot;2000Windows&quot;中的&quot;Windows&quot;，但不能匹配&quot;3.1Windows&quot;中的&quot;Windows&quot;。</p>
+</blockquote>
+<h3 id="pattern-v6"><a class="header-anchor" href="#pattern-v6">¶</a>(?&lt;!pattern)</h3>
+<blockquote>
+<p>反向否定预查，与正向否定预查类拟，只是方向相反。<br>
+例如“(?&lt;!95|98|NT|2000)Windows&quot;能匹配&quot;3.1Windows&quot;中的&quot;Windows&quot;，但不能匹配&quot;2000Windows&quot;中的&quot;Windows&quot;。</p>
+</blockquote>
+<p>Here is a footnote reference,<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> and another.<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
+<h2 id="vim-相关"><a class="header-anchor" href="#vim-相关">¶</a>vim 相关</h2>
+<blockquote>
+<p>reference</p>
+</blockquote>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/346058975" target="_blank" rel="noopener">神级编辑器 Vim 使用-正则替换篇</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/670012180" target="_blank" rel="noopener">Vim使用技巧</a></li>
+</ul>
+<blockquote>
+<p>Examples</p>
+</blockquote>
+<h3 id="vim-每-5行-合并为一行"><a class="header-anchor" href="#vim-每-5行-合并为一行">¶</a>vim 每 5行 合并为一行</h3>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">nomarl 模式</span><br><span class="line"></span><br><span class="line">输入 qa 进入录制模式</span><br><span class="line"></span><br><span class="line">按<span class="number">5</span>次 J 合并 <span class="number">5</span>行</span><br><span class="line"></span><br><span class="line">按j 跳下一行 </span><br><span class="line"></span><br><span class="line">输入 q 退出录制模式</span><br><span class="line"></span><br><span class="line">输入 <span class="symbol">3000@</span>a 表示 重复执行<span class="number">3000</span>次录制操作</span><br></pre></td></tr></table></figure>
+<h3 id="vim-匹配-数字数字-并前后插入换行符"><a class="header-anchor" href="#vim-匹配-数字数字-并前后插入换行符">¶</a>vim 匹配 <code>####</code> 数字数字. 并前后插入换行符</h3>
+<p><a href="https://zhuanlan.zhihu.com/p/346058975" target="_blank" rel="noopener">&amp; 表示使用匹配串</a></p>
+<p><code>:%s/#### \d\d. /\r\r&amp;\r\r\/</code></p>
+<h3 id="vim-每10行插入-3行空行"><a class="header-anchor" href="#vim-每10行插入-3行空行">¶</a>vim 每10行插入 3行空行</h3>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">normal 模式下 yy辅助一行空行</span><br><span class="line"></span><br><span class="line">输入 qa 进入录制模式</span><br><span class="line"></span><br><span class="line">按<span class="number">10</span>次 j 跳过<span class="number">10</span>行</span><br><span class="line"></span><br><span class="line">按<span class="number">3</span>次 P 插入拷贝空行</span><br><span class="line"></span><br><span class="line">输入q 退出录制模式</span><br><span class="line"></span><br><span class="line">输入 <span class="symbol">150@</span>a 表示重复执行 <span class="number">150</span>次录制操作</span><br></pre></td></tr></table></figure>
+<h2 id="Endnotes"><a class="header-anchor" href="#Endnotes">¶</a>Endnotes</h2>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Here is the footnote. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Here’s one with multiple blocks. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2024/07/07/bash-脚本/" data-toggle="tooltip" data-placement="top" title="bash 脚本">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2024/07/07/算法笔记/" data-toggle="tooltip" data-placement="top" title="算法笔记">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <br>
+
+                <!-- require APlayer -->
+                
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+
+                
+
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">正则表达式</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#basic"><span class="toc-nav-text">basic</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#常用"><span class="toc-nav-text">常用</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#pattern"><span class="toc-nav-text">(pattern)</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#正向反向匹配"><span class="toc-nav-text">正向反向匹配</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#pattern-v2"><span class="toc-nav-text">(?:pattern)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#pattern-v3"><span class="toc-nav-text">(?&#x3D;pattern)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#pattern-v4"><span class="toc-nav-text">(?!pattern)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#pattern-v5"><span class="toc-nav-text">(?&lt;&#x3D;pattern)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#pattern-v6"><span class="toc-nav-text">(?&lt;!pattern)</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#vim-相关"><span class="toc-nav-text">vim 相关</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#vim-每-5行-合并为一行"><span class="toc-nav-text">vim 每 5行 合并为一行</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#vim-匹配-数字数字-并前后插入换行符"><span class="toc-nav-text">vim 匹配 #### 数字数字. 并前后插入换行符</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#vim-每10行插入-3行空行"><span class="toc-nav-text">vim 每10行插入 3行空行</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Endnotes"><span class="toc-nav-text">Endnotes</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="http://www.roading.org" target="_blank">Adoo&#39;s blog</a></li>
+                    
+                        <li><a href="https://blog.csdn.net/chosen0ne/" target="_blank">娄振林专栏</a></li>
+                    
+                        <li><a href="https://www.cnblogs.com/miloyip/" target="_blank">Milo的游戏开发</a></li>
+                    
+                        <li><a href="https://www.cnblogs.com/zhaoyl/" target="_blank">Just Love U</a></li>
+                    
+                        <li><a href="https://www.cnblogs.com/sniperHW/" target="_blank">sniperHW</a></li>
+                    
+                        <li><a href="http://www.cppblog.com/converse/" target="_blank">那谁的技术博客</a></li>
+                    
+                        <li><a href="http://www.cppblog.com/Solstice/" target="_blank">陈硕的Blog</a></li>
+                    
+                        <li><a href="https://www.cnblogs.com/learnhow/p/9420404.html#4035973" target="_blank">30分钟带你了解Docker</a></li>
+                    
+                        <li><a href="https://leftnoteasy.cnblogs.com/" target="_blank">LeftNotEasy - Wangda Tan</a></li>
+                    
+                        <li><a href="https://blog.codingnow.com/" target="_blank">云风的 BLOG</a></li>
+                    
+                        <li><a href="https://iyuan.iteye.com/blog/search?page=4&amp;query=ZeroMQ%E5%88%9D%E4%BD%93%E9%AA%8C" target="_blank">zero MQ</a></li>
+                    
+                        <li><a href="https://levblanc.github.io/" target="_blank">levblanc blog</a></li>
+                    
+                        <li><a href="https://blog.zhangruipeng.me/hexo-theme-icarus/" target="_blank">zhangruipeng blog</a></li>
+                    
+                        <li><a href="https://v-vincen.life/" target="_blank">v-vincen blog</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: '∞'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+<script>
+    /**/
+    function setClipboardText(event){
+        event.preventDefault();//阻止元素发生默认的行为（例如，当点击提交按钮时阻止对表单的提交）。
+        var node = document.createElement('div');
+        //对documentfragment不熟，不知道怎么获取里面的内容，用了一个比较笨的方式
+        node.appendChild(window.getSelection().getRangeAt(0).cloneContents());
+        //getRangeAt(0)返回对基于零的数字索引与传递参数匹配的选择对象中的范围的引用。对于连续选择，参数应为零。
+        var htmlData = '<div>'
+            + node.innerHTML
+            + '<br /><br />著作权归作者所有。<br />'
+            + '商业转载请联系作者获得授权，非商业转载请注明出处。<br />'
+            + '作者：Zirpon Cheung <br />链接：'
+            + location.href
+            + '<br />来源：dianfanbao.ltd<br /><br />'
+            + '</div>';
+        var textData = window.getSelection().getRangeAt(0)
+            + '\n\n著作权归作者所有。\n'
+            + '商业转载请联系作者获得授权，非商业转载请注明出处。\n'
+            + '作者：Zirpon Cheung\n'
+            + '链接：'
+            + location.href
+            + '来源：dianfanbao.ltd\n\n';
+        if(event.clipboardData){
+            event.clipboardData.setData("text/html", htmlData);
+            //setData(剪贴板格式, 数据) 给剪贴板赋予指定格式的数据。返回 true 表示操作成功。
+            event.clipboardData.setData("text/plain",textData);
+        }
+        else if(window.clipboardData){ //window.clipboardData的作用是在页面上将需要的东西复制到剪贴板上，提供了对于预定义的剪贴板格式的访问，以便在编辑操作中使用。
+            return window.clipboardData.setData("text", textData);
+        }
+    };
+ 
+    document.addEventListener('copy',function(e){
+        setClipboardText(e);
+    });
+</script>
+
+
+
+<!-- chrome Firefox 中文锚点定位失效-->
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<!-- smooth scroll behavior polyfill  -->
+<script type="text/javascript" src="https://zirpon.github.io/js/smoothscroll.js"></script>
+<script>
+        $('#toc').on('click','a',function(a){
+            // var isChrome = window.navigator.userAgent.indexOf("Chrome") !== -1;
+            // console.log(window.navigator.userAgent,isChrome)
+                // if(isChrome) {
+                    // console.log(a.currentTarget.outerHTML);
+                    // console.log($(a.currentTarget).attr("href"));
+                    //跳转到指定锚点
+                    // document.getElementById(a.target.innerText.toLowerCase()).scrollIntoView(true);
+                    document.getElementById($(a.currentTarget).attr("href").replace("#","")).scrollIntoView({behavior: 'smooth' });
+                // }
+        })  
+</script>
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<body class="">
+<div>
+<img src="https://champon.gitee.io/blog/img/header_img/RomanTheatre_ZH-CN9417897135_1920x1080.jpg" 
+    width='64px' height='48px'>
+</div>
+</body>
+</html>
+-->
+
+	<!-- Footer (contains ThemeColor、viewer) -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/monkeyzhang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/Zirpon">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Zirpon Cheung 2024 
+                    <br>
+                    Theme by <a href="http://beantech.org/" target="_blank" rel="noopener">BeanTech</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="https://zirpon.github.io">Zirpon</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=Zirpon&repo=hexo-theme-zirpon&type=star&count=true" >
+                    </iframe>
+
+                    <br>
+                </p>
+                <br>
+                <!-- cnzz Tongji -->
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- cnzz Tongji -->
+
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- totop(rocket) -->
+<script type="text/javascript" async="true" src="https://zirpon.github.io/js/totop.js?v=1.0.0"></script>
+
+<!-- Busuanzi JavaScript -->
+<script type="text/javascript" async="true" src="/js/busuanzi.pure.mini.js"></script>
+
+
+    <!-- ThemeColor start -->
+    <script type="text/javascript" src="https://zirpon.github.io/js/themecolor.js"></script>
+    <!-- ThemeColor end -->
+
+
+
+    <!-- viewer start -->
+    <!-- viewer start (Picture preview) -->
+    <script type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+    <!-- viewer end -->
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+
+    // fastClick.js
+    async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+        var $nav = document.querySelector("nav");
+        if ($nav)
+        FastClick.attach($nav);
+        }
+    )
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+
+
+    <!-- Search -->
+	
+        <div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/ziploader.js"></script>
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('-1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+    
+
+    <a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="https://zirpon.github.io/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="https://zirpon.github.io/js/toc.js?v=1.0.0" async=""></script>
+    <!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
