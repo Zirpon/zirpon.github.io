@@ -27,7 +27,7 @@ top: 9999
 
 > 其中 `./utils` 文件夹 与 `spider-kanxshuo.py` 同级
 
-```py
+```python
 import scrapy
 from scrapy.selector import Selector
 import json
@@ -103,7 +103,7 @@ class kanxshuoSpider(scrapy.Spider):
 
 #### ./utils/mylog.py
 
-```py
+```python
 import logging, coloredlogs
 
 def mylogger(name):
@@ -136,13 +136,16 @@ def mylogger(name):
 
 ### python 执行脚本
 
-```sh
+```bash
 scrapy runspider spider-kanxshuo.py -o spider-kanxshuo.json -s FEED_EXPORT_ENCODING=UTF-8 -s LOG_FILE=spider-kanxshuo.log
+##
 ```
 
 ## 下载B站 有声小说视频
 
 使用剪映 识别视频字幕 保存为小说正文
+
+## 处理爬取 小说正文
 
 ### 使用vim 修改 视频字幕小说正文
 
@@ -198,6 +201,111 @@ normal 模式下 yy辅助一行空行
   for i in `ls | grep all-log-split-`;do a=`echo $i.txt`; mv $i $a;done
 ```
 
-## 爬取 B站 《庆余年》 有声小说视频
+## 爬取 B站 《庆余年》 有声小说视频 (视频+小说=伴读书郎)
 
 [《庆余年》小说正文](《庆余年》_qinkan.net.txt)
+
+## 爬虫本地数据库 NoSQL数据库
+
+- LiteDB
+    - [litedb_doc][]
+    - [LiteDB][]
+
+- [FileXdb.py][FileXdb]
+
+- TinyDB
+    - [和SQLite数据库对应的NoSQL数据库：TinyDB的详细使用（python3经典编程案例][]
+    - [Python TinyDB库：轻量级NoSQL数据库的终极指南][]
+    - [tinydb_doc][]
+
+### TinyDB
+
+#### 更快的json读写插件 [BetterJSONStorage][]
+
+```python
+from BetterJSONStorage import BetterJSONStorage
+from tinydb import TinyDB, Query
+from pathlib import Path
+
+path = Path('./output/moviedb4.json')
+moviedb = TinyDB(path, access_mode="r+", storage=BetterJSONStorage)
+
+moviedb.default_table_name = 'movietable'
+movietable = moviedb.table('movietable')
+
+query = Query()
+
+# 插入或者更新DB
+ret = movietable.upsert(movieJson, query.name == name)
+
+# 查询DB
+if movietable.get(query.name == name) is None:
+    pass
+
+doc_id = movietable.get(query.name == name).doc_id
+
+# 更新DB
+movietable.update({'url':url}, doc_ids = [doc_id])
+movietable.update({'screenshots':jsonResult['screenshots']}, doc_ids = [doc_id])
+movietable.update({'cover':cover_url}, doc_ids = [doc_id])
+logger.debug(movietable.get(doc_id=doc_id))
+
+# 打印DB
+def print_db():
+    outMDName = "./db/actorDB.md"
+    logger.info('outMDName total: {}'.format(outMDName))
+
+    # 取数据写 markdown
+    with open(outMDName, 'w+', newline='', encoding='utf-8') as ff:
+        logger.info('outMDName: {}'.format(outMDName))
+        with TinyDB(path, access_mode="r+", storage=BetterJSONStorage) as actorDB:
+            logger.info('DB total: {}'.format(actorDB))
+            actorTable = actorDB.table('actorTable')
+            logger.info('DB table: {}'.format(actorTable))
+
+            i = 0
+            for item in actorTable.all():
+                logger.info(item)
+
+                md_item = print_item(item)
+                i+=1
+
+                ff.writelines(md_item)
+                ff.flush()
+                logger.info(md_item)
+                logger.info(i)
+            actorDB.close()
+        ff.close()
+    return
+
+# 写入DB
+def flush_db():
+    outDict = []
+    ...
+    outDict.append(user_dict)
+    ...
+    path = Path(f'./db/actorDB.json')
+    with TinyDB(path, access_mode="r+", storage=BetterJSONStorage) as actorDB:
+        actorDB.default_table_name = 'actorTable'
+        actorTable = actorDB.table('actorTable')
+        query = Query()
+        for actor in outDict:
+            logger.info('actor:::::::::::{}'.format(actor))
+            actorTable.upsert(actor, query.name == actor.name'])
+        logger.info('DB total: {}'.format(actorDB))
+        actorDB.close()
+```
+
+Here is a footnote reference,[^1] and another.[^longnote]
+
+## Endnotes
+[^1]: Here is the footnote.
+[^longnote]: Here's one with multiple blocks.
+
+[BetterJSONStorage]: <https://github.com/MrPigss/BetterJSONStorage>
+[FileXdb]: <https://github.com/FileXdb/FileXdb.py>
+[LiteDB]: <https://github.com/lidanger/LiteDB.wiki_Translation_zh-cn?tab=readme-ov-file>
+[litedb_doc]: <https://dev.listera.top/docs/litedb/>
+[和SQLite数据库对应的NoSQL数据库：TinyDB的详细使用（python3经典编程案例]: https://blog.csdn.net/cui_yonghua/article/details/120060474
+[tinydb_doc]: <https://tinydb.readthedocs.io/en/latest/index.html>
+[Python TinyDB库：轻量级NoSQL数据库的终极指南]: <https://blog.csdn.net/GitHub_miao/article/details/139188174>
