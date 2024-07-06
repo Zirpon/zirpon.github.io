@@ -148,6 +148,10 @@ scrapy runspider spider-kanxshuo.py -o spider-kanxshuo.json -s FEED_EXPORT_ENCOD
 
 #### vim 每 5行 合并为一行
 
+```re
+[\u4e00-\u9fa5]
+```
+
 ```
 nomarl 模式
 

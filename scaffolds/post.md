@@ -11,6 +11,12 @@ top: 9
 
 # {{ title }}
 
+
+Here is a footnote reference,[^1] and another.[^longnote]
+
 ## Endnotes
 
-- [label]: <https://> "website title"
+[^1]: Here is the footnote.
+[^longnote]: Here's one with multiple blocks.
+
+[label]: <https://> "website title"
