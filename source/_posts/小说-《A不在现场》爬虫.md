@@ -17,11 +17,17 @@ top: 9999
 
 保存为markdown 格式 [《A不在现场》前11章](kanxshuo-他不在现场-苏格拉夫顿-27846.txt)
 
+### 使用 vim 正则表达式 处理连接修改 视频字幕小说正文
+
+[《不在现场》11章到最后一章](《不在现场》11章到最后一章.txt)
+
 ### 源码
 
 - [spider-kanxshuo.py](spider-kanxshuo.py) 
 - [mylog.py](./utils/mylog.py)
-- 依赖 [scrapy](https://docs.scrapy.org/en/latest/) [中文版](https://scrapy-16.readthedocs.io/zh-cn/)
+- 依赖 
+  - [scrapy](https://docs.scrapy.org/en/latest/) 
+  - [中文版](https://scrapy-16.readthedocs.io/zh-cn/)
 
 #### spider-kanxshuo.py
 
@@ -136,74 +142,13 @@ def mylogger(name):
 
 ### python 执行脚本
 
-```bash
-scrapy runspider spider-kanxshuo.py -o spider-kanxshuo.json -s FEED_EXPORT_ENCODING=UTF-8 -s LOG_FILE=spider-kanxshuo.log
-##
-```
-
-## 下载B站 有声小说视频
-
-使用剪映 识别视频字幕 保存为小说正文
-
-## 处理爬取 小说正文
-
-### 使用vim 修改 视频字幕小说正文
-
-#### vim 每 5行 合并为一行
-
-```re
-[\u4e00-\u9fa5]
-```
-
-```
-nomarl 模式
-
-输入 qa 进入录制模式
-
-按5次 J 合并 5行
-
-按j 跳下一行 
-
-输入 q 退出录制模式
-
-输入 3000@a 表示 重复执行3000次录制操作
-```
-
-#### vim 匹配 #### 数字数字. 并前后插入换行符
-
-[& 表示使用匹配串](https://zhuanlan.zhihu.com/p/346058975)
-
-> :%s/#### \d\d. /\r\r&\r\r\/
->
-
-#### vim 每10行插入 3行空行
-
-```
-normal 模式下 yy辅助一行空行
-
-输入 qa 进入录制模式
-
-按10次 j 跳过10行
-
-按3次 P 插入拷贝空行
-
-输入q 退出录制模式
-
-输入 150@a 表示重复执行 150次录制操作
-```
-[《不在现场》11章到最后一章](《不在现场》11章到最后一章.txt)
-
-### 使用 bash脚本 分割大文本文件
-[linux的history命令只显示最新10条](https://blog.csdn.net/u013541707/article/details/107359727)
-```bash
-  wc -l all.log
-  split -l 35000 -d --verbose all.log all-log-split-
-  for i in `ls | grep all-log-split-`;do a=`echo $i.txt`; mv $i $a;done
-```
+`scrapy runspider spider-kanxshuo.py -o spider-kanxshuo.json -s FEED_EXPORT_ENCODING=UTF-8 -s LOG_FILE=spider-kanxshuo.log`
 
 ## 爬取 B站 《庆余年》 有声小说视频 (视频+小说=伴读书郎)
 
-[《庆余年》小说正文](《庆余年》_qinkan.net.txt)
+- 下载B站 有声小说视频 使用剪映 识别视频字幕 保存为小说正文
+- 使用 vim 正则表达式 处理 爬取小说正文
+- [《庆余年》小说正文](《庆余年》_qinkan.net.txt)
 
 ## 爬虫本地数据库 NoSQL数据库
 
