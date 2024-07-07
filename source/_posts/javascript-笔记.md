@@ -17,6 +17,11 @@ catagories:
 [JS实现将文字转换为语音并自动播放](https://segmentfault.com/a/1190000041989692)
 [JavaScript中的一次性定时器和周期性定时器](https://cloud.tencent.com/developer/article/1797513)
 [简易开关](https://blog.csdn.net/qq_41675812/article/details/131554034)
+AI语音开源模型下载地址：https://discord.gg/aihub
+https://github.com/w-okada/voice-changer
+[最新rvc实时变声（附模型、安装、教程地址）voice-changer，AI唱歌](https://www.bilibili.com/video/BV11F41197AP/?spm_id_from=333.880.my_history.page.click&vd_source=b48342a630f5cc1a5c86649a37c0db89)
+[js版本变声器](https://github.com/Venryx/w-okada-voice-changer-scripts/tree/master)
+
 
 ```js
 //	var a='xixi'; 
