@@ -44,6 +44,7 @@ typeof运算符的返回类型为字符串，值包括如下几种：
 
 ## [Tampermonkey中文文档](https://bbs.tampermonkey.net.cn/forum.php?mod=viewthread&tid=1909)
 
+- [世界通用版本号规则](https://semver.org/lang/zh-CN/)
 - [menu](https://bbs.tampermonkey.net.cn/forum.php?mod=viewthread&tid=271)
 - [Webpack+TypeScript 油猴脚本开发模板，支持本地开发，在线热刷新，Tampermonkey template，油猴开发框架，以斗鱼直播自动切换清晰度作为示例的油猴脚本开发模板](https://github.com/Eished/tampermonkey-template)
 - [油猴脚本tampermonkey脚手架，完全支持TypeScript、热更新部署](https://github.com/xcr1234/tampermonkey-typescript)
