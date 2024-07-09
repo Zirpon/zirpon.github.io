@@ -13,46 +13,28 @@ catagories:
 
 ## basic
 
-[HTML5+JavaScript实现语音合成（文字转语音）](https://blog.csdn.net/cnds123/article/details/137920674)
-[JS实现将文字转换为语音并自动播放](https://segmentfault.com/a/1190000041989692)
 [JavaScript中的一次性定时器和周期性定时器](https://cloud.tencent.com/developer/article/1797513)
-[简易开关](https://blog.csdn.net/qq_41675812/article/details/131554034)
-AI语音开源模型下载地址：https://discord.gg/aihub
-https://github.com/w-okada/voice-changer
-[最新rvc实时变声（附模型、安装、教程地址）voice-changer，AI唱歌](https://www.bilibili.com/video/BV11F41197AP/?spm_id_from=333.880.my_history.page.click&vd_source=b48342a630f5cc1a5c86649a37c0db89)
-[js版本变声器](https://github.com/Venryx/w-okada-voice-changer-scripts/tree/master)
+[JavaScript ES6-10语法](https://iknow.fun/2020/06/02/javascript-es6-10/#1-1-%E8%AF%BE%E7%A8%8B%E5%AF%BC%E5%AD%A6-%E8%AF%95%E7%9C%8B)
+[HTML/CSS switch开关 （包括JS控制checked选择）](https://www.cnblogs.com/it-Ren/p/13062999.html)
 
 
 ```js
-//	var a='xixi'; 
+//	var a='xixi';  function  object number string boolean undefined
 	if(typeof(a) == "undefined" || a == null)
 		alert("a is undefined");
 	else
 		alert("a is defined");
 ```
-typeof运算符的返回类型为字符串，值包括如下几种：
 
-'undefined' --未定义的变量或值
+## Javascrip 变声 文字转语音
 
-'boolean' --布尔类型的变量或值
+https://github.com/w-okada/voice-changer
+AI语音开源模型下载地址：https://discord.gg/aihub
 
-'string' --字符串类型的变量或值
-
-'number' --数字类型的变量或值
-
-'object' --对象类型的变量或值，或者null(这个是js历史遗留问题，将null作为object类型处理)
-
-'function' --函数类型的变量或值
-
-
-[HTML/CSS switch开关 （包括JS控制checked选择）](https://www.cnblogs.com/it-Ren/p/13062999.html)
-
-## [Tampermonkey中文文档](https://bbs.tampermonkey.net.cn/forum.php?mod=viewthread&tid=1909)
-
-- [世界通用版本号规则](https://semver.org/lang/zh-CN/)
-- [menu](https://bbs.tampermonkey.net.cn/forum.php?mod=viewthread&tid=271)
-- [Webpack+TypeScript 油猴脚本开发模板，支持本地开发，在线热刷新，Tampermonkey template，油猴开发框架，以斗鱼直播自动切换清晰度作为示例的油猴脚本开发模板](https://github.com/Eished/tampermonkey-template)
-- [油猴脚本tampermonkey脚手架，完全支持TypeScript、热更新部署](https://github.com/xcr1234/tampermonkey-typescript)
+[HTML5+JavaScript实现语音合成（文字转语音）](https://blog.csdn.net/cnds123/article/details/137920674)
+[JS实现将文字转换为语音并自动播放](https://segmentfault.com/a/1190000041989692)
+[最新rvc实时变声（附模型、安装、教程地址）voice-changer，AI唱歌](https://www.bilibili.com/video/BV11F41197AP/?spm_id_from=333.880.my_history.page.click&vd_source=b48342a630f5cc1a5c86649a37c0db89)
+[js版本变声器](https://github.com/Venryx/w-okada-voice-changer-scripts/tree/master)
 
 ## javascript 3D 渲染
 
