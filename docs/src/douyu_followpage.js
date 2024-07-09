@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Douyu斗鱼 主播开播下播提醒 + 粤语/国语语音播报通知
 // @namespace    http://tampermonkey.net/
-// @version      3.3.3
+// @version      3.3.4
 // @description  手动打开关注页面并放置在后台(https://www.douyu.com/directory/myFollow)  有主播开播/更改标题时自动发送通知提醒
 // @author       anonymous, hlc1209, P
 // @icon         https://www.douyu.com/favicon.ico
@@ -26,6 +26,10 @@ Source: https://stackoverflow.com/questions/36779883/userscript-notifications-wo
 */
 
 /*--create style--*/
+GM_getValue("LANG", "zh-CN");
+GM_getValue("RATE", 1);
+GM_getValue("switchVoice", true);
+GM_getValue("GM_notice", true);
 
 var domHead = document.getElementsByTagName("head")[0];
 
@@ -634,6 +638,19 @@ class BaseClass {
         setHtml += '<button id="btn2">Submit</button>';
         setHtml += "</div>";
 
+        setHtml += "<br>";
+        setHtml += "<div class='setWrapLiContent'>";
+        setHtml += "<p>通知弹窗开关：</p>";
+        setHtml += "<div>";
+        setHtml += '\
+            <label class="switch">\
+                <input type="checkbox" id="gmTogBtn" />\
+                <div class="slider round"></div>\
+            </label>'
+        setHtml += "</div>";
+        setHtml += "</div>";
+        setHtml += "<br>";
+
         setHtml += "</ul>";
 
         setHtml += "<div style='height:40px;'></div>";
@@ -657,18 +674,30 @@ class BaseClass {
 
                 // 获取之前的开关状态
                 let previousState = GM_getValue("switchVoice", true);
-
                 // 如果之前的状态存在，设置开关的状态
                 if (previousState) {
                     document.getElementById("togBtn").checked = previousState == true;
                 }
-
                 // 当开关被点击时，切换状态并保存到本地存储
                 document
                     .getElementById("togBtn")
                     .addEventListener("change", function () {
                         previousState = this.checked;
-                        console.log("语音开关:", this.checked);
+                        console.log("语音开关：", this.checked);
+                    });
+
+                // 获取之前的开关状态
+                let gmState = GM_getValue("GM_notice", true);
+                // 如果之前的状态存在，设置开关的状态
+                if (gmState) {
+                    document.getElementById("gmTogBtn").checked = gmState == true;
+                }
+                // 当开关被点击时，切换状态并保存到本地存储
+                document
+                    .getElementById("gmTogBtn")
+                    .addEventListener("change", function () {
+                        gmState = this.checked;
+                        console.log("通知弹窗开关：", this.checked);
                     });
 
                 const btn = document.querySelector("#btn");
@@ -711,9 +740,12 @@ class BaseClass {
                         elem.parentNode.removeChild(elem); // 让 “要删除的元素” 的 “父元素” 删除 “要删除的元素”
                         GM_setValue("switchVoice", true);
                         let bSwitch = previousState == true ? "语音播报已开启" : "语音播报已关闭";
+                        let strGMSwitch = gmState == true ? "通知弹窗已开启" : "通知弹窗已关闭";
+                        GM_setValue("GM_notice", gmState);
                         let numRate = GM_getValue("RATE", 1);
                         let strLang = GM_getValue("LANG", "zh-HK") === "zh-CN" ? "国语" : "粤语";
-                        let sTxt = bSwitch + "，播报语言设置为" + strLang + "，语速设置为" + numRate;
+                        let sTxt = bSwitch + '，'+ strGMSwitch 
+                            +"，播报语言设置为" + strLang + "，语速设置为" + numRate;
                         console.log(sTxt)
                         speak(
                             {
@@ -904,7 +936,7 @@ function append_notify(res) {
                     },
                 };
             })();
-            GM_notification(notificationDetails);
+            wrap_GM_notification(notificationDetails);
             //下播 开播都刷新 反正状态变了都刷新
             changed = 1;
         }
@@ -948,7 +980,7 @@ function append_notify(res) {
                     },
                 };
             })();
-            GM_notification(notificationDetails_name);
+            wrap_GM_notification(notificationDetails_name);
             changed = 1;
         }
     }
@@ -971,9 +1003,18 @@ function check() {
     });
 }
 
+function wrap_GM_notification(param) {
+    let bGMnotice = GM_getValue("GM_notice", true);
+    if (bGMnotice) {
+        GM_notification(param);
+    } else {
+        console.log("GM_notification disabled");
+    }
+}
+
 check();
 function notifyTitle(s) {
-    GM_notification({
+    wrap_GM_notification({
         text: "斗鱼开播提醒",
         title: s,
         timeout: 1800,

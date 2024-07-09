@@ -234,7 +234,7 @@ markdown:
     # Class used for the permalink anchor tag.
     permalinkClass: header-anchor 
     # The symbol used to make the permalink
-    permalinkSymbol: ¶
+    permalinkSymbol: 🏝️
   plugins:
     - markdown-it-abbr
     - markdown-it-footnote

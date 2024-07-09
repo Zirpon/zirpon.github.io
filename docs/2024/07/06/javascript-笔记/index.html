@@ -167,7 +167,7 @@
                             </span>
                             <div class="blank_box"></div>
                             <span class="meta">
-                              Words <span class="post-count">292</span> In Total
+                              Words <span class="post-count">222</span> In Total
                             </span>
                             <div class="blank_box"></div>
                             <!-- 不蒜子统计 start -->
@@ -322,27 +322,21 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 article-container">
 
                 <h1>javascript 笔记</h1>
-<h2 id="basic"><a class="header-anchor" href="#basic">¶</a>basic</h2>
+<h2 id="basic"><a class="header-anchor" href="#basic">🍅</a>basic</h2>
+<p><a href="https://cloud.tencent.com/developer/article/1797513" target="_blank" rel="noopener">JavaScript中的一次性定时器和周期性定时器</a><br>
+<a href="https://iknow.fun/2020/06/02/javascript-es6-10/#1-1-%E8%AF%BE%E7%A8%8B%E5%AF%BC%E5%AD%A6-%E8%AF%95%E7%9C%8B" target="_blank" rel="noopener">JavaScript ES6-10语法</a><br>
+<a href="https://www.cnblogs.com/it-Ren/p/13062999.html" target="_blank" rel="noopener">HTML/CSS switch开关 （包括JS控制checked选择）</a><br>
+<a href="https://geek-docs.com/javascript/javascript-ask-answer/102_tk_1703987553.html" target="_blank" rel="noopener">JavaScript字典遍历用法介绍</a><br>
+<a href="https://geek-docs.com/javascript/javascript-ask-answer/55_hk_1709422196.html" target="_blank" rel="noopener">JS 字典遍历</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> [key, value] <span class="keyword">of</span> <span class="built_in">Object</span>.entries(object)) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(key, value);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> points = [<span class="number">40</span>,<span class="number">100</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">25</span>,<span class="number">10</span>];</span><br><span class="line">points.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;<span class="keyword">return</span> a-b&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//	var a='xixi';  function  object number string boolean undefined</span></span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">typeof</span>(a) == <span class="string">"undefined"</span> || a == <span class="literal">null</span>)</span><br><span class="line">		alert(<span class="string">"a is undefined"</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		alert(<span class="string">"a is defined"</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="Javascrip-变声-文字转语音"><a class="header-anchor" href="#Javascrip-变声-文字转语音">🍅</a>Javascrip 变声 文字转语音</h2>
+<p><a href="https://github.com/w-okada/voice-changer" target="_blank" rel="noopener">https://github.com/w-okada/voice-changer</a><br>
+AI语音开源模型下载地址：<a href="https://discord.gg/aihub" target="_blank" rel="noopener">https://discord.gg/aihub</a></p>
 <p><a href="https://blog.csdn.net/cnds123/article/details/137920674" target="_blank" rel="noopener">HTML5+JavaScript实现语音合成（文字转语音）</a><br>
 <a href="https://segmentfault.com/a/1190000041989692" target="_blank" rel="noopener">JS实现将文字转换为语音并自动播放</a><br>
-<a href="https://cloud.tencent.com/developer/article/1797513" target="_blank" rel="noopener">JavaScript中的一次性定时器和周期性定时器</a><br>
-<a href="https://blog.csdn.net/qq_41675812/article/details/131554034" target="_blank" rel="noopener">简易开关</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//	var a='xixi'; </span></span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">typeof</span>(a) == <span class="string">"undefined"</span> || a == <span class="literal">null</span>)</span><br><span class="line">		alert(<span class="string">"a is undefined"</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		alert(<span class="string">"a is defined"</span>);</span><br></pre></td></tr></table></figure>
-<p>typeof运算符的返回类型为字符串，值包括如下几种：</p>
-<p>‘undefined’ --未定义的变量或值</p>
-<p>‘boolean’ --布尔类型的变量或值</p>
-<p>‘string’ --字符串类型的变量或值</p>
-<p>‘number’ --数字类型的变量或值</p>
-<p>‘object’ --对象类型的变量或值，或者null(这个是js历史遗留问题，将null作为object类型处理)</p>
-<p>‘function’ --函数类型的变量或值</p>
-<p><a href="https://www.cnblogs.com/it-Ren/p/13062999.html" target="_blank" rel="noopener">HTML/CSS switch开关 （包括JS控制checked选择）</a></p>
-<h2 id="Tampermonkey中文文档"><a class="header-anchor" href="#Tampermonkey中文文档">¶</a><a href="https://bbs.tampermonkey.net.cn/forum.php?mod=viewthread&amp;tid=1909" target="_blank" rel="noopener">Tampermonkey中文文档</a></h2>
-<ul>
-<li><a href="https://bbs.tampermonkey.net.cn/forum.php?mod=viewthread&amp;tid=271" target="_blank" rel="noopener">menu</a></li>
-<li><a href="https://github.com/Eished/tampermonkey-template" target="_blank" rel="noopener">Webpack+TypeScript 油猴脚本开发模板，支持本地开发，在线热刷新，Tampermonkey template，油猴开发框架，以斗鱼直播自动切换清晰度作为示例的油猴脚本开发模板</a></li>
-<li><a href="https://github.com/xcr1234/tampermonkey-typescript" target="_blank" rel="noopener">油猴脚本tampermonkey脚手架，完全支持TypeScript、热更新部署</a></li>
-</ul>
-<h2 id="javascript-3D-渲染"><a class="header-anchor" href="#javascript-3D-渲染">¶</a>javascript 3D 渲染</h2>
+<a href="https://www.bilibili.com/video/BV11F41197AP/?spm_id_from=333.880.my_history.page.click&amp;vd_source=b48342a630f5cc1a5c86649a37c0db89" target="_blank" rel="noopener">最新rvc实时变声（附模型、安装、教程地址）voice-changer，AI唱歌</a><br>
+<a href="https://github.com/Venryx/w-okada-voice-changer-scripts/tree/master" target="_blank" rel="noopener">js版本变声器</a></p>
+<h2 id="javascript-3D-渲染"><a class="header-anchor" href="#javascript-3D-渲染">🍅</a>javascript 3D 渲染</h2>
 <ul>
 <li><a href="https://sketchfab.com/developers/data-api/v3" target="_blank" rel="noopener" title="website title">sketchfab_doc</a></li>
 <li><a href="https://support.fab.com/s/article/Embedding-your-3D-models" target="_blank" rel="noopener">epic_sketchfab</a></li>
@@ -351,7 +345,7 @@
 <li><a href="http://webgl3d.cn/pages/aac9ab/" target="_blank" rel="noopener">threejs_doc</a></li>
 </ul>
 <p>Here is a footnote reference,<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> and another.<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
-<h2 id="Endnotes"><a class="header-anchor" href="#Endnotes">¶</a>Endnotes</h2>
+<h2 id="Endnotes"><a class="header-anchor" href="#Endnotes">🍅</a>Endnotes</h2>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
@@ -408,7 +402,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">javascript 笔记</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#basic"><span class="toc-nav-text">basic</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Tampermonkey中文文档"><span class="toc-nav-text">Tampermonkey中文文档</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#javascript-3D-渲染"><span class="toc-nav-text">javascript 3D 渲染</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Endnotes"><span class="toc-nav-text">Endnotes</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">javascript 笔记</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#basic"><span class="toc-nav-text">🍅basic</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Javascrip-变声-文字转语音"><span class="toc-nav-text">🍅Javascrip 变声 文字转语音</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#javascript-3D-渲染"><span class="toc-nav-text">🍅javascript 3D 渲染</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Endnotes"><span class="toc-nav-text">🍅Endnotes</span></a></li></ol></li></ol>
         
         </div>
       </aside>
@@ -498,7 +492,7 @@
         anchors.options = {
           visible: 'hover',
           placement: 'left',
-          icon: '∞'
+          icon: '🍄'
         };
         anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
     })

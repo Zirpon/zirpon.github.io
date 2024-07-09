@@ -16,9 +16,17 @@ catagories:
 [JavaScript中的一次性定时器和周期性定时器](https://cloud.tencent.com/developer/article/1797513)
 [JavaScript ES6-10语法](https://iknow.fun/2020/06/02/javascript-es6-10/#1-1-%E8%AF%BE%E7%A8%8B%E5%AF%BC%E5%AD%A6-%E8%AF%95%E7%9C%8B)
 [HTML/CSS switch开关 （包括JS控制checked选择）](https://www.cnblogs.com/it-Ren/p/13062999.html)
-
+[JavaScript字典遍历用法介绍](https://geek-docs.com/javascript/javascript-ask-answer/102_tk_1703987553.html)
+[JS 字典遍历](https://geek-docs.com/javascript/javascript-ask-answer/55_hk_1709422196.html)
 
 ```js
+for (const [key, value] of Object.entries(object)) {
+    console.log(key, value);
+}
+
+var points = [40,100,1,5,25,10];
+points.sort(function(a,b){return a-b});
+
 //	var a='xixi';  function  object number string boolean undefined
 	if(typeof(a) == "undefined" || a == null)
 		alert("a is undefined");
