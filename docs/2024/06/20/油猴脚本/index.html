@@ -110,7 +110,41 @@
 
     <!-- ga & ba script hoook -->
     <script></script>
-<meta name="generator" content="Hexo 4.2.1"></head>
+<meta name="generator" content="Hexo 4.2.1"><style>
+    figure.codeblock {
+       margin: 0;
+    }
+    figure figcaption .tabs {
+      display: flex;
+      margin: 0;
+    }
+    figure figcaption .tabs .tab {
+      cursor: pointer;
+      list-style: none;
+      padding: 5px 15px;
+    }
+    figure figcaption .tabs .tab.active {
+      background: #2d2d2d;
+      color: white;
+    }
+  </style><style>
+    figure.codeblock {
+       margin: 0;
+    }
+    figure figcaption .tabs {
+      display: flex;
+      margin: 0;
+    }
+    figure figcaption .tabs .tab {
+      cursor: pointer;
+      list-style: none;
+      padding: 5px 15px;
+    }
+    figure figcaption .tabs .tab.active {
+      background: #2d2d2d;
+      color: white;
+    }
+  </style></head>
 
 
 <!-- hack iOS CSS :active style -->
@@ -122,8 +156,8 @@
 <!-- <div class="toggle" onclick="document.body.classList.toggle('body--dark')">Switch Color</div> -->
 
 <div class="toggle" onclick="document.body.classList.toggle('body--dark')">
-  <strong class="mdui-icon material-icons bright-mode">🤡</strong>
-  <strong class="mdui-icon material-icons dark-mode">🤡</strong>
+  <strong class="mdui-icon material-icons bright-mode">☀️</strong>
+  <strong class="mdui-icon material-icons dark-mode">🌃</strong>
 </div>
 
     
@@ -150,6 +184,14 @@
                     <div class="post-heading">
                         <div class="tags">
                             
+                              <a class="tag" href="/tags/#油猴" title="油猴">油猴</a>
+                            
+                              <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
+                            
+                              <a class="tag" href="/tags/#Tampermonkey" title="Tampermonkey">Tampermonkey</a>
+                            
+                              <a class="tag" href="/tags/#斗鱼" title="斗鱼">斗鱼</a>
+                            
                         </div>
                         <h1>油猴脚本</h1>
                         <h2 class="subheading">The quick brown fox jumps over the lazy dog</h2>
@@ -167,7 +209,7 @@
                             </span>
                             <div class="blank_box"></div>
                             <span class="meta">
-                              Words <span class="post-count">170</span> In Total
+                              Words <span class="post-count">320</span> In Total
                             </span>
                             <div class="blank_box"></div>
                             <!-- 不蒜子统计 start -->
@@ -263,6 +305,9 @@
 
                         
                     
+
+                        
+                    
                     
           
           <li><a class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
@@ -321,47 +366,78 @@
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 article-container">
 
-                <h1>油猴脚本</h1>
-<h2 id="斗鱼开播提醒"><a class="header-anchor" href="#斗鱼开播提醒">🍅</a>斗鱼开播提醒</h2>
+                <h1><a id="_1"></a>油猴脚本</h1>
+<h2><a id="_3"></a><a class="header-anchor" href="#斗鱼开播提醒">🏝️</a>斗鱼开播提醒</h2>
 <blockquote>
 <p>此 <a href="https://greasyfork.org/zh-CN/scripts/498616-douyu%E6%96%97%E9%B1%BC-%E4%B8%BB%E6%92%AD%E5%BC%80%E6%92%AD%E4%B8%8B%E6%92%AD%E6%8F%90%E9%86%92-%E7%B2%A4%E8%AF%AD-%E5%9B%BD%E8%AF%AD%E8%AF%AD%E9%9F%B3%E6%92%AD%E6%8A%A5%E9%80%9A%E7%9F%A5" target="_blank" rel="noopener">Script</a> 继承了 @P- 的 <a href="https://greasyfork.org/zh-CN/scripts/378317-douyu-%E6%96%97%E9%B1%BC%E5%BC%80%E6%92%AD%E6%8F%90%E9%86%92" target="_blank" rel="noopener">原脚本</a> 在此感谢 <a href="https://greasyfork.org/zh-CN/users/250428-p" target="_blank" rel="noopener">@P-</a> 的开发工作。</p>
 </blockquote>
-<h3 id="增加功能"><a class="header-anchor" href="#增加功能">🍅</a>增加功能</h3>
-<ul>
-<li>[x] 下播提醒</li>
-<li>[x] 每次提醒重新刷新 关注页面</li>
-<li>[x] 粤语/国语 语音播报 <code>改标题/下播/开播</code> 提醒<br>
-<img src="https://image-static.segmentfault.com/995/584/9955847-62a9b4b214bea_fix732" alt="语音列表"></li>
+<h3><a id="_7"></a><a class="header-anchor" href="#增加功能">🏝️</a>增加功能</h3>
+<ul class="lvl-0" class="task-list">
+<li class="lvl-2" class="task-list-item">
+<p><input type="checkbox" id="cbx_0" checked="true" disabled="true"><label for="cbx_0"> 下播提醒</label></p>
+</li>
+<li class="lvl-2" class="task-list-item">
+<p><input type="checkbox" id="cbx_1" checked="true" disabled="true"><label for="cbx_1"> 每次提醒重新刷新 关注页面</label></p>
+</li>
+<li class="lvl-2" class="task-list-item">
+<p><input type="checkbox" id="cbx_2" checked="true" disabled="true"><label for="cbx_2"> 粤语/国语 语音播报 <code>改标题/下播/开播</code> 提醒<br>
+<img src="https://image-static.segmentfault.com/995/584/9955847-62a9b4b214bea_fix732" alt="语音列表"></label></p>
+</li>
 </ul>
-<h3 id="版本更新"><a class="header-anchor" href="#版本更新">🍅</a>版本更新</h3>
+<h3><a id="_14"></a><a class="header-anchor" href="#版本更新">🏝️</a>版本更新</h3>
+<blockquote>
+<p>3.3.6</p>
+</blockquote>
+<ul class="lvl-0" class="task-list">
+<li class="lvl-2" class="task-list-item">
+<p><input type="checkbox" id="cbx_3" checked="true" disabled="true"><label for="cbx_3"> 关闭系统通知时 用页面常驻弹窗通知</label></p>
+</li>
+</ul>
+<blockquote>
+<p>3.3.5</p>
+</blockquote>
+<ul class="lvl-0" class="task-list">
+<li class="lvl-2" class="task-list-item">
+<p><input type="checkbox" id="cbx_4" checked="true" disabled="true"><label for="cbx_4"> 油猴脚本工程化管理</label></p>
+</li>
+</ul>
 <blockquote>
 <p>3.3.4</p>
 </blockquote>
-<ul>
-<li>[x] 增加通知提醒开关按钮</li>
+<ul class="lvl-0" class="task-list">
+<li class="lvl-2" class="task-list-item">
+<p><input type="checkbox" id="cbx_5" checked="true" disabled="true"><label for="cbx_5"> 增加通知提醒开关按钮</label></p>
+</li>
 </ul>
 <blockquote>
 <p>3.3.3</p>
 </blockquote>
-<ul>
-<li>[x] 增加语音播报开关按钮</li>
+<ul class="lvl-0" class="task-list">
+<li class="lvl-2" class="task-list-item">
+<p><input type="checkbox" id="cbx_6" checked="true" disabled="true"><label for="cbx_6"> 增加语音播报开关按钮</label></p>
+</li>
 </ul>
 <blockquote>
 <p>3.3.2</p>
 </blockquote>
-<ul>
-<li>[x] 关闭设置界面不再刷新 关注页面 而是语音播报设置修改内</li>
+<ul class="lvl-0" class="task-list">
+<li class="lvl-2" class="task-list-item">
+<p><input type="checkbox" id="cbx_7" checked="true" disabled="true"><label for="cbx_7"> 关闭设置界面不再刷新 关注页面 而是语音播报设置修改内</label></p>
+</li>
 </ul>
 <blockquote>
 <p>3.2</p>
 </blockquote>
-<ul>
-<li>[x] 增加设置界面 方便用户使用</li>
+<ul class="lvl-0" class="task-list">
+<li class="lvl-2" class="task-list-item">
+<p><input type="checkbox" id="cbx_8" checked="true" disabled="true"><label for="cbx_8"> 增加设置界面 方便用户使用</label></p>
+</li>
 </ul>
-<h3 id="源码"><a class="header-anchor" href="#源码">🍅</a>源码</h3>
+<h3><a id="_33"></a><a class="header-anchor" href="#源码">🏝️</a>源码</h3>
 <p><a href="https://raw.githubusercontent.com/Zirpon/zirpon.github.io/master/source/src/douyu_followpage.js" target="_blank" rel="noopener">源码</a></p>
+<figure class="highlight js"><figcaption><span>油猴脚本</span><a href="https://raw.githubusercontent.com/Zirpon/zirpon.github.io/master/source/src/douyu_followpage.js" target="_blank" rel="noopener">douyu_followpage源码</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line marked"><span class="function"><span class="keyword">function</span> <span class="title">speak</span>(<span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">    &#123; text, speechRate, lang, volume, pitch &#125;,</span></span></span><br><span class="line"><span class="function"><span class="params">    endEvent,</span></span></span><br><span class="line marked"><span class="function"><span class="params">    startEvent</span></span></span><br><span class="line marked"><span class="function"><span class="params"></span>) </span>&#123;</span><br><span class="line marked">    <span class="keyword">if</span> (!<span class="built_in">window</span>.SpeechSynthesisUtterance) &#123;</span><br><span class="line marked">        <span class="built_in">console</span>.warn(<span class="string">"当前浏览器不支持文字转语音服务"</span>);</span><br><span class="line marked">        <span class="keyword">return</span>;</span><br><span class="line marked">    &#125;</span><br><span class="line marked"></span><br><span class="line marked">    <span class="keyword">if</span> (!text) &#123;</span><br><span class="line marked">        <span class="keyword">return</span>;</span><br><span class="line marked">    &#125;</span><br><span class="line marked">    <span class="keyword">let</span> onoff = GM_getValue(<span class="string">"switchVoice"</span>, <span class="literal">true</span>);</span><br><span class="line marked">    <span class="keyword">if</span> (onoff != <span class="literal">true</span>) &#123;</span><br><span class="line marked">        <span class="keyword">return</span>;</span><br><span class="line marked">    &#125;</span><br><span class="line marked"></span><br><span class="line marked">    <span class="keyword">let</span> setlang = GM_getValue(<span class="string">"LANG"</span>, <span class="string">"zh-CN"</span>);</span><br><span class="line marked">    <span class="keyword">let</span> setrate = GM_getValue(<span class="string">"RATE"</span>, <span class="number">1</span>);</span><br><span class="line marked">    <span class="keyword">const</span> speechUtterance = <span class="keyword">new</span> SpeechSynthesisUtterance();</span><br><span class="line marked">    speechUtterance.text = text;</span><br><span class="line marked">    speechUtterance.rate = speechRate || setrate;</span><br><span class="line marked">    speechUtterance.lang = lang || setlang;</span><br><span class="line marked">    speechUtterance.volume = volume || <span class="number">1</span>;</span><br><span class="line marked">    speechUtterance.pitch = pitch || <span class="number">1</span>;</span><br><span class="line marked">    speechUtterance.onend = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line marked">        endEvent &amp;&amp; endEvent();</span><br><span class="line marked">    &#125;;</span><br><span class="line marked">    speechUtterance.onstart = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line marked">        startEvent &amp;&amp; startEvent();</span><br><span class="line marked">    &#125;;</span><br><span class="line marked">    <span class="keyword">var</span> timeFun = <span class="built_in">window</span>.setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line marked">        <span class="built_in">window</span>.clearInterval(timeFun);</span><br><span class="line marked">        speechSynthesis.speak(speechUtterance);</span><br><span class="line marked">    &#125;, <span class="number">500</span>);</span><br><span class="line marked"></span><br><span class="line marked">    <span class="keyword">return</span> speechUtterance;</span><br><span class="line marked">&#125;</span><br></pre></td></tr></table></figure>
 <p>Here is a footnote reference,<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> and another.<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
-<h2 id="Endnotes"><a class="header-anchor" href="#Endnotes">🍅</a>Endnotes</h2>
+<h2><a id="Endnotes_41"></a><a class="header-anchor" href="#Endnotes">🏝️</a>Endnotes</h2>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
@@ -418,7 +494,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">油猴脚本</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#斗鱼开播提醒"><span class="toc-nav-text">🍅斗鱼开播提醒</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#增加功能"><span class="toc-nav-text">🍅增加功能</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#版本更新"><span class="toc-nav-text">🍅版本更新</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#源码"><span class="toc-nav-text">🍅源码</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Endnotes"><span class="toc-nav-text">🍅Endnotes</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">油猴脚本</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️斗鱼开播提醒</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️增加功能</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️版本更新</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️源码</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️Endnotes</span></a></li></ol></li></ol>
         
         </div>
       </aside>
@@ -438,6 +514,14 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
+                          <a class="tag" href="/tags/#油猴" title="油猴">油猴</a>
+                        
+                          <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
+                        
+                          <a class="tag" href="/tags/#Tampermonkey" title="Tampermonkey">Tampermonkey</a>
+                        
+                          <a class="tag" href="/tags/#斗鱼" title="斗鱼">斗鱼</a>
+                        
                     </div>
                 </section>
                 
@@ -594,7 +678,37 @@
 <img src="https://champon.gitee.io/blog/img/header_img/RomanTheatre_ZH-CN9417897135_1920x1080.jpg" 
     width='64px' height='48px'>
 </div>
-</body>
+<script>
+  $(document).ready(function() {
+    $('figure.codeblock').find('.tab').click(function() {
+        var $codeblock = $(this).parent().parent().parent();
+        var $tab = $(this);
+        // remove "active" css class on all tabs
+        $tab.siblings().removeClass('active');
+        // add "active" css class on the clicked tab
+        $tab.addClass('active');
+        // hide all tab contents
+        $codeblock.find('.highlight').hide();
+        // show only the right one
+        $codeblock.find('.highlight.' + $tab.text()).show();
+    });
+  });
+  </script><script>
+  $(document).ready(function() {
+    $('figure.codeblock').find('.tab').click(function() {
+        var $codeblock = $(this).parent().parent().parent();
+        var $tab = $(this);
+        // remove "active" css class on all tabs
+        $tab.siblings().removeClass('active');
+        // add "active" css class on the clicked tab
+        $tab.addClass('active');
+        // hide all tab contents
+        $codeblock.find('.highlight').hide();
+        // show only the right one
+        $codeblock.find('.highlight.' + $tab.text()).show();
+    });
+  });
+  </script></body>
 </html>
 -->
 

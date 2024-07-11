@@ -110,7 +110,41 @@
 
     <!-- ga & ba script hoook -->
     <script></script>
-<meta name="generator" content="Hexo 4.2.1"></head>
+<meta name="generator" content="Hexo 4.2.1"><style>
+    figure.codeblock {
+       margin: 0;
+    }
+    figure figcaption .tabs {
+      display: flex;
+      margin: 0;
+    }
+    figure figcaption .tabs .tab {
+      cursor: pointer;
+      list-style: none;
+      padding: 5px 15px;
+    }
+    figure figcaption .tabs .tab.active {
+      background: #2d2d2d;
+      color: white;
+    }
+  </style><style>
+    figure.codeblock {
+       margin: 0;
+    }
+    figure figcaption .tabs {
+      display: flex;
+      margin: 0;
+    }
+    figure figcaption .tabs .tab {
+      cursor: pointer;
+      list-style: none;
+      padding: 5px 15px;
+    }
+    figure figcaption .tabs .tab.active {
+      background: #2d2d2d;
+      color: white;
+    }
+  </style></head>
 
 
 <!-- hack iOS CSS :active style -->
@@ -122,8 +156,8 @@
 <!-- <div class="toggle" onclick="document.body.classList.toggle('body--dark')">Switch Color</div> -->
 
 <div class="toggle" onclick="document.body.classList.toggle('body--dark')">
-  <strong class="mdui-icon material-icons bright-mode">🤡</strong>
-  <strong class="mdui-icon material-icons dark-mode">🤡</strong>
+  <strong class="mdui-icon material-icons bright-mode">☀️</strong>
+  <strong class="mdui-icon material-icons dark-mode">🌃</strong>
 </div>
 
     
@@ -149,6 +183,12 @@
                 
                     <div class="post-heading">
                         <div class="tags">
+                            
+                              <a class="tag" href="/tags/#正则表达式" title="正则表达式">正则表达式</a>
+                            
+                              <a class="tag" href="/tags/#vim" title="vim">vim</a>
+                            
+                              <a class="tag" href="/tags/#re" title="re">re</a>
                             
                         </div>
                         <h1>正则表达式</h1>
@@ -263,6 +303,9 @@
 
                         
                     
+
+                        
+                    
                     
           
           <li><a class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
@@ -321,86 +364,89 @@
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 article-container">
 
-                <h1>正则表达式</h1>
-<h2 id="basic"><a class="header-anchor" href="#basic">¶</a>basic</h2>
+                <h1><a id="_1"></a>正则表达式</h1>
+<h2><a id="basic_3"></a><a class="header-anchor" href="#basic">🏝️</a>basic</h2>
 <figure class="highlight re"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">/a.c/ -&gt; aac、abc、acc、adc</span><br><span class="line">/a*b/ -&gt; <span class="string">"b"</span>、<span class="string">"ab"</span>、<span class="string">"aab"</span>、<span class="string">"aaab"</span> </span><br><span class="line">/a+b/ -&gt; <span class="string">"ab"</span>、<span class="string">"aab"</span>、<span class="string">"aaab"</span> </span><br><span class="line">/colou?r/ -&gt; <span class="string">"color"</span> 或 <span class="string">"colour"</span></span><br><span class="line"></span><br><span class="line">用户名由若干个字母、数字、下划线和中划线组成，所以需要用到 + 表示 <span class="number">1</span> 次或多次出现</span><br><span class="line"><span class="literal">[<span class="identifier">a</span>-<span class="identifier">zA</span>-Z0-<span class="number">9_</span>-]</span>+</span><br><span class="line"></span><br><span class="line">匹配 iframe 标签</span><br><span class="line">/&lt;iframe((<span class="literal">[\<span class="identifier">s</span>\S]</span>)*?)&lt;\/iframe&gt;/</span><br><span class="line"></span><br><span class="line">匹配所有 img 标签</span><br><span class="line">/&lt;img.*?src=<span class="string">"(.*?)"</span>.*?\/?&gt;/gi</span><br><span class="line"></span><br><span class="line">中括号表达式 匹配字符组的一个列表</span><br><span class="line">/Chapter <span class="literal">[<span class="number">1</span>-<span class="number">5</span>]</span>/</span><br><span class="line">/Chapter <span class="literal">[<span class="number">12345</span>]</span>/ -&gt; Chapter <span class="number">1</span>、Chapter <span class="number">2</span>、Chapter <span class="number">3</span>、Chapter <span class="number">4</span> 和 Chapter <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="literal">[!--]</span></span><br><span class="line"><span class="literal">[!-~]</span></span><br><span class="line">/Chapter <span class="literal">[^<span class="number">1</span>-<span class="number">5</span>]</span>/</span><br><span class="line">/<span class="literal">[A-Z<span class="identifier">a</span>-<span class="identifier">z0</span>-<span class="number">9</span>]</span>/</span><br><span class="line"></span><br><span class="line">/^(Chapter<span class="pattern-match">|<span class="constructor">Section</span>) [1-9][0-9]&#123;0,1&#125;<span class="constructor">$</span><span class="operator">/</span></span></span><br><span class="line"><span class="pattern-match"></span></span><br><span class="line"><span class="pattern-match">\b	匹配一个单词边界，也就是指单词和空格间的位置。例如，“er\b"可以匹配"never"中的"er"，但不能匹配"verb"中的"er"。</span></span><br><span class="line"><span class="pattern-match">\<span class="constructor">B</span>	匹配非单词边界。“er\<span class="constructor">B</span>"能匹配"verb"中的"er"，但不能匹配"never"中的"er"。</span></span><br><span class="line"><span class="pattern-match"></span></span><br><span class="line"><span class="pattern-match">\n	匹配一个换行符。等价于\x0a和\c<span class="constructor">J</span>。</span></span><br><span class="line"><span class="pattern-match">\r	匹配一个回车符。等价于\x0d和\c<span class="constructor">M</span>。</span></span><br><span class="line"><span class="pattern-match"></span></span><br><span class="line"><span class="pattern-match">\s	匹配任何空白字符，包括空格、制表符、换页符等等。等价于[ \f\n\r\t\v]。</span></span><br><span class="line"><span class="pattern-match">\<span class="constructor">S</span>	匹配任何非空白字符。等价于[^ \f\n\r\t\v]</span></span><br><span class="line"><span class="pattern-match"></span></span><br><span class="line"><span class="pattern-match">\w	匹配包括下划线的任何单词字符。等价于“[<span class="constructor">A</span>-<span class="constructor">Za</span>-z0-9<span class="constructor">_</span>]"。</span></span><br><span class="line"><span class="pattern-match">\<span class="constructor">W</span>	匹配任何非单词字符。等价于“[^<span class="constructor">A</span>-<span class="constructor">Za</span>-z0-9<span class="constructor">_</span>]"。</span></span><br></pre></td></tr></table></figure>
-<h2 id="常用"><a class="header-anchor" href="#常用">¶</a>常用</h2>
+<h2><a id="_7"></a><a class="header-anchor" href="#常用">🏝️</a>常用</h2>
 <blockquote>
 <p>reference</p>
 </blockquote>
 <p><a href="https://stackoverflow.org.cn/regexsucha/" target="_blank" rel="noopener">regexsucha</a><br>
 <a href="https://stackoverflow.org.cn/regex/" target="_blank" rel="noopener">在线测试reg</a></p>
 <figure class="highlight re"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">汉字(字符)	<span class="literal">[\<span class="identifier">u4e00</span>-\<span class="identifier">u9fa5</span>]</span></span><br><span class="line">匹配双字节字符(包括汉字在内)	<span class="literal">[^\<span class="identifier">x00</span>-\<span class="identifier">xff</span>]</span></span><br><span class="line">空白行	\n\s*\r  </span><br><span class="line">        \n\n(editplus) </span><br><span class="line">        ^<span class="literal">[\<span class="identifier">s</span>\S ]</span>*\n</span><br><span class="line">用户名	/^<span class="literal">[<span class="identifier">a</span>-<span class="identifier">z0</span>-<span class="number">9_</span>-]</span>&#123;<span class="number">3</span>,<span class="number">16</span>&#125;$/</span><br><span class="line">密码	/^<span class="literal">[<span class="identifier">a</span>-<span class="identifier">z0</span>-<span class="number">9_</span>-]</span>&#123;<span class="number">6</span>,<span class="number">18</span>&#125;$/</span><br><span class="line">密码<span class="number">2</span>	(?=^.&#123;<span class="number">8</span>,&#125;$)(?=.*\d)(?=.*\W+)(?=.*<span class="literal">[A-Z]</span>)(?=.*<span class="literal">[<span class="identifier">a</span>-<span class="identifier">z</span>]</span>)(?!.*\n).*$ (由数字/大写字母/小写字母/标点符号组成，四种都必有，<span class="number">8</span>位以上)</span><br><span class="line">URL	/^(https?:\/\/)?(<span class="literal">[\<span class="identifier">da</span>-<span class="identifier">z</span>\.-]</span>+)\.(<span class="literal">[<span class="identifier">a</span>-<span class="identifier">z</span>\.]</span>&#123;<span class="number">2</span>,<span class="number">6</span>&#125;)(<span class="literal">[\<span class="operator">/</span>\<span class="identifier">w</span> \.-]</span>*)*\/?$/ 或 <span class="literal">[<span class="identifier">a</span>-<span class="identifier">zA</span>-<span class="identifier">z</span>]</span>+:<span class="comment">//[^\s]*</span></span><br><span class="line">IP 地址	/((<span class="number">2</span><span class="literal">[<span class="number">0</span>-<span class="number">4</span>]</span>\d<span class="pattern-match">|25[0-5]|[01]?\d\d?)\.)&#123;3&#125;(2[0-4]\d|25[0-5]|[01]?\d\d?)<span class="operator">/</span></span></span><br><span class="line"><span class="pattern-match"><span class="operator">/</span>^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.)&#123;3&#125;(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)<span class="constructor">$</span><span class="operator">/</span> 或 ((2[0-4]\d|25[0-5]|[01]?\d\d?)\.)&#123;3&#125;(2[0-4]\d|25[0-5]|[01]?\d\d?)</span></span><br></pre></td></tr></table></figure>
-<h2 id="pattern"><a class="header-anchor" href="#pattern">¶</a>(pattern)</h2>
+<h2><a id="pattern_15"></a><a class="header-anchor" href="#pattern">🏝️</a>(pattern)</h2>
 <blockquote>
 <p>匹配pattern并获取这一匹配。所获取的匹配可以</p>
 </blockquote>
-<ul>
-<li>从产生的Matches集合得到，</li>
-<li>在VBScript中使用SubMatches集合，</li>
-<li>在JScript中则使用$0…$9属性。</li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>从产生的Matches集合得到，</p>
+</li>
+<li class="lvl-2">
+<p>在VBScript中使用SubMatches集合，</p>
+</li>
+<li class="lvl-2">
+<p>在JScript中则使用$0…$9属性。</p>
+</li>
 </ul>
 <blockquote>
 <p>要匹配圆括号字符，请使用“(“或”)&quot;。</p>
 </blockquote>
-<h2 id="正向反向匹配"><a class="header-anchor" href="#正向反向匹配">¶</a>正向反向匹配</h2>
+<h2><a id="_25"></a><a class="header-anchor" href="#正向反向匹配">🏝️</a>正向反向匹配</h2>
 <blockquote>
 <p>Windows ：Windows 3.1、Windows 95 、Windows 98 和 Windows NT</p>
 </blockquote>
-<h3 id="pattern-v2"><a class="header-anchor" href="#pattern-v2">¶</a>(?:pattern)</h3>
+<h3><a id="pattern_29"></a><a class="header-anchor" href="#pattern-v2">🏝️</a>(?:pattern)</h3>
 <blockquote>
-<p>匹配pattern但不获取匹配结果，也就是说这是一个非获取匹配，不进行存储供以后使用。这在使用或字符“(|)&quot;来组合一个模式的各个部分是很有用。<br>
-例如&quot;industr(?:y|ies)&quot;就是一个比&quot;industry|industries&quot;更简略的表达式。</p>
+<p>匹配pattern但不获取匹配结果，也就是说这是一个非获取匹配，不进行存储供以后使用。这在使用或字符“(|)&quot;来组合一个模式的各个部分是很有用。例如&quot;industr(?:y|ies)&quot;就是一个比&quot;industry|industries&quot;更简略的表达式。</p>
 </blockquote>
 <figure class="highlight re"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Windows (?:<span class="number">95</span> <span class="pattern-match">|98 |<span class="constructor">NT</span> ) -&gt; <span class="constructor">Windows</span> 95 <span class="constructor">Windows</span> 98 <span class="constructor">Windows</span> <span class="constructor">NT</span></span></span><br></pre></td></tr></table></figure>
-<h3 id="pattern-v3"><a class="header-anchor" href="#pattern-v3">¶</a>(?=pattern)</h3>
+<h3><a id="pattern_35"></a><a class="header-anchor" href="#pattern-v3">🏝️</a>(?=pattern)</h3>
 <blockquote>
-<p>正向肯定预查，在任何匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。<br>
-例如，“Windows(?=95|98|NT|2000)“能匹配&quot;Windows2000&quot;中的&quot;Windows”，但不能匹配&quot;Windows3.1&quot;中的&quot;Windows&quot;。<br>
-预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。</p>
+<p>正向肯定预查，在任何匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如，“Windows(?=95|98|NT|2000)“能匹配&quot;Windows2000&quot;中的&quot;Windows”，但不能匹配&quot;Windows3.1&quot;中的&quot;Windows&quot;。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。</p>
 </blockquote>
 <blockquote>
 <p>Windows (?=95 |98 |NT ) -&gt; <strong>Windows</strong> 95 <strong>Windows</strong> 98 <strong>Windows</strong> NT</p>
 </blockquote>
-<h3 id="pattern-v4"><a class="header-anchor" href="#pattern-v4">¶</a>(?!pattern)</h3>
+<h3><a id="pattern_43"></a><a class="header-anchor" href="#pattern-v4">🏝️</a>(?!pattern)</h3>
 <blockquote>
-<p>正向否定预查，在任何不匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。<br>
-例如“Windows(?!95|98|NT|2000)“能匹配&quot;Windows3.1&quot;中的&quot;Windows”，但不能匹配&quot;Windows2000&quot;中的&quot;Windows&quot;。<br>
-预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始</p>
+<p>正向否定预查，在任何不匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如“Windows(?!95|98|NT|2000)“能匹配&quot;Windows3.1&quot;中的&quot;Windows”，但不能匹配&quot;Windows2000&quot;中的&quot;Windows&quot;。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始</p>
 </blockquote>
 <blockquote>
 <p>Windows (?!95 |98 |NT ) -&gt; <strong>Windows</strong> ：<strong>Windows</strong> 3.1</p>
 </blockquote>
-<h3 id="pattern-v5"><a class="header-anchor" href="#pattern-v5">¶</a>(?&lt;=pattern)</h3>
+<h3><a id="pattern_51"></a><a class="header-anchor" href="#pattern-v5">🏝️</a>(?&lt;=pattern)</h3>
 <blockquote>
-<p>反向肯定预查，与正向肯定预查类拟，只是方向相反。<br>
-例如，“(?&lt;=95|98|NT|2000)Windows&quot;能匹配&quot;2000Windows&quot;中的&quot;Windows&quot;，但不能匹配&quot;3.1Windows&quot;中的&quot;Windows&quot;。</p>
+<p>反向肯定预查，与正向肯定预查类拟，只是方向相反。例如，“(?&lt;=95|98|NT|2000)Windows&quot;能匹配&quot;2000Windows&quot;中的&quot;Windows&quot;，但不能匹配&quot;3.1Windows&quot;中的&quot;Windows&quot;。</p>
 </blockquote>
-<h3 id="pattern-v6"><a class="header-anchor" href="#pattern-v6">¶</a>(?&lt;!pattern)</h3>
+<h3><a id="pattern_56"></a><a class="header-anchor" href="#pattern-v6">🏝️</a>(?&lt;!pattern)</h3>
 <blockquote>
-<p>反向否定预查，与正向否定预查类拟，只是方向相反。<br>
-例如“(?&lt;!95|98|NT|2000)Windows&quot;能匹配&quot;3.1Windows&quot;中的&quot;Windows&quot;，但不能匹配&quot;2000Windows&quot;中的&quot;Windows&quot;。</p>
+<p>反向否定预查，与正向否定预查类拟，只是方向相反。例如“(?&lt;!95|98|NT|2000)Windows&quot;能匹配&quot;3.1Windows&quot;中的&quot;Windows&quot;，但不能匹配&quot;2000Windows&quot;中的&quot;Windows&quot;。</p>
 </blockquote>
 <p>Here is a footnote reference,<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> and another.<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
-<h2 id="vim-相关"><a class="header-anchor" href="#vim-相关">¶</a>vim 相关</h2>
+<h2><a id="vim__63"></a><a class="header-anchor" href="#vim-相关">🏝️</a>vim 相关</h2>
 <blockquote>
 <p>reference</p>
 </blockquote>
-<ul>
-<li><a href="https://zhuanlan.zhihu.com/p/346058975" target="_blank" rel="noopener">神级编辑器 Vim 使用-正则替换篇</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/670012180" target="_blank" rel="noopener">Vim使用技巧</a></li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://zhuanlan.zhihu.com/p/346058975" target="_blank" rel="noopener">神级编辑器 Vim 使用-正则替换篇</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://zhuanlan.zhihu.com/p/670012180" target="_blank" rel="noopener">Vim使用技巧</a></p>
+</li>
 </ul>
 <blockquote>
 <p>Examples</p>
 </blockquote>
-<h3 id="vim-每-5行-合并为一行"><a class="header-anchor" href="#vim-每-5行-合并为一行">¶</a>vim 每 5行 合并为一行</h3>
+<h3><a id="vim__5__72"></a><a class="header-anchor" href="#vim-每-5行-合并为一行">🏝️</a>vim 每 5行 合并为一行</h3>
 <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">nomarl 模式</span><br><span class="line"></span><br><span class="line">输入 qa 进入录制模式</span><br><span class="line"></span><br><span class="line">按<span class="number">5</span>次 J 合并 <span class="number">5</span>行</span><br><span class="line"></span><br><span class="line">按j 跳下一行 </span><br><span class="line"></span><br><span class="line">输入 q 退出录制模式</span><br><span class="line"></span><br><span class="line">输入 <span class="symbol">3000@</span>a 表示 重复执行<span class="number">3000</span>次录制操作</span><br></pre></td></tr></table></figure>
-<h3 id="vim-匹配-数字数字-并前后插入换行符"><a class="header-anchor" href="#vim-匹配-数字数字-并前后插入换行符">¶</a>vim 匹配 <code>####</code> 数字数字. 并前后插入换行符</h3>
+<h3><a id="vim_____76"></a><a class="header-anchor" href="#vim-匹配-数字数字-并前后插入换行符">🏝️</a>vim 匹配 <code>####</code> 数字数字. 并前后插入换行符</h3>
 <p><a href="https://zhuanlan.zhihu.com/p/346058975" target="_blank" rel="noopener">&amp; 表示使用匹配串</a></p>
 <p><code>:%s/#### \d\d. /\r\r&amp;\r\r\/</code></p>
-<h3 id="vim-每10行插入-3行空行"><a class="header-anchor" href="#vim-每10行插入-3行空行">¶</a>vim 每10行插入 3行空行</h3>
+<h3><a id="vim_10_3_82"></a><a class="header-anchor" href="#vim-每10行插入-3行空行">🏝️</a>vim 每10行插入 3行空行</h3>
 <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">normal 模式下 yy辅助一行空行</span><br><span class="line"></span><br><span class="line">输入 qa 进入录制模式</span><br><span class="line"></span><br><span class="line">按<span class="number">10</span>次 j 跳过<span class="number">10</span>行</span><br><span class="line"></span><br><span class="line">按<span class="number">3</span>次 P 插入拷贝空行</span><br><span class="line"></span><br><span class="line">输入q 退出录制模式</span><br><span class="line"></span><br><span class="line">输入 <span class="symbol">150@</span>a 表示重复执行 <span class="number">150</span>次录制操作</span><br></pre></td></tr></table></figure>
-<h2 id="Endnotes"><a class="header-anchor" href="#Endnotes">¶</a>Endnotes</h2>
+<h2><a id="Endnotes_86"></a><a class="header-anchor" href="#Endnotes">🏝️</a>Endnotes</h2>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
@@ -457,7 +503,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">正则表达式</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#basic"><span class="toc-nav-text">basic</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#常用"><span class="toc-nav-text">常用</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#pattern"><span class="toc-nav-text">(pattern)</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#正向反向匹配"><span class="toc-nav-text">正向反向匹配</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#pattern-v2"><span class="toc-nav-text">(?:pattern)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#pattern-v3"><span class="toc-nav-text">(?&#x3D;pattern)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#pattern-v4"><span class="toc-nav-text">(?!pattern)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#pattern-v5"><span class="toc-nav-text">(?&lt;&#x3D;pattern)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#pattern-v6"><span class="toc-nav-text">(?&lt;!pattern)</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#vim-相关"><span class="toc-nav-text">vim 相关</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#vim-每-5行-合并为一行"><span class="toc-nav-text">vim 每 5行 合并为一行</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#vim-匹配-数字数字-并前后插入换行符"><span class="toc-nav-text">vim 匹配 #### 数字数字. 并前后插入换行符</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#vim-每10行插入-3行空行"><span class="toc-nav-text">vim 每10行插入 3行空行</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Endnotes"><span class="toc-nav-text">Endnotes</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">正则表达式</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️basic</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️常用</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️(pattern)</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️正向反向匹配</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️(?:pattern)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️(?&#x3D;pattern)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️(?!pattern)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️(?&lt;&#x3D;pattern)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️(?&lt;!pattern)</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️vim 相关</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️vim 每 5行 合并为一行</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️vim 匹配 #### 数字数字. 并前后插入换行符</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️vim 每10行插入 3行空行</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️Endnotes</span></a></li></ol></li></ol>
         
         </div>
       </aside>
@@ -477,6 +523,12 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
+                          <a class="tag" href="/tags/#正则表达式" title="正则表达式">正则表达式</a>
+                        
+                          <a class="tag" href="/tags/#vim" title="vim">vim</a>
+                        
+                          <a class="tag" href="/tags/#re" title="re">re</a>
+                        
                     </div>
                 </section>
                 
@@ -633,7 +685,37 @@
 <img src="https://champon.gitee.io/blog/img/header_img/RomanTheatre_ZH-CN9417897135_1920x1080.jpg" 
     width='64px' height='48px'>
 </div>
-</body>
+<script>
+  $(document).ready(function() {
+    $('figure.codeblock').find('.tab').click(function() {
+        var $codeblock = $(this).parent().parent().parent();
+        var $tab = $(this);
+        // remove "active" css class on all tabs
+        $tab.siblings().removeClass('active');
+        // add "active" css class on the clicked tab
+        $tab.addClass('active');
+        // hide all tab contents
+        $codeblock.find('.highlight').hide();
+        // show only the right one
+        $codeblock.find('.highlight.' + $tab.text()).show();
+    });
+  });
+  </script><script>
+  $(document).ready(function() {
+    $('figure.codeblock').find('.tab').click(function() {
+        var $codeblock = $(this).parent().parent().parent();
+        var $tab = $(this);
+        // remove "active" css class on all tabs
+        $tab.siblings().removeClass('active');
+        // add "active" css class on the clicked tab
+        $tab.addClass('active');
+        // hide all tab contents
+        $codeblock.find('.highlight').hide();
+        // show only the right one
+        $codeblock.find('.highlight.' + $tab.text()).show();
+    });
+  });
+  </script></body>
 </html>
 -->
 

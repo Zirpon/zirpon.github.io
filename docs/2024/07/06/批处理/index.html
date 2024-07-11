@@ -110,7 +110,41 @@
 
     <!-- ga & ba script hoook -->
     <script></script>
-<meta name="generator" content="Hexo 4.2.1"></head>
+<meta name="generator" content="Hexo 4.2.1"><style>
+    figure.codeblock {
+       margin: 0;
+    }
+    figure figcaption .tabs {
+      display: flex;
+      margin: 0;
+    }
+    figure figcaption .tabs .tab {
+      cursor: pointer;
+      list-style: none;
+      padding: 5px 15px;
+    }
+    figure figcaption .tabs .tab.active {
+      background: #2d2d2d;
+      color: white;
+    }
+  </style><style>
+    figure.codeblock {
+       margin: 0;
+    }
+    figure figcaption .tabs {
+      display: flex;
+      margin: 0;
+    }
+    figure figcaption .tabs .tab {
+      cursor: pointer;
+      list-style: none;
+      padding: 5px 15px;
+    }
+    figure figcaption .tabs .tab.active {
+      background: #2d2d2d;
+      color: white;
+    }
+  </style></head>
 
 
 <!-- hack iOS CSS :active style -->
@@ -122,8 +156,8 @@
 <!-- <div class="toggle" onclick="document.body.classList.toggle('body--dark')">Switch Color</div> -->
 
 <div class="toggle" onclick="document.body.classList.toggle('body--dark')">
-  <strong class="mdui-icon material-icons bright-mode">🤡</strong>
-  <strong class="mdui-icon material-icons dark-mode">🤡</strong>
+  <strong class="mdui-icon material-icons bright-mode">☀️</strong>
+  <strong class="mdui-icon material-icons dark-mode">🌃</strong>
 </div>
 
     
@@ -149,6 +183,10 @@
                 
                     <div class="post-heading">
                         <div class="tags">
+                            
+                              <a class="tag" href="/tags/#windows" title="windows">windows</a>
+                            
+                              <a class="tag" href="/tags/#批处理" title="批处理">批处理</a>
                             
                         </div>
                         <h1>批处理</h1>
@@ -263,6 +301,9 @@
 
                         
                     
+
+                        
+                    
                     
           
           <li><a class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
@@ -321,31 +362,30 @@
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 article-container">
 
-                <h1>批处理</h1>
-<h2 id="Example"><a class="header-anchor" href="#Example">¶</a>Example</h2>
-<h3 id="无限循环，定时，固定时间间隔"><a class="header-anchor" href="#无限循环，定时，固定时间间隔">¶</a>无限循环，定时，固定时间间隔</h3>
+                <h1><a id="_1"></a>批处理</h1>
+<h2><a id="Example_3"></a><a class="header-anchor" href="#Example">🏝️</a>Example</h2>
+<h3><a id="_5"></a><a class="header-anchor" href="#无限循环，定时，固定时间间隔">🏝️</a>无限循环，定时，固定时间间隔</h3>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line"></span><br><span class="line">:start</span><br><span class="line">echo jajaja</span><br><span class="line">choice /t <span class="number">5</span> /d y /n &gt;nul</span><br><span class="line"></span><br><span class="line">goto start</span><br></pre></td></tr></table></figure>
-<h2 id="搜索目录"><a class="header-anchor" href="#搜索目录">¶</a>搜索目录</h2>
+<h2><a id="_9"></a><a class="header-anchor" href="#搜索目录">🏝️</a>搜索目录</h2>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">::搜索当前目录下的文件</span><br><span class="line"><span class="keyword">for</span> %%i <span class="keyword">in</span> (*.*) <span class="keyword">do</span> echo <span class="string">"%%i"</span></span><br><span class="line">:: 或者</span><br><span class="line"><span class="keyword">for</span> /r <span class="string">"目录路径"</span> %%a <span class="keyword">in</span> (匹配规则，例如*.txt) <span class="keyword">do</span> 执行操作</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
-<h2 id="for"><a class="header-anchor" href="#for">¶</a>for</h2>
+<h2><a id="for_13"></a><a class="header-anchor" href="#for">🏝️</a>for</h2>
 <blockquote>
 <p>reference</p>
 </blockquote>
 <p><a href="https://blog.csdn.net/m0_56208280/article/details/129074215" target="_blank" rel="noopener">Windows 批处理(bat) for循环语句使用教程</a></p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> %%a <span class="keyword">in</span> (ele1 ele2 ele3) <span class="keyword">do</span> (</span><br><span class="line">	echo %%a</span><br><span class="line">)</span><br><span class="line"><span class="keyword">for</span> %%a <span class="keyword">in</span> (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>) <span class="keyword">do</span> (</span><br><span class="line">	echo %%a</span><br><span class="line">)</span><br><span class="line">pause</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> /d %%i <span class="keyword">in</span> (./docs/) <span class="keyword">do</span> (echo %%i)</span><br><span class="line"></span><br><span class="line">:: <span class="keyword">for</span> /l %%i  <span class="keyword">in</span> (start,step,<span class="keyword">end</span>) <span class="keyword">do</span> command</span><br><span class="line"><span class="keyword">for</span> /l %%i <span class="keyword">in</span> (<span class="number">1</span>,<span class="number">3</span>,<span class="number">20</span>) <span class="keyword">do</span> (echo %%i)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> /f %%i <span class="keyword">in</span> (.\test.txt) <span class="keyword">do</span> (echo %%i)</span><br><span class="line"></span><br><span class="line">:: delims这个参数，=后面有一个空格，意思是再将每一个元素以空格分割，默认是只取分割以后的第一个元素。</span><br><span class="line"><span class="keyword">for</span> /f <span class="string">"delims= "</span> %%i <span class="keyword">in</span> (.\test.txt) <span class="keyword">do</span> echo %%i</span><br></pre></td></tr></table></figure>
-<h2 id="If-命令-有三种格式"><a class="header-anchor" href="#If-命令-有三种格式">¶</a>If 命令 有三种格式:</h2>
-<h3 id="1-if-“参数”-“字符串”-待执行的命令"><a class="header-anchor" href="#1-if-“参数”-“字符串”-待执行的命令">¶</a>1. if “参数” == “字符串” 　待执行的命令</h3>
+<h2><a id="If___21"></a><a class="header-anchor" href="#If-命令-有三种格式">🏝️</a>If 命令 有三种格式:</h2>
+<h3><a id="1_if____　_23"></a><a class="header-anchor" href="#1-if-“参数”-“字符串”-待执行的命令">🏝️</a>1. if “参数” == “字符串” 　待执行的命令</h3>
 <p>参数如果等于指定的字符串，则条件成立，运行命令，否则运行下一句。(注意是两个等号）如</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="string">"%1"</span>==<span class="string">"a"</span> format a:</span><br><span class="line"><span class="keyword">if</span> &#123; %<span class="number">1</span> &#125;==&#123; &#125; goto noparms</span><br><span class="line"><span class="keyword">if</span> &#123; %<span class="number">2</span> &#125;==&#123; &#125; goto noparms</span><br></pre></td></tr></table></figure>
-<h3 id="2-if-exist-文件名-待执行的命令"><a class="header-anchor" href="#2-if-exist-文件名-待执行的命令">¶</a>2. if exist 文件名　 待执行的命令</h3>
+<h3><a id="2_if_exist_　__29"></a><a class="header-anchor" href="#2-if-exist-文件名-待执行的命令">🏝️</a>2. if exist 文件名　 待执行的命令</h3>
 <p>如果有指定的文件，则条件成立，运行命令，否则运行下一句 如</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> exist config.sys edit config.sys</span><br></pre></td></tr></table></figure>
-<h3 id="3-if-errorlevel-if-not-errorlevel-数字-待执行的命令"><a class="header-anchor" href="#3-if-errorlevel-if-not-errorlevel-数字-待执行的命令">¶</a>3. if errorlevel / if not errorlevel 数字　 待执行的命令</h3>
-<p>如果返回码等于指定的数字，则条件成立，运行命令，否则运行下一句。<br>
-如</p>
+<h3><a id="3_if_errorlevel__if_not_errorlevel_　__35"></a><a class="header-anchor" href="#3-if-errorlevel-if-not-errorlevel-数字-待执行的命令">🏝️</a>3. if errorlevel / if not errorlevel 数字　 待执行的命令</h3>
+<p>如果返回码等于指定的数字，则条件成立，运行命令，否则运行下一句。如</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> errorlevel <span class="number">2</span> goto x2</span><br></pre></td></tr></table></figure>
 <p>DOS 程序运行时都会返回一个数字给 DOS，称为错误码 errorlevel 或称返回码，常见的返回码为 0、1。</p>
-<h2 id="注释方式"><a class="header-anchor" href="#注释方式">¶</a>注释方式</h2>
+<h2><a id="_44"></a><a class="header-anchor" href="#注释方式">🏝️</a>注释方式</h2>
 <p>1、:: 注释内容（第一个冒号后也可以跟任何一个非字母数字的字符）<br>
 2、rem 注释内容（不能出现重定向符号和管道符号）<br>
 3、echo 注释内容（不能出现重定向符号和管道符号）〉nul<br>
@@ -354,33 +394,27 @@
 6、%注释内容%（可以用作行间注释，不能出现重定向符号和管道符号）<br>
 7、goto 标签 注释内容（可以用作说明 goto 的条件和执行内容）<br>
 8、:标签 注释内容（可以用作标签下方段的执行内容）</p>
-<p>@echo off 表示执行了这条命令后关闭所有命令(包括本身这条命令)的回显。<br>
-而 echo off 命令则表示关闭其他所有命令(不包括本身这条命令)的回显，<br>
+<p>@echo off 表示执行了这条命令后关闭所有命令(包括本身这条命令)的回显。而 echo off 命令则表示关闭其他所有命令(不包括本身这条命令)的回显，<br>
 @的作用就是关闭紧跟其后的一条命令的回显，</p>
-<h2 id="判断语句"><a class="header-anchor" href="#判断语句">¶</a>判断语句</h2>
-<h3 id="1-判断字符串相等。"><a class="header-anchor" href="#1-判断字符串相等。">¶</a>1. 判断字符串相等。</h3>
+<h2><a id="_59"></a><a class="header-anchor" href="#判断语句">🏝️</a>判断语句</h2>
+<h3><a id="1__61"></a><a class="header-anchor" href="#1-判断字符串相等。">🏝️</a>1. 判断字符串相等。</h3>
 <p>示例如下：新建一个文本文件，命名为 ifstring，修改文件类型为 bat，：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line"></span><br><span class="line">set <span class="string">"var=this is an apple"</span></span><br><span class="line">rem 比较%var%是否等于apple,如果相等,返回OK,否则返回NO.</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="string">"%var%"</span>==<span class="string">"apple"</span> (echo OK) <span class="keyword">else</span> echo NO</span><br><span class="line"></span><br><span class="line">pause&gt;nul</span><br></pre></td></tr></table></figure>
 <p>注意：if 判断字符串相等时候，后面用的是“==”，而不是“=”。</p>
-<h3 id="2-判断数值相等。"><a class="header-anchor" href="#2-判断数值相等。">¶</a>2. 判断数值相等。</h3>
+<h3><a id="2__69"></a><a class="header-anchor" href="#2-判断数值相等。">🏝️</a>2. 判断数值相等。</h3>
 <p>示例如下：新建一个文本文件，命名为 ifnumber，修改文件类型为 bat，：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">set /a num1=<span class="number">100</span></span><br><span class="line">set /a num2=<span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> %num1% gtr %num2% echo %num1%大于%num2%</span><br><span class="line"><span class="keyword">if</span> %num1% EQU %num2% echo %num1%等于%num2%</span><br><span class="line"><span class="keyword">if</span> %num1% LSS %num2% echo %num1%小于%num2%</span><br><span class="line"></span><br><span class="line">pause&gt;nul</span><br></pre></td></tr></table></figure>
 <p>注意：比较运算符分为以下几种：</p>
-<p>EQU - 等于<br>
-　　 NEQ - 不等于<br>
-　　 LSS - 小于<br>
-　　 LEQ - 小于或等于<br>
-　　 GTR - 大于<br>
-　　 GEQ - 大于或等于</p>
-<h3 id="3-结合-errorlevel-使用"><a class="header-anchor" href="#3-结合-errorlevel-使用">¶</a>3. 结合 errorlevel 使用</h3>
+<p>EQU - 等于　　 NEQ - 不等于　　 LSS - 小于　　 LEQ - 小于或等于　　 GTR - 大于　　 GEQ - 大于或等于</p>
+<h3><a id="3__errorlevel__84"></a><a class="header-anchor" href="#3-结合-errorlevel-使用">🏝️</a>3. 结合 errorlevel 使用</h3>
 <p>示例如下：新建一个文本文件，命名为 iferrorlevel，修改文件类型为 bat，：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@ECHO off</span><br><span class="line"></span><br><span class="line">XCOPY F:\studybat\if\iferrorlevel.bat D:\</span><br><span class="line"><span class="keyword">IF</span> ERRORLEVEL <span class="number">1</span> ECHO 文件拷贝失败</span><br><span class="line"><span class="keyword">IF</span> ERRORLEVEL <span class="number">0</span> ECHO 成功拷贝文件</span><br><span class="line"></span><br><span class="line">pause&gt;nul</span><br></pre></td></tr></table></figure>
 <p>注意：环境变量 errorlevel 的初始值为 0，当一些命令执行不成功，就会返回一个数值，如：1 ，2 等</p>
-<h3 id="4-判断变量定义与否。"><a class="header-anchor" href="#4-判断变量定义与否。">¶</a>4. 判断变量定义与否。</h3>
+<h3><a id="4__92"></a><a class="header-anchor" href="#4-判断变量定义与否。">🏝️</a>4. 判断变量定义与否。</h3>
 <p>示例如下：新建一个文本文件，命名为 ifdefined，修改文件类型为 bat，：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">set <span class="string">"str1=ok"</span></span><br><span class="line">set <span class="string">"str2=no"</span></span><br><span class="line"><span class="keyword">if</span> defined str1 echo str1已经被定义</span><br><span class="line"><span class="keyword">if</span> defined str2 echo str2已经被定义</span><br><span class="line"><span class="keyword">if</span> defined str3 (echo str3已经被定义) <span class="keyword">else</span> echo str3 没有被定义</span><br><span class="line"></span><br><span class="line">pause&gt;nul</span><br></pre></td></tr></table></figure>
 <p>Here is a footnote reference,<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> and another.<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
-<h2 id="Endnotes"><a class="header-anchor" href="#Endnotes">¶</a>Endnotes</h2>
+<h2><a id="Endnotes_100"></a><a class="header-anchor" href="#Endnotes">🏝️</a>Endnotes</h2>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
@@ -437,7 +471,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">批处理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Example"><span class="toc-nav-text">Example</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#无限循环，定时，固定时间间隔"><span class="toc-nav-text">无限循环，定时，固定时间间隔</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#搜索目录"><span class="toc-nav-text">搜索目录</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#for"><span class="toc-nav-text">for</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#If-命令-有三种格式"><span class="toc-nav-text">If 命令 有三种格式:</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-if-“参数”-“字符串”-待执行的命令"><span class="toc-nav-text">1. if “参数” &#x3D;&#x3D; “字符串” 　待执行的命令</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-if-exist-文件名-待执行的命令"><span class="toc-nav-text">2. if exist 文件名　 待执行的命令</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-if-errorlevel-if-not-errorlevel-数字-待执行的命令"><span class="toc-nav-text">3. if errorlevel &#x2F; if not errorlevel 数字　 待执行的命令</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#注释方式"><span class="toc-nav-text">注释方式</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#判断语句"><span class="toc-nav-text">判断语句</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-判断字符串相等。"><span class="toc-nav-text">1. 判断字符串相等。</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-判断数值相等。"><span class="toc-nav-text">2. 判断数值相等。</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-结合-errorlevel-使用"><span class="toc-nav-text">3. 结合 errorlevel 使用</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4-判断变量定义与否。"><span class="toc-nav-text">4. 判断变量定义与否。</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Endnotes"><span class="toc-nav-text">Endnotes</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">批处理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️Example</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️无限循环，定时，固定时间间隔</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️搜索目录</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️for</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️If 命令 有三种格式:</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️1. if “参数” &#x3D;&#x3D; “字符串” 　待执行的命令</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️2. if exist 文件名　 待执行的命令</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️3. if errorlevel &#x2F; if not errorlevel 数字　 待执行的命令</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️注释方式</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️判断语句</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️1. 判断字符串相等。</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️2. 判断数值相等。</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️3. 结合 errorlevel 使用</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️4. 判断变量定义与否。</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️Endnotes</span></a></li></ol></li></ol>
         
         </div>
       </aside>
@@ -457,6 +491,10 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
+                          <a class="tag" href="/tags/#windows" title="windows">windows</a>
+                        
+                          <a class="tag" href="/tags/#批处理" title="批处理">批处理</a>
+                        
                     </div>
                 </section>
                 
@@ -613,7 +651,37 @@
 <img src="https://champon.gitee.io/blog/img/header_img/RomanTheatre_ZH-CN9417897135_1920x1080.jpg" 
     width='64px' height='48px'>
 </div>
-</body>
+<script>
+  $(document).ready(function() {
+    $('figure.codeblock').find('.tab').click(function() {
+        var $codeblock = $(this).parent().parent().parent();
+        var $tab = $(this);
+        // remove "active" css class on all tabs
+        $tab.siblings().removeClass('active');
+        // add "active" css class on the clicked tab
+        $tab.addClass('active');
+        // hide all tab contents
+        $codeblock.find('.highlight').hide();
+        // show only the right one
+        $codeblock.find('.highlight.' + $tab.text()).show();
+    });
+  });
+  </script><script>
+  $(document).ready(function() {
+    $('figure.codeblock').find('.tab').click(function() {
+        var $codeblock = $(this).parent().parent().parent();
+        var $tab = $(this);
+        // remove "active" css class on all tabs
+        $tab.siblings().removeClass('active');
+        // add "active" css class on the clicked tab
+        $tab.addClass('active');
+        // hide all tab contents
+        $codeblock.find('.highlight').hide();
+        // show only the right one
+        $codeblock.find('.highlight.' + $tab.text()).show();
+    });
+  });
+  </script></body>
 </html>
 -->
 

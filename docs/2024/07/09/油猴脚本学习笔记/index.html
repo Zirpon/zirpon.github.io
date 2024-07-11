@@ -110,7 +110,41 @@
 
     <!-- ga & ba script hoook -->
     <script></script>
-<meta name="generator" content="Hexo 4.2.1"></head>
+<meta name="generator" content="Hexo 4.2.1"><style>
+    figure.codeblock {
+       margin: 0;
+    }
+    figure figcaption .tabs {
+      display: flex;
+      margin: 0;
+    }
+    figure figcaption .tabs .tab {
+      cursor: pointer;
+      list-style: none;
+      padding: 5px 15px;
+    }
+    figure figcaption .tabs .tab.active {
+      background: #2d2d2d;
+      color: white;
+    }
+  </style><style>
+    figure.codeblock {
+       margin: 0;
+    }
+    figure figcaption .tabs {
+      display: flex;
+      margin: 0;
+    }
+    figure figcaption .tabs .tab {
+      cursor: pointer;
+      list-style: none;
+      padding: 5px 15px;
+    }
+    figure figcaption .tabs .tab.active {
+      background: #2d2d2d;
+      color: white;
+    }
+  </style></head>
 
 
 <!-- hack iOS CSS :active style -->
@@ -122,8 +156,8 @@
 <!-- <div class="toggle" onclick="document.body.classList.toggle('body--dark')">Switch Color</div> -->
 
 <div class="toggle" onclick="document.body.classList.toggle('body--dark')">
-  <strong class="mdui-icon material-icons bright-mode">🤡</strong>
-  <strong class="mdui-icon material-icons dark-mode">🤡</strong>
+  <strong class="mdui-icon material-icons bright-mode">☀️</strong>
+  <strong class="mdui-icon material-icons dark-mode">🌃</strong>
 </div>
 
     
@@ -149,6 +183,18 @@
                 
                     <div class="post-heading">
                         <div class="tags">
+                            
+                              <a class="tag" href="/tags/#油猴" title="油猴">油猴</a>
+                            
+                              <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
+                            
+                              <a class="tag" href="/tags/#webpack" title="webpack">webpack</a>
+                            
+                              <a class="tag" href="/tags/#脚手架" title="脚手架">脚手架</a>
+                            
+                              <a class="tag" href="/tags/#Tampermonkey" title="Tampermonkey">Tampermonkey</a>
+                            
+                              <a class="tag" href="/tags/#TypeScript" title="TypeScript">TypeScript</a>
                             
                         </div>
                         <h1>油猴脚本学习笔记</h1>
@@ -263,6 +309,9 @@
 
                         
                     
+
+                        
+                    
                     
           
           <li><a class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
@@ -321,80 +370,79 @@
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 article-container">
 
-                <h1>油猴脚本学习笔记</h1>
-<h2 id="基础资料"><a class="header-anchor" href="#基础资料">🍅</a>基础资料</h2>
-<p><a href="https://bbs.tampermonkey.net.cn/forum.php?mod=viewthread&amp;tid=1909" target="_blank" rel="noopener" title="website title">Tampermonkey中文文档</a><br>
-<a href="https://semver.org/lang/zh-CN/" target="_blank" rel="noopener">世界通用版本号规则</a><br>
-<a href="https://bbs.tampermonkey.net.cn/forum.php?mod=viewthread&amp;tid=271" target="_blank" rel="noopener">Tampermonkey菜单</a><br>
-<a href="https://iknow.fun/2022/08/03/vscode-webpack-typescript-you-hou-kai-fa-huan-jing-da-jian-ben-di-diao-shi-shi-shi-re-shua-xin-zi-dong-gou-jian-he-fa-bu/" target="_blank" rel="noopener" title="油猴脚本开发进阶】VSCode + Webpack + TypeScript 油猴开发环境搭建，本地调试、实时热刷新、自动构建和发布">油猴脚本开发进阶 VSCode + Webpack + TypeScript 油猴开发环境搭建，本地调试、实时热刷新、自动构建和发布</a><br>
+                <h1><a id="_1"></a>油猴脚本学习笔记</h1>
+<h2><a id="_3"></a><a class="header-anchor" href="#基础资料">🏝️</a>基础资料</h2>
+<p><a href="https://bbs.tampermonkey.net.cn/forum.php?mod=viewthread&amp;tid=1909" target="_blank" rel="noopener" title="website title">Tampermonkey中文文档</a><a href="https://semver.org/lang/zh-CN/" target="_blank" rel="noopener">世界通用版本号规则</a><br>
+<a href="https://bbs.tampermonkey.net.cn/forum.php?mod=viewthread&amp;tid=271" target="_blank" rel="noopener">Tampermonkey菜单</a><a href="https://iknow.fun/2022/08/03/vscode-webpack-typescript-you-hou-kai-fa-huan-jing-da-jian-ben-di-diao-shi-shi-shi-re-shua-xin-zi-dong-gou-jian-he-fa-bu/" target="_blank" rel="noopener" title="油猴脚本开发进阶】VSCode + Webpack + TypeScript 油猴开发环境搭建，本地调试、实时热刷新、自动构建和发布">油猴脚本开发进阶 VSCode + Webpack + TypeScript 油猴开发环境搭建，本地调试、实时热刷新、自动构建和发布</a><br>
 <a href="https://iknow.fun/2022/08/01/webpack-typescript-kai-fa-you-hou-jiao-ben-dou-yu-zhi-bo-zi-dong-qie-huan-hua-zhi-2-0/" target="_blank" rel="noopener">Webpack 配置的改进</a><br>
 <a href="https://blog.csdn.net/weixin_45047039/article/details/110262176" target="_blank" rel="noopener" title="webpack使用html-loader加载js中引入的html资源">webpack使用html-loader加载js中引入的html资源</a></p>
-<h2 id="油猴webpack脚手架框架介绍"><a class="header-anchor" href="#油猴webpack脚手架框架介绍">🍅</a><a href="https://iknow.fun/2022/08/03/vscode-webpack-typescript-you-hou-kai-fa-huan-jing-da-jian-ben-di-diao-shi-shi-shi-re-shua-xin-zi-dong-gou-jian-he-fa-bu/" target="_blank" rel="noopener" title="油猴脚本开发进阶】VSCode + Webpack + TypeScript 油猴开发环境搭建，本地调试、实时热刷新、自动构建和发布">油猴webpack脚手架</a>框架介绍</h2>
-<h3 id="项目结构"><a class="header-anchor" href="#项目结构">🍅</a>项目结构</h3>
+<h2><a id="webpack_12"></a><a class="header-anchor" href="#油猴webpack脚手架框架介绍">🏝️</a><a href="https://iknow.fun/2022/08/03/vscode-webpack-typescript-you-hou-kai-fa-huan-jing-da-jian-ben-di-diao-shi-shi-shi-re-shua-xin-zi-dong-gou-jian-he-fa-bu/" target="_blank" rel="noopener" title="油猴脚本开发进阶】VSCode + Webpack + TypeScript 油猴开发环境搭建，本地调试、实时热刷新、自动构建和发布">油猴webpack脚手架</a>框架介绍</h2>
+<h3><a id="_14"></a><a class="header-anchor" href="#项目结构">🏝️</a>项目结构</h3>
 <p><img src="./QQ_1720489834153.png" alt=""></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">│</span><br><span class="line">│─package.json</span><br><span class="line">│   (- yarn start&#x2F;dev&#x2F;build 自定义命令 </span><br><span class="line">│       建议参照 yarn build 自定义增加编译 douyu.dev.user.js 的命令 如: yarn builddev </span><br><span class="line">│        注意：自定义参数不能有空格</span><br><span class="line">│   - 项目名字 版本 描述 作者 主页 开源协议 依赖 脚本</span><br><span class="line">│   )</span><br><span class="line">├─config</span><br><span class="line">│      common.meta.json</span><br><span class="line">│        (生产环境油猴脚本banner元数据 json文件)</span><br><span class="line">│      dev.meta.json</span><br><span class="line">│        (调试环境油猴脚本banner元数据 json文件 &quot;require&quot;键对应的修改为本地文件 douyu.dev.user.js 的路径) </span><br><span class="line">│      webpack.config.base.js</span><br><span class="line">│        (webpack项目基础配置)   </span><br><span class="line">│      webpack.dev.js</span><br><span class="line">│        (webpack项目开发环境 生成目标文件的配置)</span><br><span class="line">│      webpack.prod.js</span><br><span class="line">│        (webpack项目生产环境 生成目标文件的配置)</span><br><span class="line">│</span><br><span class="line">├─dist</span><br><span class="line">│      douyu.user.js</span><br><span class="line">│        (yarn build 生成的脚本 生产环境脚本)</span><br><span class="line">│      douyu.dev.user.js</span><br><span class="line">│        (yarn start 跟 yarn dev 生成的脚本 开发环境脚本)</span><br><span class="line">│</span><br><span class="line">├─public</span><br><span class="line">│      index.html</span><br><span class="line">│        (本地调试目标页面 执行 yarn start 启动页面)</span><br><span class="line">│</span><br><span class="line">└─src</span><br><span class="line">    │  app.ts</span><br><span class="line">    │    (油猴脚本源码入口)</span><br><span class="line">    │  devTools.ts</span><br><span class="line">    │   (框架调试工具接口)</span><br><span class="line">    │  global.d.ts</span><br><span class="line">    │  index.ts</span><br><span class="line">    │   (项目入口文件)</span><br><span class="line">    ├─lib</span><br><span class="line">    │      ajax.ts</span><br><span class="line">    │      message.ts</span><br><span class="line">    └─mock</span><br><span class="line">            douyu.less</span><br><span class="line">            douyuPlayer.ts</span><br><span class="line">            (本地调试目标页面 ts部分)</span><br></pre></td></tr></table></figure>
-<h3 id="项目初始化"><a class="header-anchor" href="#项目初始化">🍅</a>项目初始化</h3>
-<ul>
-<li>
+<h3><a id="_19"></a><a class="header-anchor" href="#项目初始化">🏝️</a>项目初始化</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
 <p>yarn install 安装依赖</p>
 </li>
-<li>
+<li class="lvl-2">
 <p>执行 yarn start 或者 yarn dev 或者 (自定义的)yarn builddev 目的是编译生成 douyu.dev.user.js</p>
 </li>
-<li>
+<li class="lvl-2">
 <p>如果运行 yarn start<br>
-项目 <code>devTools.ts</code> 的函数 <code>autoInstall</code> 文件会 弹出油猴脚本安装网页提示安装脚本 安装脚本成功后<br>
-修改 脚本内容 就是你磁盘文件 <code>douyu.dev.user.js</code> 的路径<br>
+项目 <code>devTools.ts</code> 的函数 <code>autoInstall</code> 文件会 弹出油猴脚本安装网页提示安装脚本 安装脚本成功后修改 脚本内容 就是你磁盘文件 <code>douyu.dev.user.js</code> 的路径<br>
 <code>// @require    file://D://xxxxx//dist//douyu.dev.user.js</code></p>
 </li>
-<li>
-<p>如果你没安装脚本 则手动 打开油猴脚本控制面板 新建空白脚本 然后 把 生成的 <code>douyu.dev.user.js</code> 的 <code>banner</code> 拷贝到油猴面板空白脚本当中<br>
-特别注意 不要拷贝整个文件内容 只需要拷贝 <code>banner</code> 部分 如下格式 不然 下次再次运行 <code>yarn start</code> 的时候 会疯狂刷新调试页面</p>
+<li class="lvl-2">
+<p>如果你没安装脚本 则手动 打开油猴脚本控制面板 新建空白脚本 然后 把 生成的 <code>douyu.dev.user.js</code> 的 <code>banner</code> 拷贝到油猴面板空白脚本当中特别注意 不要拷贝整个文件内容 只需要拷贝 <code>banner</code> 部分 如下格式 不然 下次再次运行 <code>yarn start</code> 的时候 会疯狂刷新调试页面</p>
   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ==UserScript== </span></span><br><span class="line">··· </span><br><span class="line"><span class="comment">// ==/UserScript==</span></span><br></pre></td></tr></table></figure>
 </li>
-<li>
+<li class="lvl-2">
 <p>修改 <code>config/dev.meta.json</code> 文件 require键对应的本地文件 douyu.dev.user.js 的路径</p>
 </li>
-<li>
+<li class="lvl-2">
 <p>至此 项目基本运行调试是没问题了 接下来就是修改 项目信息</p>
 </li>
-<li>
+<li class="lvl-2">
 <p>具体需要编辑的 文件 就是 <code>common.meta.json</code> <code>dev.meta.json</code> <code>package.json</code></p>
 </li>
 </ul>
-<h3 id="编码注意事项"><a class="header-anchor" href="#编码注意事项">🍅</a>编码注意事项</h3>
-<ul>
-<li>index.js 是项目入口
-<ul>
-<li>项目调试页面代码 在于 <code>mock</code> 文件夹的的源文件 可随意修改定制</li>
-<li>项目油猴 入口在于 <code>app.ts</code></li>
-<li><code>index.ts</code> 是通过 <code>import app</code> <code>app()</code> 进入油猴源码入口的</li>
-<li>所以一切的逻辑代码 都必须编辑在 <code>app.ts</code> 的 <code>const app = () =&gt; {};</code> 中</li>
-<li>比如 <code>GM_registerMenuCommand('test', () =&gt; console.log('test'));</code><br>
-<code>GM_registerMenuCommand</code> 只能在 <code>const app = () =&gt; {};</code> 中解析调用<br>
-否则 无法识别 <code>GM_registerMenuCommand</code> 函数</li>
+<h3><a id="_36"></a><a class="header-anchor" href="#编码注意事项">🏝️</a>编码注意事项</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>index.js 是项目入口</p>
+<ul class="lvl-2">
+<li class="lvl-6">项目调试页面代码 在于 <code>mock</code> 文件夹的的源文件 可随意修改定制</li>
+<li class="lvl-6">项目油猴 入口在于 <code>app.ts</code></li>
+<li class="lvl-6"><code>index.ts</code> 是通过 <code>import app</code> <code>app()</code> 进入油猴源码入口的</li>
+<li class="lvl-6">所以一切的逻辑代码 都必须编辑在 <code>app.ts</code> 的 <code>const app = () =&gt; {};</code> 中</li>
+<li class="lvl-6">比如 <code>GM_registerMenuCommand('test', () =&gt; console.log('test'));</code><br>
+<code>GM_registerMenuCommand</code> 只能在 <code>const app = () =&gt; {};</code> 中解析调用否则 无法识别 <code>GM_registerMenuCommand</code> 函数</li>
 </ul>
 </li>
-<li>菜单栏 少量HTML标签元素 导入
-<ul>
-<li>依赖 <code>core-js</code> <code>html-loader</code>  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -<span class="literal">-safe</span><span class="literal">-dev</span> core<span class="literal">-js</span></span><br><span class="line">npm install -<span class="literal">-safe</span><span class="literal">-dev</span> html<span class="literal">-loader</span></span><br></pre></td></tr></table></figure>
+<li class="lvl-2">
+<p>菜单栏 少量HTML标签元素 导入</p>
+<ul class="lvl-2">
+<li class="lvl-6">依赖 <code>core-js</code> <code>html-loader</code>  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">npm install -<span class="literal">-safe</span><span class="literal">-dev</span> core<span class="literal">-js</span></span><br><span class="line">npm install -<span class="literal">-safe</span><span class="literal">-dev</span> html<span class="literal">-loader</span></span><br><span class="line"></span><br><span class="line">或者</span><br><span class="line"></span><br><span class="line">yarn add core<span class="literal">-js</span> -<span class="literal">-dev</span></span><br><span class="line">yarn add html<span class="literal">-loader</span> -<span class="literal">-dev</span></span><br></pre></td></tr></table></figure>
 </li>
-<li>配置文件 <code>webpack.config.base.js</code></li>
+<li class="lvl-6">配置文件 <code>webpack.config.base.js</code></li>
 </ul>
   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>: &#123;</span><br><span class="line">  rules: [</span><br><span class="line">  &#123;</span><br><span class="line">      test: <span class="regexp">/\.html$/i</span>,</span><br><span class="line">      use: &#123;</span><br><span class="line">      loader: <span class="string">'html-loader'</span>,</span><br><span class="line">      options: &#123;</span><br><span class="line">          sources: &#123;</span><br><span class="line">          list: [</span><br><span class="line">              <span class="string">'...'</span>, <span class="comment">// 所有默认支持的标签和属性，这个一定要加上，不然就只会检测a标签了</span></span><br><span class="line">              &#123;</span><br><span class="line">              tag: <span class="string">'a'</span>,</span><br><span class="line">              attribute: <span class="string">'href'</span>,</span><br><span class="line">              type: <span class="string">'src'</span>,</span><br><span class="line">              &#125;,</span><br><span class="line">          ],</span><br><span class="line">          &#125;,</span><br><span class="line">          minimize: <span class="literal">true</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      &#125;,</span><br><span class="line">  &#125;,]&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>逻辑代码</li>
+<ul class="lvl-2">
+<li class="lvl-6">逻辑代码</li>
 </ul>
   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 其中 import 出来的 menu 是字符串</span></span><br><span class="line"><span class="keyword">import</span> menu <span class="keyword">from</span> <span class="string">'./menu.html'</span>;</span><br><span class="line"><span class="keyword">let</span> menuWrapper = <span class="built_in">document</span>.getElementById(<span class="string">'menuWrapper'</span>);</span><br><span class="line">menuWrapper.innerHTML = menu;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>Here is a footnote reference,<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> and another.<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
-<h3 id="调试编译打包指令"><a class="header-anchor" href="#调试编译打包指令">🍅</a>调试编译打包指令</h3>
-<ul>
-<li><code>package.json</code> 可自行定义</li>
+<h3><a id="_56"></a><a class="header-anchor" href="#调试编译打包指令">🏝️</a>调试编译打包指令</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><code>package.json</code> 可自行定义</p>
+</li>
 </ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">"scripts": &#123;</span><br><span class="line">  "start": "webpack serve --config ./config/webpack.dev.js --env filename=douyu.dev.user.js",</span><br><span class="line">  "dev": "webpack --watch --config ./config/webpack.dev.js --env filename=douyu.dev.user.js",</span><br><span class="line">  "build": "yarn lint:fix &amp;&amp; webpack --config ./config/webpack.prod.js --env filename=douyu.user.js --stats-error-details",</span><br><span class="line">  "builddev": "yarn lint:fix &amp;&amp; webpack --config ./config/webpack.prod.js --env filename=douyu.dev.user.js --stats-error-details",</span><br><span class="line">  "lint": "eslint \"src/**/*.&#123;ts,tsx&#125;\"",</span><br><span class="line">  "lint:fix": "yarn lint --fix"</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<h2 id="Endnotes"><a class="header-anchor" href="#Endnotes">🍅</a>Endnotes</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">"scripts": &#123;</span><br><span class="line">  "start": "webpack serve --config ./config/webpack.dev.js --env filename=douyu.dev.user.js",</span><br><span class="line">  "dev": "webpack --watch --config ./config/webpack.dev.js --env filename=douyu.dev.user.js",</span><br><span class="line">  "build": "yarn lint:fix &amp;&amp; webpack --config ./config/webpack.prod.js --env filename=douyu.user.js --stats-error-details",</span><br><span class="line">  "builddev": "yarn lint:fix &amp;&amp; webpack --config ./config/webpack.dev.js --env filename=douyu.dev.user.js --stats-error-details",</span><br><span class="line">  "lint": "eslint \"src/**/*.&#123;ts,tsx&#125;\"",</span><br><span class="line">  "lint:fix": "yarn lint --fix"</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<h2><a id="Endnotes_63"></a><a class="header-anchor" href="#Endnotes">🏝️</a>Endnotes</h2>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
@@ -447,7 +495,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">油猴脚本学习笔记</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#基础资料"><span class="toc-nav-text">🍅基础资料</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#油猴webpack脚手架框架介绍"><span class="toc-nav-text">🍅油猴webpack脚手架框架介绍</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#项目结构"><span class="toc-nav-text">🍅项目结构</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#项目初始化"><span class="toc-nav-text">🍅项目初始化</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#编码注意事项"><span class="toc-nav-text">🍅编码注意事项</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#调试编译打包指令"><span class="toc-nav-text">🍅调试编译打包指令</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Endnotes"><span class="toc-nav-text">🍅Endnotes</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">油猴脚本学习笔记</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️基础资料</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️油猴webpack脚手架框架介绍</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️项目结构</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️项目初始化</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️编码注意事项</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️调试编译打包指令</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️Endnotes</span></a></li></ol></li></ol>
         
         </div>
       </aside>
@@ -467,6 +515,18 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
+                          <a class="tag" href="/tags/#油猴" title="油猴">油猴</a>
+                        
+                          <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
+                        
+                          <a class="tag" href="/tags/#webpack" title="webpack">webpack</a>
+                        
+                          <a class="tag" href="/tags/#脚手架" title="脚手架">脚手架</a>
+                        
+                          <a class="tag" href="/tags/#Tampermonkey" title="Tampermonkey">Tampermonkey</a>
+                        
+                          <a class="tag" href="/tags/#TypeScript" title="TypeScript">TypeScript</a>
+                        
                     </div>
                 </section>
                 
@@ -623,7 +683,37 @@
 <img src="https://champon.gitee.io/blog/img/header_img/RomanTheatre_ZH-CN9417897135_1920x1080.jpg" 
     width='64px' height='48px'>
 </div>
-</body>
+<script>
+  $(document).ready(function() {
+    $('figure.codeblock').find('.tab').click(function() {
+        var $codeblock = $(this).parent().parent().parent();
+        var $tab = $(this);
+        // remove "active" css class on all tabs
+        $tab.siblings().removeClass('active');
+        // add "active" css class on the clicked tab
+        $tab.addClass('active');
+        // hide all tab contents
+        $codeblock.find('.highlight').hide();
+        // show only the right one
+        $codeblock.find('.highlight.' + $tab.text()).show();
+    });
+  });
+  </script><script>
+  $(document).ready(function() {
+    $('figure.codeblock').find('.tab').click(function() {
+        var $codeblock = $(this).parent().parent().parent();
+        var $tab = $(this);
+        // remove "active" css class on all tabs
+        $tab.siblings().removeClass('active');
+        // add "active" css class on the clicked tab
+        $tab.addClass('active');
+        // hide all tab contents
+        $codeblock.find('.highlight').hide();
+        // show only the right one
+        $codeblock.find('.highlight.' + $tab.text()).show();
+    });
+  });
+  </script></body>
 </html>
 -->
 

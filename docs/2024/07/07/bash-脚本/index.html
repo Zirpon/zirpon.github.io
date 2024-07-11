@@ -110,7 +110,41 @@
 
     <!-- ga & ba script hoook -->
     <script></script>
-<meta name="generator" content="Hexo 4.2.1"></head>
+<meta name="generator" content="Hexo 4.2.1"><style>
+    figure.codeblock {
+       margin: 0;
+    }
+    figure figcaption .tabs {
+      display: flex;
+      margin: 0;
+    }
+    figure figcaption .tabs .tab {
+      cursor: pointer;
+      list-style: none;
+      padding: 5px 15px;
+    }
+    figure figcaption .tabs .tab.active {
+      background: #2d2d2d;
+      color: white;
+    }
+  </style><style>
+    figure.codeblock {
+       margin: 0;
+    }
+    figure figcaption .tabs {
+      display: flex;
+      margin: 0;
+    }
+    figure figcaption .tabs .tab {
+      cursor: pointer;
+      list-style: none;
+      padding: 5px 15px;
+    }
+    figure figcaption .tabs .tab.active {
+      background: #2d2d2d;
+      color: white;
+    }
+  </style></head>
 
 
 <!-- hack iOS CSS :active style -->
@@ -122,8 +156,8 @@
 <!-- <div class="toggle" onclick="document.body.classList.toggle('body--dark')">Switch Color</div> -->
 
 <div class="toggle" onclick="document.body.classList.toggle('body--dark')">
-  <strong class="mdui-icon material-icons bright-mode">🤡</strong>
-  <strong class="mdui-icon material-icons dark-mode">🤡</strong>
+  <strong class="mdui-icon material-icons bright-mode">☀️</strong>
+  <strong class="mdui-icon material-icons dark-mode">🌃</strong>
 </div>
 
     
@@ -149,6 +183,8 @@
                 
                     <div class="post-heading">
                         <div class="tags">
+                            
+                              <a class="tag" href="/tags/#bash" title="bash">bash</a>
                             
                         </div>
                         <h1>bash 脚本</h1>
@@ -263,6 +299,9 @@
 
                         
                     
+
+                        
+                    
                     
           
           <li><a class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
@@ -321,13 +360,13 @@
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 article-container">
 
-                <h1>bash 脚本</h1>
-<h2 id="basic"><a class="header-anchor" href="#basic">¶</a>basic</h2>
+                <h1><a id="bash__1"></a>bash 脚本</h1>
+<h2><a id="basic_3"></a><a class="header-anchor" href="#basic">🏝️</a>basic</h2>
 <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">history</span>  <span class="number">5</span></span><br><span class="line"><span class="keyword">grep</span> -<span class="number">10</span> <span class="string">'qsm'</span> test.<span class="built_in">log</span>//打印匹配行的前后<span class="number">10</span>行</span><br></pre></td></tr></table></figure>
-<h2 id="分割大文本文件"><a class="header-anchor" href="#分割大文本文件">¶</a>分割大文本文件</h2>
+<h2><a id="_7"></a><a class="header-anchor" href="#分割大文本文件">🏝️</a>分割大文本文件</h2>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wc -l all.log</span><br><span class="line">split -l 35000 -d --verbose all.log all-log-split-</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> `ls | grep all-log-split-`;<span class="keyword">do</span> a=`<span class="built_in">echo</span> <span class="variable">$i</span>.txt`; mv <span class="variable">$i</span> <span class="variable">$a</span>;<span class="keyword">done</span></span><br></pre></td></tr></table></figure>
 <p>Here is a footnote reference,<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> and another.<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
-<h2 id="Endnotes"><a class="header-anchor" href="#Endnotes">¶</a>Endnotes</h2>
+<h2><a id="Endnotes_13"></a><a class="header-anchor" href="#Endnotes">🏝️</a>Endnotes</h2>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
@@ -384,7 +423,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">bash 脚本</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#basic"><span class="toc-nav-text">basic</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#分割大文本文件"><span class="toc-nav-text">分割大文本文件</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Endnotes"><span class="toc-nav-text">Endnotes</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">bash 脚本</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️basic</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️分割大文本文件</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️Endnotes</span></a></li></ol></li></ol>
         
         </div>
       </aside>
@@ -404,6 +443,8 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
+                          <a class="tag" href="/tags/#bash" title="bash">bash</a>
+                        
                     </div>
                 </section>
                 
@@ -560,7 +601,37 @@
 <img src="https://champon.gitee.io/blog/img/header_img/RomanTheatre_ZH-CN9417897135_1920x1080.jpg" 
     width='64px' height='48px'>
 </div>
-</body>
+<script>
+  $(document).ready(function() {
+    $('figure.codeblock').find('.tab').click(function() {
+        var $codeblock = $(this).parent().parent().parent();
+        var $tab = $(this);
+        // remove "active" css class on all tabs
+        $tab.siblings().removeClass('active');
+        // add "active" css class on the clicked tab
+        $tab.addClass('active');
+        // hide all tab contents
+        $codeblock.find('.highlight').hide();
+        // show only the right one
+        $codeblock.find('.highlight.' + $tab.text()).show();
+    });
+  });
+  </script><script>
+  $(document).ready(function() {
+    $('figure.codeblock').find('.tab').click(function() {
+        var $codeblock = $(this).parent().parent().parent();
+        var $tab = $(this);
+        // remove "active" css class on all tabs
+        $tab.siblings().removeClass('active');
+        // add "active" css class on the clicked tab
+        $tab.addClass('active');
+        // hide all tab contents
+        $codeblock.find('.highlight').hide();
+        // show only the right one
+        $codeblock.find('.highlight.' + $tab.text()).show();
+    });
+  });
+  </script></body>
 </html>
 -->
 

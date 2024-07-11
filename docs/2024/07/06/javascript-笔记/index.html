@@ -110,7 +110,41 @@
 
     <!-- ga & ba script hoook -->
     <script></script>
-<meta name="generator" content="Hexo 4.2.1"></head>
+<meta name="generator" content="Hexo 4.2.1"><style>
+    figure.codeblock {
+       margin: 0;
+    }
+    figure figcaption .tabs {
+      display: flex;
+      margin: 0;
+    }
+    figure figcaption .tabs .tab {
+      cursor: pointer;
+      list-style: none;
+      padding: 5px 15px;
+    }
+    figure figcaption .tabs .tab.active {
+      background: #2d2d2d;
+      color: white;
+    }
+  </style><style>
+    figure.codeblock {
+       margin: 0;
+    }
+    figure figcaption .tabs {
+      display: flex;
+      margin: 0;
+    }
+    figure figcaption .tabs .tab {
+      cursor: pointer;
+      list-style: none;
+      padding: 5px 15px;
+    }
+    figure figcaption .tabs .tab.active {
+      background: #2d2d2d;
+      color: white;
+    }
+  </style></head>
 
 
 <!-- hack iOS CSS :active style -->
@@ -122,8 +156,8 @@
 <!-- <div class="toggle" onclick="document.body.classList.toggle('body--dark')">Switch Color</div> -->
 
 <div class="toggle" onclick="document.body.classList.toggle('body--dark')">
-  <strong class="mdui-icon material-icons bright-mode">🤡</strong>
-  <strong class="mdui-icon material-icons dark-mode">🤡</strong>
+  <strong class="mdui-icon material-icons bright-mode">☀️</strong>
+  <strong class="mdui-icon material-icons dark-mode">🌃</strong>
 </div>
 
     
@@ -150,6 +184,16 @@
                     <div class="post-heading">
                         <div class="tags">
                             
+                              <a class="tag" href="/tags/#javascript" title="javascript">javascript</a>
+                            
+                              <a class="tag" href="/tags/#文字转语音" title="文字转语音">文字转语音</a>
+                            
+                              <a class="tag" href="/tags/#threejs" title="threejs">threejs</a>
+                            
+                              <a class="tag" href="/tags/#3D" title="3D">3D</a>
+                            
+                              <a class="tag" href="/tags/#sketchfab" title="sketchfab">sketchfab</a>
+                            
                         </div>
                         <h1>javascript 笔记</h1>
                         <h2 class="subheading">The quick brown fox jumps over the lazy dog</h2>
@@ -163,11 +207,11 @@
                             <!-- WordCount start -->
                             <div class="blank_box"></div>
                             <span class="meta">
-                              Estimated Reading Time <span class="post-count">1</span> Minutes
+                              Estimated Reading Time <span class="post-count">5</span> Minutes
                             </span>
                             <div class="blank_box"></div>
                             <span class="meta">
-                              Words <span class="post-count">222</span> In Total
+                              Words <span class="post-count">916</span> In Total
                             </span>
                             <div class="blank_box"></div>
                             <!-- 不蒜子统计 start -->
@@ -263,6 +307,9 @@
 
                         
                     
+
+                        
+                    
                     
           
           <li><a class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
@@ -321,31 +368,76 @@
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 article-container">
 
-                <h1>javascript 笔记</h1>
-<h2 id="basic"><a class="header-anchor" href="#basic">🍅</a>basic</h2>
-<p><a href="https://cloud.tencent.com/developer/article/1797513" target="_blank" rel="noopener">JavaScript中的一次性定时器和周期性定时器</a><br>
-<a href="https://iknow.fun/2020/06/02/javascript-es6-10/#1-1-%E8%AF%BE%E7%A8%8B%E5%AF%BC%E5%AD%A6-%E8%AF%95%E7%9C%8B" target="_blank" rel="noopener">JavaScript ES6-10语法</a><br>
-<a href="https://www.cnblogs.com/it-Ren/p/13062999.html" target="_blank" rel="noopener">HTML/CSS switch开关 （包括JS控制checked选择）</a><br>
-<a href="https://geek-docs.com/javascript/javascript-ask-answer/102_tk_1703987553.html" target="_blank" rel="noopener">JavaScript字典遍历用法介绍</a><br>
-<a href="https://geek-docs.com/javascript/javascript-ask-answer/55_hk_1709422196.html" target="_blank" rel="noopener">JS 字典遍历</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> [key, value] <span class="keyword">of</span> <span class="built_in">Object</span>.entries(object)) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(key, value);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> points = [<span class="number">40</span>,<span class="number">100</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">25</span>,<span class="number">10</span>];</span><br><span class="line">points.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;<span class="keyword">return</span> a-b&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//	var a='xixi';  function  object number string boolean undefined</span></span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">typeof</span>(a) == <span class="string">"undefined"</span> || a == <span class="literal">null</span>)</span><br><span class="line">		alert(<span class="string">"a is undefined"</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		alert(<span class="string">"a is defined"</span>);</span><br></pre></td></tr></table></figure>
-<h2 id="Javascrip-变声-文字转语音"><a class="header-anchor" href="#Javascrip-变声-文字转语音">🍅</a>Javascrip 变声 文字转语音</h2>
+                <h1><a id="javascript__1"></a>javascript 笔记</h1>
+<h2><a id="basic_3"></a><a class="header-anchor" href="#basic">🏝️</a>basic</h2>
+<p><a href="https://cloud.tencent.com/developer/article/1797513" target="_blank" rel="noopener">JavaScript 中的一次性定时器和周期性定时器</a><br>
+<a href="https://iknow.fun/2020/06/02/javascript-es6-10/#1-1-%E8%AF%BE%E7%A8%8B%E5%AF%BC%E5%AD%A6-%E8%AF%95%E7%9C%8B" target="_blank" rel="noopener">JavaScript ES6-10 语法</a><br>
+<a href="https://www.cnblogs.com/it-Ren/p/13062999.html" target="_blank" rel="noopener">HTML/CSS switch 开关 （包括 JS 控制 checked 选择）</a><br>
+<a href="https://geek-docs.com/javascript/javascript-ask-answer/102_tk_1703987553.html" target="_blank" rel="noopener">JavaScript 字典遍历用法介绍</a><br>
+<a href="https://geek-docs.com/javascript/javascript-ask-answer/55_hk_1709422196.html" target="_blank" rel="noopener">JS 字典遍历</a><a href="https://sweetalert.js.org/guides/" target="_blank" rel="noopener">非阻塞弹窗</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> [key, value] <span class="keyword">of</span> <span class="built_in">Object</span>.entries(object)) &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(key, value);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> points = [<span class="number">40</span>, <span class="number">100</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">25</span>, <span class="number">10</span>];</span><br><span class="line">points.sort(<span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a - b;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//	var a='xixi';  function  object number string boolean undefined</span></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> a == <span class="string">"undefined"</span> || a == <span class="literal">null</span>) alert(<span class="string">"a is undefined"</span>);</span><br><span class="line"><span class="keyword">else</span> alert(<span class="string">"a is defined"</span>);</span><br><span class="line"></span><br><span class="line">myString = <span class="string">"129"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(myString)); <span class="comment">// expected result: 129</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Number</span>(<span class="string">"10.33"</span>); <span class="comment">// returns 10.33</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(+<span class="string">""</span>); <span class="comment">// expected output: 0</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">parseFloat</span>(<span class="string">"10 20 30"</span>); <span class="comment">// returns 10</span></span><br><span class="line"><span class="built_in">parseFloat</span>(<span class="string">"10 years"</span>); <span class="comment">// returns 10</span></span><br><span class="line"><span class="built_in">parseFloat</span>(<span class="string">"years 10"</span>); <span class="comment">// returns NaN</span></span><br><span class="line"></span><br><span class="line">str = <span class="string">"1222"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.floor(str)); <span class="comment">// returns 1222</span></span><br><span class="line"></span><br><span class="line">str = <span class="string">"2344"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str * <span class="number">1</span>); <span class="comment">// expected result: 2344</span></span><br><span class="line"></span><br><span class="line">negStr = <span class="string">"-234"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(~~negStr); <span class="comment">// expected result: -234</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Array</span>.from(&#123;<span class="attr">length</span>: <span class="number">10</span>&#125;, (val, i) =&gt; i) <span class="comment">// [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span></span><br><span class="line"><span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">10</span>).keys()) <span class="comment">// [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span></span><br><span class="line"><span class="built_in">Object</span>.keys(<span class="built_in">Array</span>.from(&#123;<span class="attr">length</span>: <span class="number">10</span>&#125;)).map(<span class="function">(<span class="params">val, i </span>) =&gt;</span> +i) <span class="comment">// [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span></span><br><span class="line">[...new <span class="built_in">Array</span>(<span class="number">10</span>).keys()]; <span class="comment">// [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span></span><br><span class="line">[...Array.from(&#123;<span class="attr">length</span>: <span class="number">10</span>&#125;).keys()] <span class="comment">// [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span></span><br></pre></td></tr></table></figure>
+<h3><a id="jsfunction_function_functionhttpsblogcsdnnetstpicearticledetails80586444_14"></a><a class="header-anchor" href="#js中-function-function-function-之间的区别">🏝️</a><a href="https://blog.csdn.net/stpice/article/details/80586444" target="_blank" rel="noopener">js中(function(){}()) (function(){})() $(function(){});之间的区别</a></h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这两种写法，都是一种立即执行函数的写法，即IIFE (Immediately Invoked Function Expression)。这种函数在函数定义的地方就直接执行了。</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;())</span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)()</span><br><span class="line"></span><br><span class="line"><span class="comment">//是$(document).ready(function()&#123;/*...*/&#125;)的简写形式，是在DOM加载完成后执行的回调函数，并且只会执行一次。</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="comment">/*...*/</span>&#125;)</span><br></pre></td></tr></table></figure>
+<h2><a id="html_18"></a><a class="header-anchor" href="#html">🏝️</a>html</h2>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"foo\bar"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"foo:bar"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="built_in">console</span>.log(<span class="string">"#foo\bar"</span>); <span class="comment">// "#fooar"</span></span></span><br><span class="line"><span class="javascript">  <span class="built_in">document</span>.querySelector(<span class="string">"#foo\bar"</span>); <span class="comment">// 不匹配任何元素</span></span></span><br><span class="line"></span><br><span class="line"><span class="javascript">  <span class="built_in">console</span>.log(<span class="string">"#foo\\bar"</span>); <span class="comment">// "#foo\bar"</span></span></span><br><span class="line"><span class="javascript">  <span class="built_in">console</span>.log(<span class="string">"#foo\\\\bar"</span>); <span class="comment">// "#foo\\bar"</span></span></span><br><span class="line"><span class="javascript">  <span class="built_in">document</span>.querySelector(<span class="string">"#foo\\\\bar"</span>); <span class="comment">// 匹配第一个 div</span></span></span><br><span class="line"></span><br><span class="line"><span class="javascript">  <span class="built_in">document</span>.querySelector(<span class="string">"#foo:bar"</span>); <span class="comment">// 不匹配任何元素</span></span></span><br><span class="line"><span class="javascript">  <span class="built_in">document</span>.querySelector(<span class="string">"#foo\\:bar"</span>); <span class="comment">// 匹配第二个 div</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> el = <span class="built_in">document</span>.querySelector(<span class="string">".myclass"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> el = <span class="built_in">document</span>.querySelector(<span class="string">"div.user-panel.main input[name='login']"</span>);</span><br></pre></td></tr></table></figure>
+<h2><a id="bun_24"></a><a class="header-anchor" href="#bun">🏝️</a><a href="https://bun.sh/docs/installation" target="_blank" rel="noopener">bun</a></h2>
+<ul class="lvl-0">
+<li class="lvl-4">
+<p>windows install</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">bun --revision</span><br><span class="line">powershell -c <span class="string">"irm bun.sh/install.ps1|iex"</span></span><br><span class="line">bun add -d @types/bun</span><br><span class="line">bun add -d @types/react@latest @types/react-dom@latest</span><br><span class="line">bun add -d @babel/core @babel/preset-react</span><br><span class="line">bun add -d @types/figlet</span><br><span class="line"></span><br><span class="line">bun --watch run dev</span><br><span class="line"></span><br><span class="line"><span class="comment">#`foo, bar and baz`</span></span><br><span class="line">bun run --filter <span class="string">'ba*'</span> &lt;script&gt;</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"console.log('Hello')"</span> | bun run -</span><br><span class="line"></span><br><span class="line">bun --smol run index.tsx</span><br><span class="line"></span><br><span class="line">bun --<span class="built_in">print</span> process.env</span><br><span class="line">bun --<span class="built_in">print</span> process.env.production</span><br><span class="line">bun --<span class="built_in">print</span> process.env.development</span><br><span class="line">bun --<span class="built_in">print</span> process.env.local</span><br><span class="line"></span><br><span class="line">bun build ./cli.ts --compile --outfile mycli</span><br><span class="line"><span class="comment"># cli.ts</span></span><br><span class="line">console.log(<span class="string">"Hello world!"</span>);</span><br><span class="line"></span><br><span class="line">bun build --compile --target=bun-windows-x64 ./path/to/my/app.ts --outfile myapp</span><br><span class="line"></span><br><span class="line">bun build --compile --target=bun-linux-x64 ./index.ts --outfile myapp</span><br><span class="line"></span><br><span class="line">bun build --compile --target=bun-darwin-x64 ./path/to/my/app.ts --outfile myapp</span><br><span class="line"></span><br><span class="line">bun build --compile --minify --sourcemap ./path/to/my/app.ts --outfile myapp</span><br></pre></td></tr></table></figure>
+<h3><a id="_30"></a><a class="header-anchor" href="#弹窗插件">🏝️</a>弹窗插件</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://sweetalert2.github.io/#examples" target="_blank" rel="noopener">sweetalert2</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://sweetalert2.github.io/recipe-gallery/queue-with-progress-steps.html" target="_blank" rel="noopener">弹窗队列案列</a></p>
+</li>
+</ul>
+<h4><a id="_35"></a><a class="header-anchor" href="#弹窗队列">🏝️</a>弹窗队列</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>自己实现的 开箱即用的弹窗队列 源码 <a href="https://raw.githubusercontent.com/Zirpon/zirpon.github.io/master/source/src/AlertQueue.js" target="_blank" rel="noopener">AlertQueue</a></p>
+</li>
+</ul>
+<h3><a id="jsx_40"></a><a class="header-anchor" href="#jsx">🏝️</a>jsx</h3>
+<ul class="lvl-0">
+<li class="lvl-4">
+<p>bun add -d @types/react@latest</p>
+</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">"react"</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Component</span>(<span class="params">props: &#123; message: string &#125;</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (</span><br><span class="line">		&lt;body&gt;</span><br><span class="line">			&lt;h1 style=&#123;&#123; <span class="attr">color</span>: <span class="string">"red"</span> &#125;&#125;&gt;&#123;props.message&#125;&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">		&lt;/</span>body&gt;</span><br><span class="line">	);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="xml"><span class="tag">&lt;<span class="name">Component</span> <span class="attr">message</span>=<span class="string">"Hello world!"</span> /&gt;</span></span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> db <span class="keyword">from</span> <span class="string">"./my.db"</span> <span class="keyword">with</span> &#123; <span class="keyword">type</span>: <span class="string">"sqlite"</span> &#125;;</span><br><span class="line"><span class="built_in">console</span>.log(db.query(<span class="string">"select * from users LIMIT 1"</span>).get());</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> myEmbeddedDb <span class="keyword">from</span> <span class="string">"./my.db"</span> <span class="keyword">with</span> &#123; <span class="keyword">type</span>: <span class="string">"sqlite"</span>, embed: <span class="string">"true"</span> &#125;;</span><br><span class="line"><span class="built_in">console</span>.log(myEmbeddedDb.query(<span class="string">"select * from users LIMIT 1"</span>).get());</span><br><span class="line"></span><br><span class="line"><span class="comment">// this becomes an internal file path</span></span><br><span class="line"><span class="keyword">import</span> icon <span class="keyword">from</span> <span class="string">"./icon.png"</span> <span class="keyword">with</span> &#123; <span class="keyword">type</span>: <span class="string">"file"</span> &#125;;</span><br><span class="line"><span class="keyword">import</span> &#123; file &#125; <span class="keyword">from</span> <span class="string">"bun"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  fetch(req) &#123;</span><br><span class="line">    <span class="comment">// Embedded files can be streamed from Response objects</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Response(file(icon));</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> icon <span class="keyword">from</span> <span class="string">"./icon.png"</span> <span class="keyword">with</span> &#123; <span class="keyword">type</span>: <span class="string">"file"</span> &#125;;</span><br><span class="line"><span class="keyword">import</span> &#123; file &#125; <span class="keyword">from</span> <span class="string">"bun"</span>;</span><br><span class="line"><span class="keyword">const</span> bytes = <span class="keyword">await</span> file(icon).arrayBuffer();</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; stuff &#125; <span class="keyword">from</span> <span class="string">"./my-commonjs.cjs"</span>;</span><br><span class="line"><span class="keyword">import</span> Stuff <span class="keyword">from</span> <span class="string">"./my-commonjs.cjs"</span>;</span><br><span class="line"><span class="keyword">const</span> myStuff = <span class="built_in">require</span>(<span class="string">"./my-commonjs.cjs"</span>);</span><br></pre></td></tr></table></figure>
+<h3><a id="pluginhttpsbunshdocsruntimeplugins__48"></a><a class="header-anchor" href="#plugin-没看太懂">🏝️</a><a href="https://bun.sh/docs/runtime/plugins" target="_blank" rel="noopener">plugin</a> 没看太懂</h3>
+<h2><a id="Javascrip___50"></a><a class="header-anchor" href="#Javascrip-变声-文字转语音">🏝️</a>Javascrip 变声 文字转语音</h2>
 <p><a href="https://github.com/w-okada/voice-changer" target="_blank" rel="noopener">https://github.com/w-okada/voice-changer</a><br>
-AI语音开源模型下载地址：<a href="https://discord.gg/aihub" target="_blank" rel="noopener">https://discord.gg/aihub</a></p>
-<p><a href="https://blog.csdn.net/cnds123/article/details/137920674" target="_blank" rel="noopener">HTML5+JavaScript实现语音合成（文字转语音）</a><br>
-<a href="https://segmentfault.com/a/1190000041989692" target="_blank" rel="noopener">JS实现将文字转换为语音并自动播放</a><br>
-<a href="https://www.bilibili.com/video/BV11F41197AP/?spm_id_from=333.880.my_history.page.click&amp;vd_source=b48342a630f5cc1a5c86649a37c0db89" target="_blank" rel="noopener">最新rvc实时变声（附模型、安装、教程地址）voice-changer，AI唱歌</a><br>
-<a href="https://github.com/Venryx/w-okada-voice-changer-scripts/tree/master" target="_blank" rel="noopener">js版本变声器</a></p>
-<h2 id="javascript-3D-渲染"><a class="header-anchor" href="#javascript-3D-渲染">🍅</a>javascript 3D 渲染</h2>
-<ul>
-<li><a href="https://sketchfab.com/developers/data-api/v3" target="_blank" rel="noopener" title="website title">sketchfab_doc</a></li>
-<li><a href="https://support.fab.com/s/article/Embedding-your-3D-models" target="_blank" rel="noopener">epic_sketchfab</a></li>
-<li><a href="https://sketchfab.com/3d-models/old-god-elder-dragon-be305f220c404e28afa073ddbc62873d" target="_blank" rel="noopener" title="Old God Elder Dragon">dragon</a></li>
-<li>sketchfab</li>
-<li><a href="http://webgl3d.cn/pages/aac9ab/" target="_blank" rel="noopener">threejs_doc</a></li>
+AI 语音开源模型下载地址：<a href="https://discord.gg/aihub" target="_blank" rel="noopener">https://discord.gg/aihub</a></p>
+<p><a href="https://blog.csdn.net/cnds123/article/details/137920674" target="_blank" rel="noopener">HTML5+JavaScript 实现语音合成（文字转语音）</a><br>
+<a href="https://segmentfault.com/a/1190000041989692" target="_blank" rel="noopener">JS 实现将文字转换为语音并自动播放</a><a href="https://www.bilibili.com/video/BV11F41197AP/?spm_id_from=333.880.my_history.page.click&amp;vd_source=b48342a630f5cc1a5c86649a37c0db89" target="_blank" rel="noopener">最新 rvc 实时变声（附模型、安装、教程地址）voice-changer，AI 唱歌</a><br>
+<a href="https://github.com/Venryx/w-okada-voice-changer-scripts/tree/master" target="_blank" rel="noopener">js 版本变声器</a></p>
+<h2><a id="javascript_3D__60"></a><a class="header-anchor" href="#javascript-3D-渲染">🏝️</a>javascript 3D 渲染</h2>
+<ul class="lvl-0">
+<li class="lvl-4">
+<p><a href="https://sketchfab.com/developers/data-api/v3" target="_blank" rel="noopener" title="website title">sketchfab_doc</a></p>
+</li>
+<li class="lvl-4">
+<p><a href="https://support.fab.com/s/article/Embedding-your-3D-models" target="_blank" rel="noopener">epic_sketchfab</a></p>
+</li>
+<li class="lvl-4">
+<p><a href="https://sketchfab.com/3d-models/old-god-elder-dragon-be305f220c404e28afa073ddbc62873d" target="_blank" rel="noopener" title="Old God Elder Dragon">dragon</a></p>
+</li>
+<li class="lvl-4">
+<p>sketchfab</p>
+</li>
+<li class="lvl-4">
+<p><a href="http://webgl3d.cn/pages/aac9ab/" target="_blank" rel="noopener">threejs_doc</a></p>
+</li>
 </ul>
 <p>Here is a footnote reference,<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> and another.<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
-<h2 id="Endnotes"><a class="header-anchor" href="#Endnotes">🍅</a>Endnotes</h2>
+<h2><a id="Endnotes_70"></a><a class="header-anchor" href="#Endnotes">🏝️</a>Endnotes</h2>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
@@ -402,7 +494,7 @@ AI语音开源模型下载地址：<a href="https://discord.gg/aihub" target="_b
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">javascript 笔记</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#basic"><span class="toc-nav-text">🍅basic</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Javascrip-变声-文字转语音"><span class="toc-nav-text">🍅Javascrip 变声 文字转语音</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#javascript-3D-渲染"><span class="toc-nav-text">🍅javascript 3D 渲染</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Endnotes"><span class="toc-nav-text">🍅Endnotes</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">javascript 笔记</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️basic</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️js中(function(){}()) (function(){})() $(function(){});之间的区别</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️html</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️bun</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️弹窗插件</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️弹窗队列</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️jsx</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️plugin 没看太懂</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️Javascrip 变声 文字转语音</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️javascript 3D 渲染</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">🏝️Endnotes</span></a></li></ol></li></ol>
         
         </div>
       </aside>
@@ -422,6 +514,16 @@ AI语音开源模型下载地址：<a href="https://discord.gg/aihub" target="_b
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
+                          <a class="tag" href="/tags/#javascript" title="javascript">javascript</a>
+                        
+                          <a class="tag" href="/tags/#文字转语音" title="文字转语音">文字转语音</a>
+                        
+                          <a class="tag" href="/tags/#threejs" title="threejs">threejs</a>
+                        
+                          <a class="tag" href="/tags/#3D" title="3D">3D</a>
+                        
+                          <a class="tag" href="/tags/#sketchfab" title="sketchfab">sketchfab</a>
+                        
                     </div>
                 </section>
                 
@@ -578,7 +680,37 @@ AI语音开源模型下载地址：<a href="https://discord.gg/aihub" target="_b
 <img src="https://champon.gitee.io/blog/img/header_img/RomanTheatre_ZH-CN9417897135_1920x1080.jpg" 
     width='64px' height='48px'>
 </div>
-</body>
+<script>
+  $(document).ready(function() {
+    $('figure.codeblock').find('.tab').click(function() {
+        var $codeblock = $(this).parent().parent().parent();
+        var $tab = $(this);
+        // remove "active" css class on all tabs
+        $tab.siblings().removeClass('active');
+        // add "active" css class on the clicked tab
+        $tab.addClass('active');
+        // hide all tab contents
+        $codeblock.find('.highlight').hide();
+        // show only the right one
+        $codeblock.find('.highlight.' + $tab.text()).show();
+    });
+  });
+  </script><script>
+  $(document).ready(function() {
+    $('figure.codeblock').find('.tab').click(function() {
+        var $codeblock = $(this).parent().parent().parent();
+        var $tab = $(this);
+        // remove "active" css class on all tabs
+        $tab.siblings().removeClass('active');
+        // add "active" css class on the clicked tab
+        $tab.addClass('active');
+        // hide all tab contents
+        $codeblock.find('.highlight').hide();
+        // show only the right one
+        $codeblock.find('.highlight.' + $tab.text()).show();
+    });
+  });
+  </script></body>
 </html>
 -->
 
