@@ -7,6 +7,9 @@ subtitle: "The quick brown fox jumps over the lazy dog"
 tags:
 catagories:
 top: 9
+updated:
+date:
+comments: true
 ---
 
 # {{ title }}
