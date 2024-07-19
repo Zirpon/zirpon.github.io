@@ -120,11 +120,8 @@ jumptoc: true
 ## Friends
 friends: [
     {
-    #     title: "Su",
-    #     href: "http://su.gallery/"
-    # },{
-        title: "Adoo's blog",
-        href: "http://www.roading.org"
+        title: "emoj library",
+        href: "https://emoji.muan.co/"
     },{
         title: "娄振林专栏",
         href: "https://blog.csdn.net/chosen0ne/"
