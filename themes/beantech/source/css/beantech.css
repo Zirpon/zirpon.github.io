@@ -181,6 +181,8 @@ pre code {
 .article-container h6 {
   margin: 30px 0 10px;
   color: inherit;
+  border-bottom:thin solid ;
+  padding-bottom: 5px;
 }
 .article-container h5 {
   font-size: 19px;
@@ -220,6 +222,8 @@ pre code {
 .article-container li h6 {
   line-height: 2;
   margin-top: 20px;
+  border-bottom:thin solid ;
+  padding-bottom: 5px;
 }
 .article-container .tags a {
   color: gray;
@@ -1080,7 +1084,7 @@ body {
 .markdown-body h4,
 .markdown-body h5,
 .markdown-body h6 {
-  color: black !important
+  color: black !important;
 }
 
 /* rocket */
