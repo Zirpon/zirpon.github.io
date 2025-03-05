@@ -4115,7 +4115,7 @@ hash_multimap 和 hash_multiset 定 义 在 &lt;hash_map&gt;和&lt;hash_set&gt;�
 <blockquote>
 <p>days &#x3D; {[0]&#x3D;”Sunday”, “Monday”, “Tuesday”, “Wednesday”, “Thursday”, “Friday”, “Saturday”}<br>{x&#x3D;10, y&#x3D;45; “one”, “two”, “three”}</p>
 </blockquote>
-<h3 id="4-basic-syntax-基本语法"><a href="#4-basic-syntax-基本语法" class="headerlink" title="4. basic syntax 基本语法"></a>4. basic syntax 基本语法</h3><blockquote>
+<h2 id="4-basic-syntax-基本语法"><a href="#4-basic-syntax-基本语法" class="headerlink" title="4. basic syntax 基本语法"></a>4. basic syntax 基本语法</h2><blockquote>
 <p>a, b &#x3D; 10, 2<em>x &lt;–&gt; a&#x3D;10; b&#x3D;2</em>x</p>
 </blockquote>
 <p>遇到赋值语句 Lua 会先计算右边所有的值然后再执行赋值操作，所以我们可以这样<br>进行交换变量的值：</p>
@@ -4261,7 +4261,7 @@ hash_multimap 和 hash_multiset 定 义 在 &lt;hash_map&gt;和&lt;hash_set&gt;�
 
 <p>note:<em>这个例子中，和想象的一样 <code>g</code> 使用*<em>局部变量</em></em> i，然而 <code>f</code> 使用<strong>全局变量</strong> i；<code>loadstring</code> 总是在<strong>全局环境</strong>中<strong>编译</strong>他的串。*</p>
 <p>note:<em>loadstring 期望一个 chunk，即语句。如果想要加载<code>表达式</code>，需要在表达式前加 <code>return</code>，那样将返回表达式的值。</em></p>
-<h2 id="8-1-require"><a href="#8-1-require" class="headerlink" title="8.1 require"></a>8.1 require</h2><ul>
+<h3 id="8-1-require"><a href="#8-1-require" class="headerlink" title="8.1 require"></a>8.1 require</h3><ul>
 <li><em>会搜索目录加载文件</em></li>
 <li><em>会判断是否文件已经加载避免重复加载同一文件</em></li>
 <li><em>?;?.lua;c:\windows?;&#x2F;usr&#x2F;local&#x2F;lua&#x2F;?&#x2F;?.lua</em></li>
@@ -4277,7 +4277,7 @@ hash_multimap 和 hash_multiset 定 义 在 &lt;hash_map&gt;和&lt;hash_set&gt;�
 
 <h3 id="8-4-exception-pcall"><a href="#8-4-exception-pcall" class="headerlink" title="8.4 exception &amp; pcall"></a>8.4 exception &amp; pcall</h3><h3 id="8-5-exception-msg-xpcall"><a href="#8-5-exception-msg-xpcall" class="headerlink" title="8.5 exception msg &amp; xpcall"></a>8.5 exception msg &amp; xpcall</h3><figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="built_in">error</span>(<span class="string">&quot;string expected&quot;</span>, <span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">debug</span>.<span class="built_in">traceback</span>())</span><br></pre></td></tr></table></figure>
 
-<h2 id="9-0-coroutine"><a href="#9-0-coroutine" class="headerlink" title="9.0 coroutine"></a>9.0 coroutine</h2><p>协同程序（coroutine）<em>与多线程情况下的线程比较类似：有自己的堆栈，自己的局部变量，有自己的指令指针，但是和其他协同程序共享全局变量等很多信息。</em></p>
+<h2 id="9-coroutine"><a href="#9-coroutine" class="headerlink" title="9. coroutine"></a>9. coroutine</h2><p>协同程序（coroutine）<em>与多线程情况下的线程比较类似：有自己的堆栈，自己的局部变量，有自己的指令指针，但是和其他协同程序共享全局变量等很多信息。</em></p>
 <p>线程和协同程序的主要不同在于：在多处理器情况下，从概念上来讲多线程程序同时运行多个线程；而协同程序是通过协作来完成，在<strong>任一指定时刻只有一个协同程序在运行</strong>，并且这个正在运行的协同程序只有在明确的被要求挂起的时候才会被挂起。</p>
 <figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">co = <span class="built_in">coroutine</span>.<span class="built_in">create</span>(<span class="function"><span class="keyword">function</span> <span class="params">()</span></span> <span class="built_in">print</span>(<span class="string">&quot;hi&quot;</span>) <span class="keyword">end</span>)</span><br><span class="line"><span class="built_in">print</span>(co) <span class="comment">--&gt; thread: 0x8071d98</span></span><br></pre></td></tr></table></figure>
 

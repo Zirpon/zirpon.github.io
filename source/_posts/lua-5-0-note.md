@@ -4,7 +4,7 @@ catalog: true
 header-img: "img/header_img/roman.png"
 subtitle: The quick brown fox jumps over the lazy dog
 date: 2019-04-06 15:32:12
-top: 99999998
+top: 199999999
 tags:
 - lua 5.0
 catagories: 
@@ -249,7 +249,7 @@ print(a[22]) --> ---
 > days = {[0]="Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"}
 > {x=10, y=45; "one", "two", "three"}
 
-### 4. basic syntax 基本语法
+## 4. basic syntax 基本语法
 
 > a, b = 10, 2*x <--> a=10; b=2*x
 
@@ -762,7 +762,7 @@ note:*这个例子中，和想象的一样 `g` 使用**局部变量** i，然而
 
 note:*loadstring 期望一个 chunk，即语句。如果想要加载`表达式`，需要在表达式前加 `return`，那样将返回表达式的值。*
 
-## 8.1 require
+### 8.1 require
 
 - *会搜索目录加载文件*
 - *会判断是否文件已经加载避免重复加载同一文件*
@@ -809,7 +809,7 @@ error("string expected", 2)
 print(debug.traceback())
 ```
 
-## 9.0 coroutine
+## 9. coroutine
 
 协同程序（coroutine）*与多线程情况下的线程比较类似：有自己的堆栈，自己的局部变量，有自己的指令指针，但是和其他协同程序共享全局变量等很多信息。*
 

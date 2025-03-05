@@ -38,7 +38,7 @@ id: post20220410123822
 banner: "_banner/4.gif"
 banner_x: 0.5
 banner_y: 0.25
-top: 9999
+top: 999
 ---
 
 # Obsidian 使用技巧

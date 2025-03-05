@@ -7,7 +7,7 @@ header-img: "img/header_img/roman.png"
 tags:
 - mysql
 catagories:
-top: 99999
+top: 999
 ---
 
 ## mysql 8.0 安装 note

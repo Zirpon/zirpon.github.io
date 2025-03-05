@@ -11,7 +11,7 @@ tags:
 - 源码编译
 catagories:
 - Golang
-top: 9999
+top: 999
 ---
 
 ## 1. Prefix

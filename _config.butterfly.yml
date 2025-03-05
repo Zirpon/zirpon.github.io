@@ -200,7 +200,7 @@ index_post_content:
 toc:
   post: true
   page: false
-  number: true
+  number: false
   expand: true
   # Only for post
   style_simple: true
@@ -296,7 +296,7 @@ aside:
       link: https://github.com/Zirpon
   card_announcement:
     enable: true
-    content: [离开世界之前，一切都是过程]
+    content: 离开世界之前，一切都是过程
   card_recent_post:
     enable: true
     # If set 0 will show all

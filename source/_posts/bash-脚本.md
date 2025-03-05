@@ -3,7 +3,7 @@ title: bash 脚本
 catalog: true
 header-img: img/header_img/roman.png
 subtitle: The quick brown fox jumps over the lazy dog
-top: 999999
+top: 999
 date: 2024-07-07 04:44:12
 tags:
 - bash
