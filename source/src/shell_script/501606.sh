@@ -1,0 +1,1 @@
+find ./*/2015-10-08/ -name EnterCopy.txt | xargs grep 501606 | awk -F: '{if($2 >= 11 && $2 <= 17){if($2 == 17 && $3 > 40){;} else {print $0;}}}' > 501606.txt

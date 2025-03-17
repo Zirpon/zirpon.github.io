@@ -1,0 +1,1 @@
+find . \( -name "*.h" -o -name "*.cpp" \) -exec sh -c "iconv -f GBK -t utf-8 {} > {}.txt;rm -f {};mv {}.txt {};" \; 

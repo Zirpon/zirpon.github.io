@@ -76,7 +76,7 @@ cd /root/go1.4/src
 		这是 `src/time/format_test.go` 文件 202 行的报错 
 		(不同1.4 go 的版本 行数可能不一样 请根据 函数 `TestParseInLocation` 查找)
 
-		![TestParseInLocation_diff.png](TestParseInLocation_diff.png)
+		![TestParseInLocation_diff.png](../img/Golang-源码-CentOS-编译安装-note/TestParseInLocation_diff.png)
 
 		这个 golang github 源码提过的一个 **[issue](https://github.com/golang/go/issues/19457)** 已经解决的
 
@@ -99,7 +99,7 @@ cd /root/go1.4/src
 
 		这是 `src/time/time_test.go` 文件 929 行的报错
 
-		![TestLoadFixed_diff](TestLoadFixed_diff.png)
+		![TestLoadFixed_diff](../img/Golang-源码-CentOS-编译安装-note/TestLoadFixed_diff.png)
 
 		issue 修改 **[链接](https://go-review.googlesource.com/c/go/+/29995/3/src/time/time_test.go#b951)** 如果访问不到这个链接 按照截图改就行
 

@@ -8,7 +8,6 @@ tags:
 catagories:
 top: 9
 updated:
-date:
 comments: true
 ---
 
