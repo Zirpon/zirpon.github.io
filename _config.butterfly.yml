@@ -67,7 +67,7 @@ avatar:
 disable_top_img: false
 
 # If the banner of page not setting, it will show the default_top_img
-default_top_img: /img/header_img/Iron-Man-3.jpg
+default_top_img: /img/header_img/home-bg-o.png
 
 # The banner image of index page
 index_img: /img/header_img/roman.png
@@ -108,7 +108,14 @@ cover:
   # When cover is not set, the default cover is displayed
   default_cover:
     # - xxx.jpg
-
+    #- https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg.png
+    #- https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg2.png
+    #- https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg3.png
+    - /img/header_img/home-bg-o.png
+    - /img/header_img/roman.png
+    - /img/header_img/tag-bg.png
+    - /img/404-bg.jpg
+    
 # Replace Broken Images
 error_img:
   flink: /img/friend_404.gif
@@ -897,7 +904,7 @@ clickShowText:
 # https://github.com/francoischalifour/medium-zoom
 # https://fancyapps.com/fancybox/
 # Leave it empty if you don't need lightbox
-lightbox:
+lightbox: fancybox
 
 # --------------------------------------
 # Tag Plugins settings
