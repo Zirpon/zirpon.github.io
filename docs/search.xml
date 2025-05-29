@@ -5110,7 +5110,7 @@ pip install pytesseract </p>
 <h5 id="部分匹配表的构建-lps数组"><a href="#部分匹配表的构建-lps数组" class="headerlink" title="部分匹配表的构建 lps数组"></a>部分匹配表的构建 lps数组</h5><p>部分匹配表的核心是计算每个位置的前缀和后缀的最长共有元素的长度。以下是一个示例：</p>
 <p>对于字符串 “ABCDABD”： </p>
 <ul>
-<li><p>lsp数组穷举<br>“A” 的前缀和后缀都为空集，共有元素的长度为0；<br>“AB” 的前缀为 [A]，后缀为 [B]，共有元素的长度为0；<br>“ABC” 的前缀为 [A, AB]，后缀为 [BC, C]，共有元素的长度为0；<br>“ABCD” 的前缀为 [A, AB, ABC]，后缀为 [BCD, CD, D]，共有元素的长度为0；<br>“ABCDA” 的前缀为 [A, AB, ABC, ABCD]，后缀为 [BCDA, CDA, DA, A]，共有元素为 “A”，长度为1；<br>“ABCDAB” 的前缀为 [A, AB, ABC, ABCD, ABCDA]，后缀为 [BCDAB, CDAB, DAB, AB, B]，共有元素为 “AB”，长度为2；<br>“ABCDABD” 的前缀为 [A, AB, ABC, ABCD, ABCDA, ABCDAB]，后缀为 [BCDABD, CDABD, DABD, ABD, BD, D]，共有元素的长度为0。</p>
+<li><p>lps数组穷举<br>“A” 的前缀和后缀都为空集，共有元素的长度为0；<br>“AB” 的前缀为 [A]，后缀为 [B]，共有元素的长度为0；<br>“ABC” 的前缀为 [A, AB]，后缀为 [BC, C]，共有元素的长度为0；<br>“ABCD” 的前缀为 [A, AB, ABC]，后缀为 [BCD, CD, D]，共有元素的长度为0；<br>“ABCDA” 的前缀为 [A, AB, ABC, ABCD]，后缀为 [BCDA, CDA, DA, A]，共有元素为 “A”，长度为1；<br>“ABCDAB” 的前缀为 [A, AB, ABC, ABCD, ABCDA]，后缀为 [BCDAB, CDAB, DAB, AB, B]，共有元素为 “AB”，长度为2；<br>“ABCDABD” 的前缀为 [A, AB, ABC, ABCD, ABCDA, ABCDAB]，后缀为 [BCDABD, CDABD, DABD, ABD, BD, D]，共有元素的长度为0。</p>
 </li>
 <li><p>next数组穷举 <a href="https://www.cnblogs.com/aninock/p/13796006.html">真正把kmp算法中的next数组含义和求法讲明白</a><br><code>next数组我是这样定义的：该位置前面字符串的最长相同的真前缀和真后缀长度。</code><br>“A” 前面没字符，前缀和后缀都为空集，共有元素的长度为0；<br>“AB” 的前面是字符串A，前缀和后缀都为空集，共有元素的长度为0；<br>“ABC” 的前面是字符串AB，前缀为 [A]，后缀为 [B]，共有元素的长度为0；<br>“ABCD” 的前面是字符串ABC，前缀为 [A, AB]，后缀为 [BC, C]，共有元素的长度为0；<br>“ABCDA” 的前面是字符串ABCD，前缀为 [A, AB, ABC]，后缀为 [BCD, CD, D]，共有元素的长度为0；<br>“ABCDAB” 的前面是字符串ABCDA，前缀为 [A, AB, ABC, ABCD]，后缀为 [BCDA, CDA, DA, A]，共有元素为 “A”，长度为1；<br>“ABCDABD” 的前面是字符串ABCDAB，前缀为 [A, AB, ABC, ABCD, ABCDA]，后缀为 [BCDAB, CDAB, DAB, AB, B]，共有元素为 “AB”，长度为2；</p>
 </li>
