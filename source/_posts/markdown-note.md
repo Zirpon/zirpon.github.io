@@ -105,10 +105,41 @@ updated:
 
 $$f(x, y) = 100 * \lbrace[(x + y) * 3] - 5\rbrace$$
 
-
-
-
 $$ f(n)= \begin{cases} n/2, & \text {if $n$ is even} \\ 3n+1, & \text{if $n$ is odd} \end{cases} $$
+
+顶点数组：
+$
+\begin{array}{|c|c|c|c|c|}
+\hline
+v_0 & v_1 & v_2 & v_3 & v_4 \\
+\hline
+\end{array}
+$
+
+边数组：
+$
+\begin{array}{c|c}
+    \color{lime}{↓}&
+    \color{yellow}\begin{matrix}
+        v_0 & v_1 & v_2 & v_3 & v_4 \\
+    \end{matrix}
+    \\
+    \hline
+    \color{teal}
+    \begin{matrix}
+        v_0 \\ v_1 \\ v_2 \\ v_3 \\ v_4 \\
+    \end{matrix}
+    &
+    \color{fuchsia}
+    \begin{matrix}
+        0 & ∞ & ∞ & ∞ & 6 \\
+        9 & 0 & 3 & ∞ & ∞ \\
+        2 & ∞ & 0 & 5 & ∞ \\
+        ∞ & ∞ & ∞ & 0 & 1 \\
+        ∞ & ∞ & ∞ & ∞ & 0 \\
+    \end{matrix} 
+\end{array}
+$
 
 ## 数组 颜色
 
