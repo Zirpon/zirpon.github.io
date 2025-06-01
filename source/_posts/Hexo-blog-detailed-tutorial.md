@@ -226,3 +226,26 @@ http {
 ## 3. 关于写作
 
 用markdown写作用于生成目录的子标题必须从"**##**"开始, 不能用"#", 这样会导致生成的目录不能跳转
+
+## 4. 后序hexo 博客的一些优化小记录
+
+### hexo-asset-image 并且修改了一点源码以支持本地/在线预览都有效
+
+[本地/在线预览都有效](https://andavid.github.io/2019/01/15/insert-local-image-in-hexo/)
+
+[Hexo插入图片并解决图片的路径问题](https://www.hwpo.top/posts/d87f7e0c/index.html)
+
+### katex 公式问题
+[Hexo使用katex渲染公式](https://dora-cmon.github.io/posts/95c5c5d2/)
+
+[Hexo + Butterfly 建站指南（八）使用 KaTeX 数学公式](https://nickxu.me/2022/04/17/Hexo-Butterfly-%E5%BB%BA%E7%AB%99%E6%8C%87%E5%8D%97%EF%BC%88%E5%85%AB%EF%BC%89%E4%BD%BF%E7%94%A8-KaTeX-%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/)
+
+[hexo-Butterfly添加数学公式插件功能](https://www.mycloudhub.top/posts/0.html#:~:text=Butterfly%E4%B8%BB%E9%A2%98%E6%94%AF%E6%8C%81Mathjax%E5%92%8CKaTex%E4%B8%A4%E7%A7%8D%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E6%B8%B2%E6%9F%93%E5%BC%95%E6%93%8E%EF%BC%8C%E6%9C%AC%E6%96%87%E9%80%89%E6%8B%A9KaTex%E6%8F%92%E4%BB%B6%EF%BC%8C%E5%9B%A0%E4%B8%BA%20KaTeX%20%E6%9B%B4%E5%BF%AB%E6%9B%B4%E8%BD%BB%E9%87%8F%EF%BC%8C%E5%9B%A0%E6%AD%A4%E6%B2%A1%E6%9C%89%20MathJax%20%E7%9A%84%E5%8A%9F%E8%83%BD%E5%A4%9A%EF%BC%88%E6%AF%94%E5%A6%82%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%EF%BC%89%E3%80%82%20%E9%80%89%E6%8B%A9KaTex%20%E4%BD%A0%E4%B8%8D%E9%9C%80%E8%A6%81%E6%B7%BB%E5%8A%A0%20katex.min.js,%E7%9B%B8%E5%BA%94%E7%9A%84%E4%BD%A0%E9%9C%80%E8%A6%81%E5%8D%B8%E8%BD%BD%E4%BD%A0%E4%B9%8B%E5%89%8D%E7%9A%84%20hexo%20%E7%9A%84%20markdown%20%E6%B8%B2%E6%9F%93%E5%99%A8%EF%BC%8C%E7%84%B6%E5%90%8E%E5%AE%89%E8%A3%85%E5%85%B6%E5%AE%83%E6%8F%92%E4%BB%B6%E3%80%82%20%E5%A6%82%E9%9C%80%E9%85%8D%E7%BD%AE%E5%85%B6%E5%AE%83%E5%8F%82%E6%95%B0%EF%BC%8C%E8%AF%B7%E5%8F%82%E8%80%83%20katex%20%E5%AE%98%E7%BD%91)
+
+[解决latex数学公式渲染不正确及行内公式中文渲染乱码问题](https://juejin.cn/post/6968651668720189454)
+
+[Markdown 数学公式排版 KaTex 语法](https://blog.sinlov.cn/posts/2023/03/16/markdown-%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E6%8E%92%E7%89%88-katex-%E8%AF%AD%E6%B3%95/)
+
+[KaTeX 数学公式大全](https://www.luogu.com.cn/article/4a81e2tt)
+
+[Hexo 错误警告与解决办法](https://www.lightshaker.cn/archives/6276/)

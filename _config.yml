@@ -40,7 +40,7 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 syntax_highlighter: highlight.js
@@ -98,7 +98,34 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
+
+markdown:
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: true
+    linkify: true
+    typographer: true
+    quotes: '“”‘’'
+  anchors:
+    level: 2
+    collisionSuffix: 'v'
+    permalink: true
+    permalinkClass: header-anchor
+    permalinkSide: 'left'
+    permalinkSymbol: 🌳
+  plugins:
+    - '@renbaoshuo/markdown-it-katex'
+
+markdown_it_plus:
+  plugins:
+    - plugin:
+        name: markdown-it-plus-image
+        enable: true
+
 theme: butterfly
+
+
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
