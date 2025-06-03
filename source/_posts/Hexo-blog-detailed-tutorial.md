@@ -8,7 +8,7 @@ tags:
 - hexo
 - blog
 catagories:
-- blog
+- 计算机科学
 top: 99
 ---
 

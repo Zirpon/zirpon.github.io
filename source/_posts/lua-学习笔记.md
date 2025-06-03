@@ -7,7 +7,7 @@ date: 2019-04-06 15:32:12
 top: 99999998
 tags:
 - lua
-catagories: 
+catagories:
 - 计算机科学
 ---
 

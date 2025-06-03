@@ -12,6 +12,7 @@ catagories:
 - Linux
 - Debug
 - gdb
+- 计算机科学
 top: 9999
 ---
 

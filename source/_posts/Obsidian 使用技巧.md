@@ -16,6 +16,7 @@ catagories:
 	- dataviewjs
 	- Linter
 	- admonition
+    - 计算机科学
 tags: 
 	- diary/year2022
 	- diary/month04

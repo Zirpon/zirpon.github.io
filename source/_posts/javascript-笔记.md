@@ -12,6 +12,7 @@ tags:
     - 3D
     - sketchfab
 catagories:
+- 计算机科学
 ---
 
 # javascript 笔记

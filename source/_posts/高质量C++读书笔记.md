@@ -2,6 +2,8 @@
 date: 2023-05-31 06:25:21
 top: 99999910
 title: 高质量C++读书笔记
+catagories: 
+- 计算机科学
 ---
 
 [cppreference.com](https://zh.cppreference.com/w/%E9%A6%96%E9%A1%B5)

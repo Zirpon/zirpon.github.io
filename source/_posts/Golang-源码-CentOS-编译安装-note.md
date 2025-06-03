@@ -11,6 +11,7 @@ tags:
 - 源码编译
 catagories:
 - Golang
+- 计算机科学
 top: 999
 ---
 

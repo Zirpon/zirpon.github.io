@@ -15,6 +15,7 @@ catagories:
 - unix
 - Linux
 - iptables
+- 计算机科学
 top: 999
 ---
 
