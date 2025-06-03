@@ -66,12 +66,13 @@ index_generator:
   per_page: 10
   order_by: -date
 
+category_generator:
+  per_page: 10
+  order_by: -date
+
 # Category & Tag
 default_category: uncategorized
 category_map:
-  编程: 计算机科学
-  生活: 健身
-  其他: blog
 tag_map:
 
 # Metadata elements

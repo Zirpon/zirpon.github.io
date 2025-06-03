@@ -1,5 +1,7 @@
 ---
-date: 2025-03-04 18:53:14
-title: 分类
+title: categories
+header-img: img/header_img/RomanTheatre_ZH-CN9417897135_1920x1080.jpg
+date: 2025-06-04 02:41:50
 type: 'categories'
+layout: "categories"
 ---
