@@ -119,8 +119,11 @@ markdown:
     permalinkSide: 'left'
     permalinkSymbol: 🌳
   plugins:
-    - '@renbaoshuo/markdown-it-katex'
-
+    - plugin:
+      name: "@renbaoshuo/markdown-it-katex"
+      enable: true
+      options:
+        strict: error
 markdown_it_plus:
   plugins:
     - plugin:
