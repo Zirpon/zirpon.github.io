@@ -7,7 +7,7 @@ date: 2018-12-21 17:43:35
 tags:
 - hexo
 - blog
-catagories:
+categories:
 - 计算机科学
 top: 99
 ---

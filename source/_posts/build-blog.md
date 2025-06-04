@@ -6,7 +6,7 @@ subtitle: "Build 到 怀疑人生"
 header-img: "img/header_img/roman.png"
 tags:
 - build blog
-catagories:
+categories:
 - 琐事
 top: 9
 ---

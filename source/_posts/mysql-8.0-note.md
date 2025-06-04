@@ -6,7 +6,7 @@ subtitle: "The quick brown fox jumps over the lazy dog"
 header-img: "img/header_img/roman.png"
 tags:
 - mysql
-catagories:
+categories:
 - 计算机科学
 top: 999
 ---

@@ -11,7 +11,7 @@ tags:
     - threejs
     - 3D
     - sketchfab
-catagories:
+categories:
 - 计算机科学
 ---
 

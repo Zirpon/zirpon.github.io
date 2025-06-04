@@ -7,7 +7,7 @@ top: 999999
 date: 2024-07-07 04:44:12
 tags:
 - bash
-catagories: 
+categories: 
 - 计算机科学
 ---
 

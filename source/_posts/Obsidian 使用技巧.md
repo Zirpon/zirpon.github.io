@@ -4,7 +4,7 @@ Author: zirpon
 catalog: true
 header-img:  "img/header_img/roman.png"
 subtitle: The quick brown fox jumps over the lazy dog
-catagories:
+categories:
 	- quickadd
 	- cmenu
 	- templater

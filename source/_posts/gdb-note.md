@@ -8,7 +8,7 @@ tags:
 - Linux
 - Debug
 - gdb
-catagories:
+categories:
 - Linux
 - Debug
 - gdb

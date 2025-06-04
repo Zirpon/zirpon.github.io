@@ -9,7 +9,7 @@ tags:
 - ocrmypdf
 - Tesseract
 - pdf转文字
-catagories: 
+categories: 
 - 计算机科学
 top: 999
 ---

@@ -7,7 +7,7 @@ top: 9
 comments: true
 date: 2025-06-01 05:02:58
 tags:
-catagories:
+categories:
 - 计算机科学
 updated:
 ---

@@ -10,7 +10,7 @@ tags:
 - iptables
 - network
 - firewall
-catagories:
+categories:
 - network
 - unix
 - Linux
