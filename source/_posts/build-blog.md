@@ -3,7 +3,7 @@ title: "Build Blog"
 catalog: true
 date: 2018-11-18 19:43:16
 subtitle: "Build 到 怀疑人生"
-header-img: img/header_img/roman.png
+header-img: img/header_img/roman.jpg
 tags:
 - build blog
 categories:

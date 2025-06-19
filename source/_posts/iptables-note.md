@@ -1,7 +1,7 @@
 ---
 title: Linux iptables note
 catalog: true
-header-img: img/header_img/roman.png
+header-img: img/header_img/roman.jpg
 date: 2018-12-20 16:00:46
 subtitle: "The quick brown fox jumps over the lazy dog"
 tags:

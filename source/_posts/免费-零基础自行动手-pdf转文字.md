@@ -1,7 +1,7 @@
 ---
 title: 免费 零基础自行动手 pdf转文字
 catalog: true
-header-img: img/header_img/roman.png
+header-img: img/header_img/roman.jpg
 subtitle: The quick brown fox jumps over the lazy dog
 date: 2024-06-03 14:42:19
 tags:

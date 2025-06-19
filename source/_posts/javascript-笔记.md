@@ -1,7 +1,7 @@
 ---
 title: javascript 笔记
 catalog: true
-header-img: img/header_img/roman.png
+header-img: img/header_img/roman.jpg
 subtitle: The quick brown fox jumps over the lazy dog
 top: 99991910
 date: 2024-07-06 23:39:44

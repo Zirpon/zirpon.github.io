@@ -1,7 +1,7 @@
 ---
 title: Hexo blog 详细教程
 catalog: true
-header-img: img/header_img/roman.png
+header-img: img/header_img/roman.jpg
 subtitle: The quick brown fox jumps over the lazy dog
 date: 2018-12-21 17:43:35
 tags:

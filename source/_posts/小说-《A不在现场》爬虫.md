@@ -1,7 +1,7 @@
 ---
 title: 小说 《A不在现场》爬虫
 catalog: true
-header-img: img/header_img/roman.png
+header-img: img/header_img/roman.jpg
 subtitle: The quick brown fox jumps over the lazy dog
 date: 2024-05-19 22:33:13
 tags:

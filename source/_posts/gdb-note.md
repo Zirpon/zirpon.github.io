@@ -1,7 +1,7 @@
 ---
 title: GDB note
 catalog: true
-header-img: img/header_img/roman.png
+header-img: img/header_img/roman.jpg
 date: 2018-12-20 16:39:10
 subtitle:
 tags:
