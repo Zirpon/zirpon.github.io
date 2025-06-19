@@ -3,7 +3,7 @@ title: GDB note
 catalog: true
 header-img: img/header_img/roman.jpg
 date: 2018-12-20 16:39:10
-subtitle:
+subtitle: The quick brown fox jumps over the lazy dog
 tags:
 - Linux
 - Debug
