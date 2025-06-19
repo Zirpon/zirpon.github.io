@@ -70,7 +70,7 @@ disable_top_img: false
 default_top_img: /img/header_img/home-bg-o.png
 
 # The banner image of index page
-index_img: /img/header_img/roman.png
+index_img: /img/header_img/roman.jpg
 
 # The banner image of archive page
 archive_img: /img/header_img/archive-bg.png
