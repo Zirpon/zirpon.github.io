@@ -1,14 +1,14 @@
 ---
-title: "Build Blog"
+title: Build Blog
 catalog: true
 date: 2018-11-18 19:43:16
-subtitle: "Build 到 怀疑人生"
+subtitle: The quick brown fox jumps over the lazy dog
 header-img: img/header_img/roman.jpg
 tags:
 - build blog
 categories:
 - 琐事
-top: 9
+top: 1
 ---
 
 今天花了一天的时间建博客 心很累 昨天就开始研究的了 但是昨天一直卡在一个有 js bug的 hexo 主题上面 [Hux](https://github.com/Huxpro/huxpro.github.io) 各种留 issue求教 没反应 研究不下来 溜了溜了
