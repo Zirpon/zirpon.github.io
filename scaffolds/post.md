@@ -9,6 +9,8 @@ categories:
 top: 9
 updated:
 comments: true
+weather: ☀️   🌡️+26°C 🌬️↖4km/h
+Author: ゼプン
 ---
 
 # {{ title }}

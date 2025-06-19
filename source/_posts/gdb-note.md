@@ -9,10 +9,7 @@ tags:
 - Debug
 - gdb
 categories:
-- Linux
-- Debug
 - gdb
-- 计算机科学
 top: 9999
 ---
 

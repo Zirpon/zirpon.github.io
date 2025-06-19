@@ -8,7 +8,7 @@ tags:
 - 爬虫
 - scrapy
 categories: 
-- 计算机科学
+- scrapy
 top: 999
 ---
 

@@ -6,13 +6,13 @@ subtitle: The quick brown fox jumps over the lazy dog
 top: 99991910
 date: 2024-07-06 23:39:44
 tags:
-    - javascript
-    - 文字转语音
-    - threejs
-    - 3D
-    - sketchfab
+- javascript
+- 文字转语音
+- threejs
+- 3D
+- sketchfab
 categories:
-- 计算机科学
+- javascript
 ---
 
 # javascript 笔记

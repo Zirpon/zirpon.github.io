@@ -10,7 +10,7 @@ tags:
 - Tesseract
 - pdf转文字
 categories: 
-- 计算机科学
+- pdf转文字
 top: 999
 ---
 

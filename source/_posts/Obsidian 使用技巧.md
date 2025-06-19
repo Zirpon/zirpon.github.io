@@ -5,33 +5,16 @@ catalog: true
 header-img:  "img/header_img/roman.png"
 subtitle: The quick brown fox jumps over the lazy dog
 categories:
-	- quickadd
-	- cmenu
-	- templater
-	- kanban
-	- calendar
-	- obsidian
-	- dataview
-	- banner
-	- dataviewjs
-	- Linter
-	- admonition
-    - 计算机科学
+- obsidian
 tags: 
-	- diary/year2022
-	- diary/month04
-	- quickadd
-	- cmenu
-	- templater
-	- kanban
-	- calendar
-	- obsidian
-	- dataview
-	- banner
-	- dataviewjs
-	- Linter
-	- admonition
-
+- cmenu
+- templater
+- kanban
+- calendar
+- obsidian
+- dataview
+- banner
+- dataviewjs
 weather: ☀️   🌡️+26°C 🌬️↖4km/h
 date: 2022-04-10 12:38:22
 update: Sunday-04-10-2022 13:35:52

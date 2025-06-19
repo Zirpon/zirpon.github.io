@@ -6,9 +6,10 @@ subtitle: The quick brown fox jumps over the lazy dog
 date: 2019-04-06 15:32:12
 top: 99999998
 tags:
-- lua
+- lua 5.0
+- lua 5.4
 categories:
-- 计算机科学
+- lua
 ---
 
 ## 1. Begin

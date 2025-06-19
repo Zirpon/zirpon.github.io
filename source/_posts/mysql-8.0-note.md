@@ -7,7 +7,7 @@ header-img: "img/header_img/roman.png"
 tags:
 - mysql
 categories:
-- 计算机科学
+- mysql
 top: 999
 ---
 
