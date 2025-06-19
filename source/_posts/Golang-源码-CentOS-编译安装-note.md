@@ -8,7 +8,6 @@ tags:
 - Golang
 - CentOS
 - Linux
-- 源码编译
 categories:
 - Golang
 top: 999
