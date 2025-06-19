@@ -2,7 +2,7 @@
 title: Obsidian 使用技巧
 Author: zirpon
 catalog: true
-header-img:  "img/header_img/roman.png"
+header-img: img/header_img/roman.png
 subtitle: The quick brown fox jumps over the lazy dog
 categories:
 - obsidian

@@ -3,7 +3,7 @@ title: "MySQL 8.0 note"
 catalog: true
 date: 2018-11-28 19:43:16
 subtitle: "The quick brown fox jumps over the lazy dog"
-header-img: "img/header_img/roman.png"
+header-img: img/header_img/roman.png
 tags:
 - mysql
 categories:

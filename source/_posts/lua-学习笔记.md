@@ -1,7 +1,7 @@
 ---
 title: Lua 5.0 ~ 5.4 学习笔记
 catalog: true
-header-img: "img/header_img/roman.png"
+header-img: img/header_img/roman.png
 subtitle: The quick brown fox jumps over the lazy dog
 date: 2019-04-06 15:32:12
 top: 99999998
