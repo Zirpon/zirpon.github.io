@@ -20,6 +20,30 @@ updated:
 - 视频资料
 <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=316858747&bvid=BV1uP411t7vS&cid=1220994701&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 
+
+
+## 视频笔记
+
+### BV1oN4y1B7Da
+
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=877659830&bvid=BV1oN4y1B7Da&cid=1378158567&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+
+#### srp-6 登录协议
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Here is a footnote reference,[^1] and another.[^longnote]
 
 ## Endnotes

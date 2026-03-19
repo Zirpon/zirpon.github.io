@@ -1,0 +1,4 @@
+[41mERROR[49m Cannot find module 'hexo' from 'E:\MyDocs\git-repos\github\zirpon.github.io'
+[41mERROR[49m Local hexo loading failed in [35mE:\MyDocs\git-repos\github\zirpon.github.io[39m
+[41mERROR[49m Try running: 'rm -rf node_modules && npm install --force'
+/mnt/c/Users/Admin/AppData/Roaming/npm/hexo: line 15: exec: node: not found
