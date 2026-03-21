@@ -1,0 +1,267 @@
+/*欢迎使用同花顺公式系统*/
+/*按“CTRL+S”启动AI，可输入需求描述生成相应代码*/
+// MACD KDJ三位一体选股系统 全方案循环输出版
+// 适用于同花顺条件选股
+
+// ================== 第一部分：基础指标计算 ==================
+
+// --- MACD指标 ---
+SHORT := 12;
+LONG := 26;
+MID := 9;
+
+DIF := EMA(CLOSE, SHORT) - EMA(CLOSE, LONG);
+DEA := EMA(DIF, MID);
+MACD := 2*(DIF - DEA);
+
+// --- KDJ指标 ---
+RSV := (CLOSE - LLV(LOW, 9)) / (HHV(HIGH, 9) - LLV(LOW, 9)) * 100;
+K1 := SMA(RSV, 3, 1);
+D1 := SMA(K1, 3, 1);
+J1 := 3*K1 - 2*D1;
+
+// --- 成交量指标 ---
+VOL5 := MA(VOL, 5);
+VOL10 := MA(VOL, 10);
+VOL20 := MA(VOL, 20);
+
+// --- 均线指标 ---
+MA5 := MA(CLOSE, 5);
+MA10 := MA(CLOSE, 10);
+MA20 := MA(CLOSE, 20);
+MA60 := MA(CLOSE, 60);
+MA120 := MA(CLOSE, 120);
+
+// --- 价格位置指标 ---
+近5日最低 := LLV(LOW, 5);
+近10日最低 := LLV(LOW, 10);
+近20日最低 := LLV(LOW, 20);
+近20日最高 := HHV(HIGH, 20);
+近20日涨幅 := (CLOSE - 近20日最低) / 近20日最低 * 100;
+近60日最低 := LLV(LOW, 60);
+近60日最高 := HHV(HIGH, 60);
+近60日跌幅 := (近60日最高 - CLOSE) / 近60日最高 * 100;
+
+// ================== 第二部分：MACD相关信号 ==================
+
+// --- MACD金叉死叉 ---
+MACD金叉 := CROSS(DIF, DEA);
+MACD死叉 := CROSS(DEA, DIF);
+
+// --- MACD位置状态 ---
+MACD水上 := DIF > 0;
+MACD水下 := DIF < 0;
+MACD走强 := DIF > DEA;
+MACD走弱 := DIF < DEA;
+MACD向上 := DIF > REF(DIF, 1);
+MACD向下 := DIF < REF(DIF, 1);
+
+// --- MACD柱状体 ---
+MACD红柱 := MACD > 0;
+MACD绿柱 := MACD < 0;
+MACD红柱放大 := MACD > REF(MACD, 1) AND MACD > 0;
+MACD绿柱缩小 := MACD > REF(MACD, 1) AND MACD < 0;
+
+// --- MACD背离 ---
+MACD底背离 := DIF > REF(DIF, 1) AND CLOSE < REF(CLOSE, 1);
+MACD顶背离 := DIF < REF(DIF, 1) AND CLOSE > REF(CLOSE, 1);
+
+// ================== 第三部分：KDJ相关信号 ==================
+
+// --- KDJ金叉死叉 ---
+KDJ金叉 := CROSS(K1, D1);
+KDJ死叉 := CROSS(D1, K1);
+
+// --- KDJ位置状态 ---
+K值低位 := K1 < 20;
+K值中位 := K1 >= 20 AND K1 <= 80;
+K值高位 := K1 > 80;
+
+J值超卖 := J1 < 20;
+J值低位 := J1 < 30;
+J值中低位 := J1 < 40;
+J值中位 := J1 >= 40 AND J1 <= 60;
+J值中高位 := J1 > 60;
+J值高位 := J1 > 70;
+J值超买 := J1 > 80;
+
+// --- KDJ趋势 ---
+J线向上 := J1 > REF(J1, 1);
+J线向下 := J1 < REF(J1, 1);
+J线连续向上 := J1 > REF(J1, 1) AND REF(J1, 1) > REF(J1, 2);
+J线连续向下 := J1 < REF(J1, 1) AND REF(J1, 1) < REF(J1, 2);
+
+K线向上 := K1 > REF(K1, 1);
+D线向上 := D1 > REF(D1, 1);
+
+// --- KDJ背离 ---
+价格新低 := LOW < REF(LLV(LOW, 10), 1);
+J值抬高 := J1 > REF(J1, 1) AND REF(J1, 1) < REF(J1, 2);
+KDJ底背离 := 价格新低 AND J值抬高;
+
+价格新高 := HIGH > REF(HHV(HIGH, 10), 1);
+J值降低 := J1 < REF(J1, 1) AND REF(J1, 1) > REF(J1, 2);
+KDJ顶背离 := 价格新高 AND J值降低;
+
+// ================== 第四部分：成交量相关信号 ==================
+
+// --- 放量缩量 ---
+今日放量 := VOL > REF(VOL, 1) * 1.2;
+温和放量 := VOL > REF(VOL, 1) * 1.1;
+微微放量 := VOL > REF(VOL, 1) * 1.05;
+平量 := VOL >= REF(VOL, 1) * 0.95 AND VOL <= REF(VOL, 1) * 1.05;
+微微缩量 := VOL < REF(VOL, 1) * 0.95;
+明显缩量 := VOL < REF(VOL, 1) * 0.8;
+
+// --- 均量关系 ---
+高于5日均量 := VOL > VOL5;
+高于10日均量 := VOL > VOL10;
+高于20日均量 := VOL > VOL20;
+
+近5日均量向上 := VOL5 > REF(VOL5, 1);
+近10日均量向上 := VOL10 > REF(VOL10, 1);
+近20日均量向上 := VOL20 > REF(VOL20, 1);
+
+// --- 放量组合 ---
+放量上涨 := VOL > REF(VOL, 1) AND CLOSE > REF(CLOSE, 1);
+放量下跌 := VOL > REF(VOL, 1) AND CLOSE < REF(CLOSE, 1);
+缩量上涨 := VOL < REF(VOL, 1) AND CLOSE > REF(CLOSE, 1);
+缩量下跌 := VOL < REF(VOL, 1) AND CLOSE < REF(CLOSE, 1);
+
+// ================== 第五部分：价格形态信号 ==================
+
+// --- 价格与均线关系 ---
+站上5日线 := CLOSE > MA5;
+站上10日线 := CLOSE > MA10;
+站上20日线 := CLOSE > MA20;
+站上60日线 := CLOSE > MA60;
+
+跌破5日线 := CLOSE < MA5;
+跌破10日线 := CLOSE < MA10;
+跌破20日线 := CLOSE < MA20;
+跌破60日线 := CLOSE < MA60;
+
+近5日线向上 := MA5 > REF(MA5, 1);
+近10日线向上 := MA10 > REF(MA10, 1);
+近20日线向上 := MA20 > REF(MA20, 1);
+近60日线向上 := MA60 > REF(MA60, 1);
+
+// --- 价格位置 ---
+近20日低位 := CLOSE <= 近20日最低 * 1.05;
+近20日底部区域 := CLOSE <= 近20日最低 + (近20日最高 - 近20日最低) * 0.2;
+近60日低位 := CLOSE <= 近60日最低 * 1.1;
+近60日底部区域 := CLOSE <= 近60日最低 + (近60日最高 - 近60日最低) * 0.3;
+
+// --- 涨跌状态 ---
+今日上涨 := CLOSE > REF(CLOSE, 1);
+今日下跌 := CLOSE < REF(CLOSE, 1);
+今日收阳 := CLOSE > OPEN;
+今日收阴 := CLOSE < OPEN;
+今日十字星 := ABS(CLOSE - OPEN) <= (HIGH - LOW) * 0.1;
+
+连续上涨 := BARSLASTCOUNT(CLOSE > REF(CLOSE, 1)) >= 2;
+连续下跌 := BARSLASTCOUNT(CLOSE < REF(CLOSE, 1)) >= 2;
+
+// ================== 第六部分：定义所有选股方案 ==================
+
+// --- 原严格方案（方案1-5）---
+方案1 := MACD金叉 AND KDJ金叉 AND J1 < 30 AND VOL > VOL5 * 1.2;  // 共振买入
+方案2 := 方案1 OR (价格新低 AND J值抬高 AND J1 < 40);  // 共振+底背离
+方案3 := MACD水上 AND DIF > DEA AND J1 < 60 AND CROSS(J1, D1) AND VOL > VOL5;  // 强势回调
+方案4 := KDJ底背离 AND J1 < 40 AND MACD金叉 AND KDJ金叉;  // 背离金叉
+方案5 := (方案1 OR (KDJ底背离 AND CROSS(J1, D1))) AND DIF > -0.5 AND CLOSE > MA20;  // 综合最强
+
+// --- 新增宽松方案（方案6-10）---
+方案6 := J线向上 AND J1 < 70 AND (MACD走强 OR MACD金叉 OR DIF > -0.3) AND VOL > REF(VOL, 1) * 0.8 AND CLOSE > 近5日最低 * 0.95;  // 温和启动
+方案7 := J1 < 45 AND (今日上涨 OR 今日收阳) AND VOL > REF(VOL, 1) * 0.9 AND (DIF > REF(DIF, 1) OR DIF > DEA);  // 超跌反弹
+方案8 := KDJ金叉 AND J1 < 75 AND VOL > REF(VOL, 1) * 0.85 AND (DIF > DEA OR DIF > -0.2);  // KDJ优先
+方案9 := MACD金叉 AND J1 < 70 AND VOL > REF(VOL, 1) * 0.9 AND (CLOSE > MA5 OR 今日收阳);  // MACD优先
+方案10 := CLOSE < MA20 * 1.05 AND J1 < 60 AND J线向上 AND VOL > REF(VOL, 1) * 0.8 AND (K1 > D1 OR KDJ金叉);  // 低位布局
+
+// --- 新增宽松方案（方案11-15）---
+方案11 := 价格新低 AND J值抬高 AND J1 < 55 AND VOL > REF(VOL, 1) AND 今日上涨;  // 底背离宽松
+方案12 := (J线向上 OR KDJ金叉) AND J1 < 80 AND VOL > REF(VOL, 1) * 0.7 AND CLOSE > 近10日最低 * 0.9 AND (DIF > DEA OR J1 < 60 OR MACD金叉);  // 综合宽松
+方案13 := J1 < 75 AND (J线向上 OR KDJ金叉) AND VOL > REF(VOL, 1) * 0.75 AND (今日上涨 OR 今日收阳) AND (DIF > DEA OR J1 < 55);  // 简单实用
+方案14 := J1 < 70 AND J线向上 AND VOL > REF(VOL, 1) * 0.7 AND 今日上涨;  // 超简版
+方案15 := CLOSE > REF(CLOSE, 1) * 0.95 AND VOL > 1000 AND J1 < 85 AND (DIF > DEA OR J1 < 65 OR KDJ金叉);  // 保证有票
+
+// ================== 第七部分：循环输出所有方案 ==================
+
+// 使用WHILE循环输出15个选股条件
+VAR1 := 1;
+WHILE VAR1 <= 15 DO
+BEGIN
+    // 动态生成方案名称和输出
+    IF VAR1 = 1 THEN 选股方案1 := 方案1;
+    IF VAR1 = 2 THEN 选股方案2 := 方案2;
+    IF VAR1 = 3 THEN 选股方案3 := 方案3;
+    IF VAR1 = 4 THEN 选股方案4 := 方案4;
+    IF VAR1 = 5 THEN 选股方案5 := 方案5;
+    IF VAR1 = 6 THEN 选股方案6 := 方案6;
+    IF VAR1 = 7 THEN 选股方案7 := 方案7;
+    IF VAR1 = 8 THEN 选股方案8 := 方案8;
+    IF VAR1 = 9 THEN 选股方案9 := 方案9;
+    IF VAR1 = 10 THEN 选股方案10 := 方案10;
+    IF VAR1 = 11 THEN 选股方案11 := 方案11;
+    IF VAR1 = 12 THEN 选股方案12 := 方案12;
+    IF VAR1 = 13 THEN 选股方案13 := 方案13;
+    IF VAR1 = 14 THEN 选股方案14 := 方案14;
+    IF VAR1 = 15 THEN 选股方案15 := 方案15;
+    
+    VAR1 := VAR1 + 1;
+END;
+
+// 输出所有选股方案（在副图中显示，用于测试）
+选股方案1;
+选股方案2;
+选股方案3;
+选股方案4;
+选股方案5;
+选股方案6;
+选股方案7;
+选股方案8;
+选股方案9;
+选股方案10;
+选股方案11;
+选股方案12;
+选股方案13;
+选股方案14;
+选股方案15;
+
+// ================== 第八部分：综合选股输出（用于条件选股） ==================
+
+// 这里可以自定义最终输出的选股条件
+// 例如：输出方案5和方案15的组合
+最终选股 := 选股方案5 OR 选股方案15;
+
+// 或者输出所有宽松方案的组合
+宽松组合 := 选股方案6 OR 选股方案7 OR 选股方案8 OR 选股方案9 OR 选股方案10 
+            OR 选股方案11 OR 选股方案12 OR 选股方案13 OR 选股方案14 OR 选股方案15;
+
+// 或者输出所有方案的组合
+全部方案 := 选股方案1 OR 选股方案2 OR 选股方案3 OR 选股方案4 OR 选股方案5
+            OR 选股方案6 OR 选股方案7 OR 选股方案8 OR 选股方案9 OR 选股方案10
+            OR 选股方案11 OR 选股方案12 OR 选股方案13 OR 选股方案14 OR 选股方案15;
+
+// 默认输出全部方案（保证能选出股票）
+选股条件: 全部方案;
+
+/* 
+使用说明：
+
+1. 当前输出的是全部15个方案的组合（任意一个满足即可选出），保证每天都有股票
+
+2. 如果想调整选股范围，可以修改"最终选股"的赋值：
+   
+   选股条件: 选股方案5;  // 只输出方案5（严格版）
+   选股条件: 选股方案15;  // 只输出方案15（最宽松）
+   选股条件: 宽松组合;  // 只输出方案6-15（宽松版）
+   选股条件: 选股方案1 OR 选股方案5;  // 自定义组合
+
+3. 在副图中可以看到所有15个方案的输出值（1表示满足，0表示不满足）
+
+4. 方案严格度排序（1最严，15最松）：
+   1-5: 严格版 - 适合强势市场
+   6-10: 温和版 - 适合震荡市场
+   11-15: 宽松版 - 适合弱势市场
+*/
