@@ -1,0 +1,56 @@
+/*  
+  同花顺15分钟K线选股公式
+  核心逻辑：20日均线多头 + 60日均线支撑 + 量能放大 + 底背离确认
+  适用周期：15分钟线
+  选股时机：底背离后K线站稳20日均线且量能放大
+*/
+
+N1:=20;  /* 短期均线周期 */
+N2:=60;  /* 长期均线周期 */
+
+/* 均线计算 */
+MA20:=MA(CLOSE, N1);
+MA60:=MA(CLOSE, N2);
+
+/* 条件1：20日均线连续3根K线上倾且收盘价逐根抬高 */
+COND1_1:=EVERY(MA20>REF(MA20,1), 3);  /* 连续3根K线MA20向上 */
+COND1_2:=EVERY(CLOSE>REF(CLOSE,1), 3); /* 连续3根K线收盘价抬高 */
+COND1:=COND1_1 AND COND1_2;  /* 短期资金进场信号 */
+
+/* 条件2：60日均线连续5根走平或向上，且20日均线始终在60日均线上方 */
+COND2_1:=EVERY(MA60>=REF(MA60,1), 5);  /* 连续5根K线MA60向上或走平 */
+COND2_2:=MA20>MA60;  /* 20日均线在60日均线上方 */
+COND2:=COND2_1 AND COND2_2;  /* 中期支撑稳固信号 */
+
+/* 条件3：量能温和放大（当前量能较前5根平均量能增加30%-50%） */
+VOL_AVG5:=MA(VOL, 5);  /* 5周期均量 */
+COND3:=VOL >= VOL_AVG5 * 1.3 AND VOL <= VOL_AVG5 * 1.5;  /* 量能放大30%-50% */
+COND3_EXT:=VOL > REF(VOL,1);  /* 量能逐根递增（辅助条件） */
+
+/* 条件4：底背离判断（以MACD为参考指标） */
+DIFF:=EMA(CLOSE,12)-EMA(CLOSE,26);
+DEA:=EMA(DIFF,9);
+MACD_VAL:=2*(DIFF-DEA);  /* MACD柱状线 */
+
+/* 最近20根K线内的价格低点和MACD低点背离 */
+REF_PRICE_LOW:=REF(LLV(CLOSE,20),1);  /* 上一周期前20根K线最低价 */
+REF_MACD_LOW:=REF(LLV(MACD_VAL,20),1);  /* 上一周期前20根K线MACD最低值 */
+CURRENT_PRICE_LOW:=LLV(CLOSE,5);  /* 近期5根K线最低价 */
+CURRENT_MACD_LOW:=LLV(MACD_VAL,5);  /* 近期5根K线MACD最低值 */
+
+/* 底背离：股价创新低但MACD未同步新低 */
+COND4:=(CURRENT_PRICE_LOW < REF_PRICE_LOW) AND (CURRENT_MACD_LOW > REF_MACD_LOW);
+
+/* 条件5：买入时机确认 - 底背离出现后，当前K线站稳20日均线上方 */
+COND5:=CLOSE > MA20;  /* 收盘价站上20日均线 */
+
+/* 综合选股信号：趋势确立 + 底背离确认 + 站稳均线 + 量能配合 */
+选股: COND1 AND COND2 AND COND4 AND COND5 AND COND3;
+
+/* 
+  使用说明：
+  1. 本公式适用于15分钟K线周期选股
+  2. 建议结合其他技术指标验证，避免主力资金“骗线”
+  3. 严格执行买入纪律：底背离出现后，下一根15分钟K线站稳20日均线上方且量能持续放大时买入
+  4. 参数可根据个人交易风格微调（如均线周期、量能放大比例等）
+*/
