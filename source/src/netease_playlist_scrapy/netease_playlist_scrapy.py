@@ -89,15 +89,12 @@ def get_cached_playlist_songs(playlist_id):
     """从 TinyDB 缓存中获取歌单歌曲名称列表，如果缓存有效则返回歌曲名称集合，否则返回 None"""
     doc = cache_table.get(PlaylistQuery.playlist_id == playlist_id)
     if doc:
-        # 检查是否过期
         expire_time = datetime.fromisoformat(doc["expire_time"])
         if datetime.now() < expire_time:
-            # 缓存有效
             song_names = set(doc["song_names"])
             logger.info(f"缓存命中 - 歌单 {playlist_id}，共 {len(song_names)} 首歌曲")
             return song_names
         else:
-            # 缓存已过期，删除该条记录
             cache_table.remove(PlaylistQuery.playlist_id == playlist_id)
             logger.info(f"缓存已过期 - 歌单 {playlist_id}")
     return None
@@ -107,34 +104,27 @@ def set_cached_playlist_songs(playlist_id, song_names):
     expire_time = datetime.now() + timedelta(days=CACHE_TTL_DAYS)
     doc = {
         "playlist_id": playlist_id,
-        "song_names": list(song_names),   # 存储为列表（JSON 可序列化）
+        "song_names": list(song_names),
         "expire_time": expire_time.isoformat()
     }
     cache_table.upsert(doc, PlaylistQuery.playlist_id == playlist_id)
     logger.info(f"缓存已更新 - 歌单 {playlist_id}，有效期 {CACHE_TTL_DAYS} 天")
 
 def get_playlist_tracks_fallback(playlist_id):
-    """
-    备用接口（oiapi.net）：获取歌单详情，返回歌曲名称集合
-    先查缓存，未命中则请求接口并存入缓存
-    """
-    # 1. 尝试从缓存获取
+    """备用接口（oiapi.net），先查缓存，未命中则请求并存入缓存"""
     cached_songs = get_cached_playlist_songs(playlist_id)
     if cached_songs is not None:
         return cached_songs
 
-    # 2. 缓存未命中，请求备用接口
     url = f"https://www.oiapi.net/api/NeteasePlaylistDetail?id={playlist_id}"
     try:
         resp = requests.get(url, timeout=15)
         resp.raise_for_status()
         data = resp.json()
-        # oiapi.net 成功时 code=1，data 为歌曲列表
         if data.get("code") == 1:
             songs = data.get("data", [])
             song_names = {song["name"] for song in songs if "name" in song}
             logger.info(f"备用接口获取歌单 {playlist_id} 成功，共 {len(song_names)} 首歌曲")
-            # 存入缓存
             set_cached_playlist_songs(playlist_id, song_names)
             return song_names
         else:
@@ -145,29 +135,19 @@ def get_playlist_tracks_fallback(playlist_id):
         return set()
 
 def get_playlist_tracks_with_fallback(playlist_id):
-    """
-    获取歌单歌曲列表，带备用降级及本地缓存机制：
-    1. 优先使用官方接口（无缓存）
-    2. 如果官方接口返回的歌曲列表中缺少目标歌曲，则尝试备用接口（带 TinyDB 缓存）
-    3. 返回最终合并后的歌曲列表
-    """
+    """获取歌单歌曲列表，官方接口优先，失败则备用接口（带缓存）"""
     official_tracks = get_playlist_tracks_official(playlist_id)
     
     # 检查官方接口是否已经包含所有目标歌曲
     if False and all(song in official_tracks for song in SONGS):
         logger.info(f"歌单 {playlist_id} 官方接口已匹配成功，无需备用接口")
         return official_tracks
-    
-    # 官方接口匹配失败，尝试备用接口（带缓存）
+
     logger.info(f"歌单 {playlist_id} 官方接口匹配失败，尝试备用接口（缓存优先）...")
     fallback_tracks = get_playlist_tracks_fallback(playlist_id)
-    
-    # 合并两个来源的歌曲集合（去重）
     merged_tracks = official_tracks.union(fallback_tracks)
-    
     if len(merged_tracks) > len(official_tracks):
         logger.info(f"备用接口补充了 {len(merged_tracks) - len(official_tracks)} 首歌曲")
-    
     return merged_tracks
 
 def main():
@@ -175,7 +155,7 @@ def main():
     logger.info("网易云音乐歌单爬虫（官方接口 + 备用接口双重验证 + TinyDB缓存）")
     logger.info("=" * 60)
 
-    # 1. 分别搜索每首歌，收集所有候选歌单（去除重复id）
+    # 1. 分别搜索每首歌，收集候选歌单
     candidate_map = {}
     for song in SONGS:
         logger.info(f"开始搜索包含《{song}》的歌单...")
@@ -197,13 +177,12 @@ def main():
         logger.warning("未找到任何候选歌单，程序结束")
         return
 
-    # 2. 逐个验证候选歌单是否同时包含两首歌（带备用降级 & 缓存）
+    # 2. 逐个验证
     matched_playlists = []
     total = len(candidate_list)
     for idx, pl in enumerate(candidate_list, 1):
         logger.info(f"正在验证 [{idx}/{total}] 歌单: {pl['name']} (ID: {pl['id']})")
         song_set = get_playlist_tracks_with_fallback(pl["id"])
-        
         if all(song in song_set for song in SONGS):
             matched_playlists.append({
                 "playlist_id": pl["id"],
@@ -217,7 +196,7 @@ def main():
             logger.info(f"  ❌ 不匹配，缺失: {', '.join(missing)}")
         #time.sleep(REQUEST_DELAY)
 
-    # 3. 输出最终结果
+    # 3. 输出结果并保存文件（按关键词动态命名）
     logger.info("=" * 60)
     if not matched_playlists:
         logger.info("没有找到同时包含指定歌曲的歌单。")
@@ -230,10 +209,12 @@ def main():
         logger.info(f"   播放量：{pl['play_count']}")
         logger.info(f"   链接：https://music.163.com/playlist?id={pl['playlist_id']}")
 
-    # 4. 保存到文件
-    with open("matched_playlists.json", "w", encoding="utf-8") as f:
+    # 动态生成文件名：使用下划线连接两首歌名
+    safe_songs = [song.replace("/", "_").replace("\\", "_") for song in SONGS]  # 简单替换非法字符
+    filename = f"{safe_songs[0]}_{safe_songs[1]}_matched.json"
+    with open(filename, "w", encoding="utf-8") as f:
         json.dump(matched_playlists, f, ensure_ascii=False, indent=2)
-    logger.info(f"\n结果已保存至 matched_playlists.json")
+    logger.info(f"\n结果已保存至 {filename}")
 
 if __name__ == "__main__":
     main()
