@@ -212,7 +212,7 @@ def main():
     # 动态生成文件名：使用下划线连接两首歌名
     safe_songs = [song.replace("/", "_").replace("\\", "_") for song in SONGS]  # 简单替换非法字符
     filename = f"{safe_songs[0]}_{safe_songs[1]}_matched.json"
-    with open(filename, "w", encoding="utf-8") as f:
+    with open("./logs/"+filename, "w", encoding="utf-8") as f:
         json.dump(matched_playlists, f, ensure_ascii=False, indent=2)
     logger.info(f"\n结果已保存至 {filename}")
 
