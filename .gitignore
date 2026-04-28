@@ -1,3 +1,4 @@
+source/src/netease_playlist_scrapy/logs/
 *.pyc
 .DS_Store
 Thumbs.db
