@@ -251,7 +251,7 @@ def main():
                 "tags": metadata["tags"],
                 "song_count": song_count,
                 "matched_songs": SONGS,
-                "url": f"https://music.163.com/playlist?id={pl['playlist_id']}"
+                "url": f"https://music.163.com/playlist?id={pl['id']}"
             })
             logger.info(f"  ✅ 匹配！歌曲总数：{song_count}，同时包含 {', '.join(SONGS)}")
         else:
